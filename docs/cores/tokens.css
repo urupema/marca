@@ -4,27 +4,27 @@
 @font-face { font-family: "Space Grotesk"; src: url("../fontes/SpaceGrotesk-Variavel.woff2") format("woff2-variations"); font-weight: 300 700; font-style: normal; font-display: swap; }
 
 :root {
-  --color-fundo: #F6F1E7;  /* Palha */
-  --color-superficie: #E7DFD0;  /* Areia */
-  --color-texto: #221F1A;  /* Tinta */
-  --color-decisao: #B4602F;  /* Urucum */
-  --color-texto-secundario: #686157;  /* Tinta reduzida */
-  --color-decisao-texto: #A85626;  /* Urucum texto */
-  --color-filete-forte: #8E887F;  /* Filete forte */
-  --color-papel: #FFFFFF;  /* Branco papel */
-  --color-escuro-fundo: #221F1A;  /* Tinta */
-  --color-escuro-superficie: #2D2A24;  /* Tinta elevada */
-  --color-escuro-filete: #3B3731;  /* Filete escuro */
-  --color-escuro-texto: #F6F1E7;  /* Palha */
-  --color-escuro-texto-secundario: #BCB8AE;  /* Palha reduzida */
-  --color-escuro-decisao-texto: #EB9461;  /* Urucum texto sobre Tinta */
-  --color-escuro-filete-forte: #706B64;  /* Filete forte escuro */
-  --color-estado-correto: #426B4B;  /* Estado correto */
-  --color-estado-atencao: #805B09;  /* Estado de atenção */
-  --color-estado-falha: #AC3942;  /* Estado de falha */
-  --color-estado-correto-escuro: #8DBA96;  /* Estado correto sobre Tinta */
-  --color-estado-atencao-escuro: #CDAB62;  /* Estado de atenção sobre Tinta */
-  --color-estado-falha-escuro: #EA98A6;  /* Estado de falha sobre Tinta */
+  --color-background: #F6F1E7;  /* Palha */
+  --color-surface: #E7DFD0;  /* Areia */
+  --color-text: #221F1A;  /* Tinta */
+  --color-decision: #B4602F;  /* Urucum */
+  --color-text-secondary: #686157;  /* Tinta reduzida */
+  --color-decision-text: #A85626;  /* Urucum texto */
+  --color-rule-strong: #8E887F;  /* Filete forte */
+  --color-paper: #FFFFFF;  /* Branco papel */
+  --color-dark-background: #221F1A;  /* Tinta */
+  --color-dark-surface: #2D2A24;  /* Tinta elevada */
+  --color-dark-rule: #3B3731;  /* Filete escuro */
+  --color-dark-text: #F6F1E7;  /* Palha */
+  --color-dark-text-secondary: #BCB8AE;  /* Palha reduzida */
+  --color-dark-decision-text: #EB9461;  /* Urucum texto sobre Tinta */
+  --color-dark-rule-strong: #706B64;  /* Filete forte escuro */
+  --color-state-ok: #426B4B;  /* Estado correto */
+  --color-state-warning: #805B09;  /* Estado de atenção */
+  --color-state-failure: #AC3942;  /* Estado de falha */
+  --color-state-ok-dark: #8DBA96;  /* Estado correto sobre Tinta */
+  --color-state-warning-dark: #CDAB62;  /* Estado de atenção sobre Tinta */
+  --color-state-failure-dark: #EA98A6;  /* Estado de falha sobre Tinta */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -33,34 +33,34 @@
   --space-6: 32px;
   --space-7: 48px;
   --space-8: 64px;
-  --space-celula: 96px;  /* Célula */
-  --radius-barra: 999px;  /* Ponta da barra */
-  --radius-superficie: 4px;  /* Canto de superfície */
+  --space-cell: 96px;  /* Célula */
+  --radius-bar: 999px;  /* Ponta da barra */
+  --radius-surface: 4px;  /* Canto de superfície */
   --fonte-institucional: "Newsreader", Georgia, serif;
   --fonte-sistema: "Space Grotesk", Arial, sans-serif;
 
   /* papéis em uso: trocam juntos no modo escuro */
-  --papel-fundo: var(--color-fundo);
-  --papel-superficie: var(--color-superficie);
-  --papel-texto: var(--color-texto);
-  --papel-texto-secundario: var(--color-texto-secundario);
-  --papel-decisao: var(--color-decisao);
-  --papel-decisao-texto: var(--color-decisao-texto);
-  --papel-filete: var(--color-superficie);
-  --papel-filete-forte: var(--color-filete-forte);
-  --papel-simbolo: var(--color-texto);
+  --papel-fundo: var(--color-background);
+  --papel-superficie: var(--color-surface);
+  --papel-texto: var(--color-text);
+  --papel-texto-secundario: var(--color-text-secondary);
+  --papel-decisao: var(--color-decision);
+  --papel-decisao-texto: var(--color-decision-text);
+  --papel-filete: var(--color-surface);
+  --papel-filete-forte: var(--color-rule-strong);
+  --papel-simbolo: var(--color-text);
 }
 
 .escuro, [data-tema="escuro"] {
-  --papel-fundo: var(--color-escuro-fundo);
-  --papel-superficie: var(--color-escuro-superficie);
-  --papel-texto: var(--color-escuro-texto);
-  --papel-texto-secundario: var(--color-escuro-texto-secundario);
-  --papel-decisao-texto: var(--color-escuro-decisao-texto);
-  --papel-filete: var(--color-escuro-filete);
-  --papel-filete-forte: var(--color-escuro-filete-forte);
-  --papel-simbolo: var(--color-escuro-texto);
-  --color-estado-correto: var(--color-estado-correto-escuro);
-  --color-estado-atencao: var(--color-estado-atencao-escuro);
-  --color-estado-falha: var(--color-estado-falha-escuro);
+  --papel-fundo: var(--color-dark-background);
+  --papel-superficie: var(--color-dark-surface);
+  --papel-texto: var(--color-dark-text);
+  --papel-texto-secundario: var(--color-dark-text-secondary);
+  --papel-decisao-texto: var(--color-dark-decision-text);
+  --papel-filete: var(--color-dark-rule);
+  --papel-filete-forte: var(--color-dark-rule-strong);
+  --papel-simbolo: var(--color-dark-text);
+  --color-state-ok: var(--color-state-ok-dark);
+  --color-state-warning: var(--color-state-warning-dark);
+  --color-state-failure: var(--color-state-failure-dark);
 }

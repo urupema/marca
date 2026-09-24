@@ -46,7 +46,7 @@ body {
   display: inline-block;
   width: calc(var(--b) * 2.382);
   height: var(--b);
-  border-radius: var(--radius-barra);
+  border-radius: var(--radius-bar);
   background: var(--papel-decisao);
   vertical-align: middle;
   flex: none;
@@ -79,7 +79,7 @@ body {
   column-gap: var(--space-3);
   align-items: start;
   border: 1.5px solid var(--papel-texto);
-  border-radius: var(--radius-superficie);
+  border-radius: var(--radius-surface);
   padding: var(--space-3) var(--space-4) var(--space-3) var(--space-3);
   background: var(--papel-fundo);
 }
@@ -108,9 +108,9 @@ body {
 /* ---------- estados de operação (produto e infraestrutura) ---------- */
 .estado { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
 .estado::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
-.estado.correto { color: var(--color-estado-correto); }
-.estado.atencao { color: var(--color-estado-atencao); }
-.estado.falha { color: var(--color-estado-falha); }
+.estado.correto { color: var(--color-state-ok); }
+.estado.atencao { color: var(--color-state-warning); }
+.estado.falha { color: var(--color-state-failure); }
 .estado.neutro { color: var(--papel-texto-secundario); }
 
 /* ---------- impressão ---------- */

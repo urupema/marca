@@ -8,9 +8,10 @@
   body { font-size: 14px; background: var(--papel-fundo); }
   .app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
   nav { border-right: 1px solid var(--papel-filete); padding: 24px 20px; display: flex; flex-direction: column; gap: 28px; }
+  nav .marca { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
+  nav .marca img { width: 32px; height: 32px; }
   nav .marca b { display: block; font: 600 24px/1 var(--fonte-sistema); letter-spacing: -0.01em; }
-  nav .marca span { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 11px; color: var(--papel-texto-secundario); white-space: nowrap; }
-  nav .marca span img { width: 16px; height: 16px; }
+  nav .marca span { grid-column: 1 / -1; display: block; margin-top: 10px; font-size: 11px; color: var(--papel-texto-secundario); white-space: nowrap; }
   nav .marca span strong { font-weight: 600; color: var(--papel-texto); }
   nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
   nav li { padding: 8px 10px; border-radius: 4px; color: var(--papel-texto-secundario); font-weight: 500; }
@@ -27,7 +28,7 @@
   .botao.primario { background: var(--papel-texto); color: var(--papel-fundo); border-color: var(--papel-texto); }
   .botao.primario .barra-decisao { --b: 7px; }
 
-  .trilha { border: 1px solid var(--papel-filete); border-radius: 4px; padding: 18px 20px 20px; background: var(--color-papel); }
+  .trilha { border: 1px solid var(--papel-filete); border-radius: 4px; padding: 18px 20px 20px; background: var(--color-paper); }
   .trilha .topo { display: flex; justify-content: space-between; margin-bottom: 16px; }
   .elos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 28px; position: relative; }
   .elo { border-top: 2px solid var(--papel-texto); padding-top: 10px; position: relative; }
@@ -39,7 +40,7 @@
   .elo .dado { font-size: 12px; color: var(--papel-texto-secundario); display: block; margin-top: 8px; }
 
   .colunas { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; align-items: start; }
-  .painel { border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--color-papel); }
+  .painel { border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--color-paper); }
   .painel h2 { font: 600 14px/1 var(--fonte-sistema); margin: 0; padding: 16px 20px; border-bottom: 1px solid var(--papel-filete); display: flex; justify-content: space-between; }
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding: 10px 20px; border-bottom: 1px solid var(--papel-filete); }
@@ -58,7 +59,7 @@
 <body>
 <div class="app">
   <nav>
-    <div class="marca" aria-label="Forja, um produto do Instituto Urupema"><b>Forja</b><span><img src="../logo/favicon-16.svg" alt="">um produto do <strong>Instituto Urupema</strong></span></div>
+    <div class="marca" aria-label="Forja, um produto do Instituto Urupema"><img src="../logo/forja-icone.svg" alt=""><b>Forja</b><span>um produto do <strong>Instituto Urupema</strong></span></div>
     <ul>
       <li>Participantes</li>
       <li>Conjuntos de dados</li>
