@@ -15,7 +15,6 @@ $R $M/certificado.html .pagina     $S/certificado 1200 900 1.6
 $R $M/apresentacao.html .slide     $S/apresentacao 2000 1200 0.8
 $R $M/card-social.html .card       $S/card-social 1300 1400 1
 $R $M/coassinatura.html .quadro    $S/coassinatura 1600 900 1.2
-$R $M/cracha.html .cracha          $S/cracha 400 500 4
 $R $M/assinatura-email.html body   $S/assinatura-email 640 300 2
 # PNG → JPEG de alta qualidade para peso de página
 python3 - <<'PY'
