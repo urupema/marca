@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 5,
-    "version": "2.2.0",
+    "version": "2.3.0",
     "brand_name": "Instituto Urupema",
     "tier": "full",
     "touchpoints": [
@@ -233,7 +233,7 @@
         "status": "final",
         "master_format": "SVG",
         "master_path": "docs/logo/simbolo.svg",
-        "criterion": "SVG masters with outlined lettering, symbol geometry identical to the 285-unit master, and structural check with no font, raster or script; reproducible with ferramentas/gerar_logos.py."
+        "criterion": "SVG masters with outlined lettering, symbol geometry identical to the 285-unit master, and structural check with no font, raster or script. Masters are final files: a change is made in the SVG itself and checked again."
       },
       "construction": "3 × 3 mesh of 81 × 34 bars with radius 17, alternating horizontal and vertical; the horizontal centre bar is Urucum. Cell = one third of the symbol side. In the signatures, the cap height of INSTITUTO equals the bar thickness (34), the x-height of urupema equals the bar length (81), the gap between the two lines equals the gap between bars (44.5), the distance from symbol to text is one bar length (81) in both signatures, and in the horizontal signature the text block, from cap top to the end of the descenders, is centred on the symbol's height.",
       "clear_space": "One cell around the symbol or the signature; signature files already include it.",
@@ -319,7 +319,7 @@
     ]
   },
   "governance": {
-    "source_of_truth": "This repository: the brand book and its files in docs/ (published by GitHub Pages), this contract, and the tools that reproduce the masters. Reader-facing Portuguese wording of the book lives in ferramentas/livro-textos.pt-BR.json and changes together with this contract.",
+    "source_of_truth": "This repository: the brand book and its files in docs/ (published by GitHub Pages) and this contract. The book is hand-edited HTML and CSS (docs/index.html, docs/livro.css); its Portuguese wording changes together with this contract.",
     "owner": "Brand owner appointed by the Institute's leadership; approves new applications and exceptions.",
     "change": "Proposal, test in a real application, owner approval and new version: a file fix changes the third number; a new rule or file, the second; thesis, symbol, base palette, type families or architecture, the first, with leadership approval.",
     "exceptions": "An exception is requested in writing, applies to one piece and is recorded; the same exception requested three times becomes a change proposal."

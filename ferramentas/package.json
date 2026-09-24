@@ -1,7 +1,0 @@
-{
-  "name": "urupema-marca-ferramentas",
-  "private": true,
-  "type": "module",
-  "description": "Ferramentas de produção dos masters e dos renders da marca.",
-  "devDependencies": { "playwright": "1.56.1" }
-}
