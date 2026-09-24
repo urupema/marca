@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 RAIZ = Path(__file__).resolve().parent
-SAIDA = RAIZ.parent / "livro" / "aplicacoes"
+SAIDA = RAIZ.parent / "docs" / "aplicacoes"
 
 
 def luz(cena, caixa):
@@ -75,4 +75,4 @@ def cracha(cr_png):
 if __name__ == "__main__":
     folha(sys.argv[1], sys.argv[2])
     cracha(sys.argv[3])
-    print("cenas compostas em livro/aplicacoes")
+    print("cenas compostas em docs/aplicacoes")

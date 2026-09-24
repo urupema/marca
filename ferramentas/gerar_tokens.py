@@ -1,4 +1,4 @@
-"""Gera livro/cores/tokens.css e tokens.json a partir do contrato.
+"""Gera docs/cores/tokens.css e tokens.json a partir do contrato.
 
 O contrato é a fonte; estes arquivos nunca são editados à mão.
 Uso: python3 ferramentas/gerar_tokens.py
@@ -75,7 +75,7 @@ css = f"""/* Instituto Urupema — tokens de marca. Gerado a partir do contrato;
   --color-estado-falha: var(--color-estado-falha-escuro);
 }}
 """
-(RAIZ / "livro" / "cores").mkdir(parents=True, exist_ok=True)
-(RAIZ / "livro" / "cores" / "tokens.css").write_text(css)
-(RAIZ / "livro" / "cores" / "tokens.json").write_text(json.dumps(tokens, ensure_ascii=False, indent=2) + "\n")
+(RAIZ / "docs" / "cores").mkdir(parents=True, exist_ok=True)
+(RAIZ / "docs" / "cores" / "tokens.css").write_text(css)
+(RAIZ / "docs" / "cores" / "tokens.json").write_text(json.dumps(tokens, ensure_ascii=False, indent=2) + "\n")
 print("tokens.css e tokens.json gerados")

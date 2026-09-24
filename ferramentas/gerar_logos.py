@@ -1,4 +1,4 @@
-"""Gera os masters vetoriais da marca em livro/logo.
+"""Gera os masters vetoriais da marca em docs/logo.
 
 O símbolo é patrimônio fixo: a geometria abaixo reproduz o master
 recebido (285 x 285) sem alteração. As assinaturas convertem o
@@ -10,7 +10,7 @@ from pathlib import Path
 
 from tipografia import contorno
 
-SAIDA = Path(__file__).resolve().parent.parent / "livro" / "logo"
+SAIDA = Path(__file__).resolve().parent.parent / "docs" / "logo"
 
 PALHA = "#F6F1E7"
 TINTA = "#221F1A"

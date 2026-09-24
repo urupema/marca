@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Renderiza as aplicações admitidas no livro a partir dos modelos em livro/modelos.
+# Renderiza as aplicações admitidas no livro a partir dos modelos em docs/modelos.
 # Uso: bash ferramentas/renderizar_aplicacoes.sh   (na raiz do repositório)
 set -euo pipefail
-M=livro/modelos; S=livro/aplicacoes; R="node ferramentas/render.mjs"
+M=docs/modelos; S=docs/aplicacoes; R="node ferramentas/render.mjs"
 mkdir -p "$S"
 $R $M/proposta.html .pagina        $S/proposta 1000 1200 1.6
 $R $M/relatorio.html .pagina       $S/relatorio 1000 1200 1.6
@@ -21,7 +21,7 @@ $R $M/assinatura-email.html body   $S/assinatura-email 640 300 2
 python3 - <<'PY'
 from pathlib import Path
 from PIL import Image
-for p in Path("livro/aplicacoes").glob("*.png"):
+for p in Path("docs/aplicacoes").glob("*.png"):
     im = Image.open(p).convert("RGB")
     if p.stem.split("-")[0] in ("proposta", "relatorio", "certificado", "apresentacao", "card", "cracha"):
         im = im.crop((2, 2, im.width - 2, im.height - 2))  # tira a borda de antisserrilhado do quadro

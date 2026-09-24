@@ -229,7 +229,7 @@
       "production": {
         "status": "final",
         "master_format": "SVG",
-        "master_path": "livro/logo/simbolo.svg",
+        "master_path": "docs/logo/simbolo.svg",
         "criterion": "Masters em SVG com lettering em contornos, geometria do símbolo idêntica ao master de 285 unidades e verificação estrutural sem fonte, raster ou script; reproduzíveis por ferramentas/gerar_logos.py."
       },
       "construction": "Malha 3 x 3 de barras 81 x 34 com raio 17, alternando horizontais e verticais; a barra central horizontal é Urucum. Célula = um terço do lado do símbolo.",
@@ -305,7 +305,7 @@
     ]
   },
   "governance": {
-    "source_of_truth": "Este repositório: o livro da marca e seus arquivos em livro/, este contrato e as ferramentas que reproduzem os masters.",
+    "source_of_truth": "Este repositório: o livro da marca e seus arquivos em docs/ (publicados pelo GitHub Pages), este contrato e as ferramentas que reproduzem os masters.",
     "owner": "Responsável pela marca designado pela direção do Instituto; aprova aplicações novas e exceções.",
     "change": "Proposta, teste em aplicação real, aprovação do responsável e nova versão: correção de arquivo muda o terceiro número; regra ou arquivo novo, o segundo; tese, símbolo, paleta-base, famílias tipográficas ou arquitetura, o primeiro, com aprovação da direção.",
     "exceptions": "Exceção é pedida por escrito, vale para uma peça e é registrada; a mesma exceção pedida três vezes vira proposta de mudança."

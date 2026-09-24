@@ -3,7 +3,7 @@
 import { chromium } from 'playwright';
 import path from 'node:path';
 import fs from 'node:fs';
-const raiz = path.resolve('livro/logo');
+const raiz = path.resolve('docs/logo');
 const saidas = [
   ['favicon-16.svg', 'favicon-16.png', 16, 16, null, 0],
   ['favicon-32.svg', 'favicon-32.png', 32, 32, null, 0],

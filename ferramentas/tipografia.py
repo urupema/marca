@@ -2,7 +2,7 @@
 
 Usado para produzir as assinaturas-mestre sem dependência de fonte.
 Forma (harfbuzz, com kerning) e desenha (fontTools) a partir das
-mesmas fontes variáveis publicadas em livro/fontes.
+mesmas fontes variáveis publicadas em docs/fontes.
 """
 from functools import lru_cache
 from pathlib import Path
@@ -14,7 +14,7 @@ from fontTools.pens.boundsPen import BoundsPen
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
 
-FONTES = Path(__file__).resolve().parent.parent / "livro" / "fontes"
+FONTES = Path(__file__).resolve().parent.parent / "docs" / "fontes"
 ARQUIVOS = {
     "newsreader": FONTES / "Newsreader-Variavel.woff2",
     "space-grotesk": FONTES / "SpaceGrotesk-Variavel.woff2",

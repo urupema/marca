@@ -1,4 +1,4 @@
-"""Gera livro/index.html, o livro da marca, a partir do contrato e da pasta livro/.
+"""Gera docs/index.html, o livro da marca, a partir do contrato e da pasta docs/.
 
 Valores, tabelas e a lista de arquivos vêm do contrato e dos próprios arquivos;
 nada é redigitado. Fontes embutidas; sem scripts; sem requisições externas.
@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-LIVRO = RAIZ / "livro"
+LIVRO = RAIZ / "docs"
 C = json.loads((RAIZ / "contrato" / "brand-spec.json").read_text())
 sys.path.insert(0, "/root/.claude/plugins/cache/enniolopes/branding-studio/3.1.0/scripts")
 try:
