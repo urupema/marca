@@ -27,13 +27,26 @@ CENTRO = 4
 LADO = 285
 CELULA = LADO / 3  # unidade de respiro: um terço do símbolo
 
-# Assinatura: proporções relativas ao lado do símbolo, calibradas no render.
-URUPEMA_CORPO = 0.785 * LADO      # altura de x ~ 0,40 do símbolo
-INSTITUTO_CORPO = 0.205 * LADO    # altura de maiúscula ~ 0,145 do símbolo
-INSTITUTO_RASTREIO = 0.21
-TOPO_OPTICO = 23.5                 # topo das barras horizontais
-BASE_OPTICA = 261.5                # base das barras horizontais
-AFASTAMENTO = 0.19 * LADO          # símbolo → texto
+# Assinatura: todas as medidas saem da malha do símbolo, não de proporções soltas.
+# Linhas horizontais do símbolo: fileira de cima 23,5–57,5 (barra de 34);
+# fileira do meio 102–183 (barras verticais de 81); intervalo entre elas 44,5.
+INTERVALO = 44.5                   # vão entre barras vizinhas; também símbolo → texto
+ESPESSURA, COMPRIMENTO = 34.0, 81.0
+DESCENDENTE = 0.20                 # Space Grotesk: descendente do p / corpo
+# INSTITUTO: altura de maiúscula = espessura da barra; urupema: altura de x = comprimento da barra;
+# entre os dois, um vão. O bloco inteiro, do topo das maiúsculas ao fim das descendentes,
+# fica centrado na altura do símbolo; centrar só até a linha de base deixa a palavra baixa.
+BLOCO = ESPESSURA + INTERVALO + COMPRIMENTO
+TOPO_BLOCO = LADO / 2 - (BLOCO + DESCENDENTE * COMPRIMENTO / 0.486) / 2
+FAIXA_INSTITUTO = (TOPO_BLOCO, TOPO_BLOCO + ESPESSURA)
+FAIXA_URUPEMA = (TOPO_BLOCO + ESPESSURA + INTERVALO, TOPO_BLOCO + BLOCO)
+INSTITUTO_RASTREIO = 0.22
+MAIUSCULA = 0.70                   # Space Grotesk: altura de maiúscula / corpo
+ALTURA_X = 0.486                   # Space Grotesk: altura de x / corpo
+INSTITUTO_CORPO = (FAIXA_INSTITUTO[1] - FAIXA_INSTITUTO[0]) / MAIUSCULA
+URUPEMA_CORPO = (FAIXA_URUPEMA[1] - FAIXA_URUPEMA[0]) / ALTURA_X
+AFASTAMENTO = INTERVALO
+AFASTAMENTO_VERTICAL = 81.0        # símbolo → INSTITUTO na vertical: um comprimento de barra
 
 
 def barras(cor, centro, dx=0.0, dy=0.0, escala=1.0):
@@ -58,27 +71,29 @@ def svg(largura, altura, titulo, desc, corpo, fundo=None):
     )
 
 
-def palavra(x, cor_instituto, cor_urupema, y_topo=TOPO_OPTICO, y_base=BASE_OPTICA, alinhar="esquerda"):
-    """Bloco INSTITUTO / urupema com topo e base ópticos dados."""
-    inst_d, inst_w, inst_b = contorno("INSTITUTO", "space-grotesk", INSTITUTO_CORPO,
-                                      (("wght", 500),), INSTITUTO_RASTREIO)
-    uru_d, uru_w, uru_b = contorno("urupema", "space-grotesk", URUPEMA_CORPO, (("wght", 600),))
-    # topo da maiúscula de INSTITUTO em y_topo; base de urupema em y_base
-    inst_y = y_topo - inst_b[1]
+def palavra(x, cor_instituto, cor_urupema, dy=0.0, alinhar="esquerda"):
+    """Bloco INSTITUTO / urupema encaixado na malha do símbolo.
+
+    INSTITUTO fica na faixa da fileira de cima; a altura de x de urupema ocupa a
+    fileira do meio. dy desloca o bloco inteiro (usado na assinatura vertical).
+    Devolve o desenho, a borda direita e o ponto mais baixo (descendentes).
+    """
+    base_inst = dy + FAIXA_INSTITUTO[1]
+    base_uru = dy + FAIXA_URUPEMA[1]
+    _, _, inst_b = contorno("INSTITUTO", "space-grotesk", INSTITUTO_CORPO, (("wght", 500),), INSTITUTO_RASTREIO)
+    _, _, uru_b = contorno("urupema", "space-grotesk", URUPEMA_CORPO, (("wght", 600),))
+    li, lu = inst_b[2] - inst_b[0], uru_b[2] - uru_b[0]
     if alinhar == "centro":
-        largura = max(inst_b[2] - inst_b[0], uru_b[2] - uru_b[0])
-        inst_x = x + (largura - (inst_b[2] - inst_b[0])) / 2 - inst_b[0]
-        uru_x = x + (largura - (uru_b[2] - uru_b[0])) / 2 - uru_b[0]
+        largura = max(li, lu)
+        inst_x = x + (largura - li) / 2 - inst_b[0]
+        uru_x = x + (largura - lu) / 2 - uru_b[0]
     else:
         inst_x = x - inst_b[0]
         uru_x = x - uru_b[0]
-    inst_d, _, ib = contorno("INSTITUTO", "space-grotesk", INSTITUTO_CORPO,
-                             (("wght", 500),), INSTITUTO_RASTREIO, inst_x, inst_y)
-    uru_d, _, ub = contorno("urupema", "space-grotesk", URUPEMA_CORPO, (("wght", 600),), 0, uru_x, y_base)
+    inst_d, _, ib = contorno("INSTITUTO", "space-grotesk", INSTITUTO_CORPO, (("wght", 500),), INSTITUTO_RASTREIO, inst_x, base_inst)
+    uru_d, _, ub = contorno("urupema", "space-grotesk", URUPEMA_CORPO, (("wght", 600),), 0, uru_x, base_uru)
     corpo = f'<path d="{inst_d}" fill="{cor_instituto}"/><path d="{uru_d}" fill="{cor_urupema}"/>'
-    direita = max(ib[2], ub[2])
-    baixo = ub[3]
-    return corpo, direita, baixo
+    return corpo, max(ib[2], ub[2]), ub[3]
 
 
 VARIANTES = {
@@ -112,30 +127,24 @@ def simbolos_campo():
 def assinatura_horizontal():
     for sufixo, (cor, centro, ci, cu, _, desc) in VARIANTES.items():
         m = CELULA  # respiro embutido de uma célula
-        corpo_texto, direita, baixo = palavra(m + LADO + AFASTAMENTO, ci, cu, m + TOPO_OPTICO, m + BASE_OPTICA)
+        corpo_texto, direita, _ = palavra(m + LADO + AFASTAMENTO, ci, cu, m)
         corpo = barras(cor, centro, m, m) + corpo_texto
-        largura = direita + m
-        altura = LADO + 2 * m
         (SAIDA / f"assinatura-horizontal{sufixo}.svg").write_text(
-            svg(largura, altura, f"Assinatura horizontal do Instituto Urupema — {desc}",
-                "Símbolo à esquerda, INSTITUTO sobre urupema. Inclui a área de respiro de uma célula.", corpo))
+            svg(direita + m, LADO + 2 * m, f"Assinatura horizontal do Instituto Urupema — {desc}",
+                "Símbolo à esquerda, INSTITUTO sobre urupema, encaixados na malha do símbolo. Inclui a área de respiro de uma célula.", corpo))
 
 
 def assinatura_vertical():
     for sufixo, (cor, centro, ci, cu, _, desc) in VARIANTES.items():
         m = CELULA
-        # mede o bloco de texto para centralizar
-        _, dir0, _ = palavra(0, ci, cu, 0, 0, "centro")
-        largura_texto = dir0
+        _, largura_texto, _ = palavra(0, ci, cu, 0, "centro")
         largura = max(LADO, largura_texto) + 2 * m
-        sx = (largura - LADO) / 2
-        topo_texto = m + LADO + 0.30 * LADO
-        base_texto = topo_texto + (BASE_OPTICA - TOPO_OPTICO)
-        corpo_texto, _, baixo = palavra((largura - largura_texto) / 2, ci, cu, topo_texto, base_texto, "centro")
-        corpo = barras(cor, centro, sx, m) + corpo_texto
-        altura = baixo + m
+        # o bloco de texto começa um comprimento de barra abaixo do símbolo
+        dy = m + LADO + AFASTAMENTO_VERTICAL - FAIXA_INSTITUTO[0]
+        corpo_texto, _, baixo = palavra((largura - largura_texto) / 2, ci, cu, dy, "centro")
+        corpo = barras(cor, centro, (largura - LADO) / 2, m) + corpo_texto
         (SAIDA / f"assinatura-vertical{sufixo}.svg").write_text(
-            svg(largura, altura, f"Assinatura vertical do Instituto Urupema — {desc}",
+            svg(largura, baixo + m, f"Assinatura vertical do Instituto Urupema — {desc}",
                 "Símbolo centralizado sobre INSTITUTO e urupema. Inclui a área de respiro de uma célula.", corpo))
 
 

@@ -114,13 +114,13 @@ BIBLIOTECA = [
         ("Uma cor", "b", "simbolo-mono.svg", []),
         ("Uma cor, negativa", "t", "simbolo-mono-negativa.svg", []),
     ]),
-    ("Assinatura horizontal", "A assinatura padrão. Largura mínima de 180 px ou 40 mm.", [
+    ("Assinatura horizontal", "A assinatura padrão. Símbolo com pelo menos 44 px ou 8,5 mm de altura.", [
         ("Cor", "p", "assinatura-horizontal.svg", ["assinatura-horizontal-1200.png"]),
         ("Negativa", "t", "assinatura-horizontal-negativa.svg", ["assinatura-horizontal-negativa-1200.png"]),
         ("Uma cor", "b", "assinatura-horizontal-mono.svg", []),
         ("Uma cor, negativa", "t", "assinatura-horizontal-mono-negativa.svg", []),
     ]),
-    ("Assinatura vertical", "Para formatos estreitos e altos. Largura mínima de 120 px ou 28 mm.", [
+    ("Assinatura vertical", "Para formatos estreitos e altos. O mesmo mínimo do símbolo.", [
         ("Cor", "p", "assinatura-vertical.svg", []),
         ("Negativa", "t", "assinatura-vertical-negativa.svg", []),
         ("Uma cor", "b", "assinatura-vertical-mono.svg", []),
@@ -744,13 +744,13 @@ corpo = f"""
       <figure><div class="palco f-t"><img src="logo/simbolo-mono-negativa.svg" alt="Símbolo em uma cor, Palha"></div><figcaption><b>Uma cor, negativa</b>Hot stamping e serigrafia sobre escuro.</figcaption></figure>
     </div>
     <div class="assinaturas-grade">
-      <figure><div class="palco f-b"><img src="logo/assinatura-horizontal.svg" alt="Assinatura horizontal" style="width:78%"></div><figcaption><b>Assinatura horizontal</b>A padrão. Largura mínima de 180 px ou 40 mm; abaixo disso, use só o símbolo.</figcaption></figure>
-      <figure><div class="palco f-b"><img src="logo/assinatura-vertical.svg" alt="Assinatura vertical" style="width:52%"></div><figcaption><b>Assinatura vertical</b>Para formatos estreitos e altos: fachada, lombada, avatar de evento. Mínimo de 120 px ou 28 mm.</figcaption></figure>
+      <figure><div class="palco f-b"><img src="logo/assinatura-horizontal.svg" alt="Assinatura horizontal" style="width:78%"></div><figcaption><b>Assinatura horizontal</b>A padrão. Símbolo com pelo menos 44 px de altura na tela ou 8,5 mm no impresso; abaixo disso, use só o símbolo.</figcaption></figure>
+      <figure><div class="palco f-b"><img src="logo/assinatura-vertical.svg" alt="Assinatura vertical" style="width:52%"></div><figcaption><b>Assinatura vertical</b>Para formatos estreitos e altos: fachada, lombada, avatar de evento. O mesmo mínimo do símbolo.</figcaption></figure>
       <figure><div class="palco f-t"><img src="logo/forja-assinatura-negativa.svg" alt="Forja, um produto do Instituto Urupema" style="width:70%"></div><figcaption><b>Assinatura de produto</b>Nome do produto sobre a linha de endosso; o símbolo aparece só na linha de endosso.</figcaption></figure>
     </div>
     <div class="regras" style="grid-column:1/-1">
       {regra("Deixe uma célula de respiro", e(L["clear_space"]), "Um terço do lado é uma medida que se confere a olho e com régua, em qualquer tamanho.", "Em capas e fachadas, aumente o respiro; nunca o reduza.")}
-      {regra("Respeite os tamanhos mínimos", "Símbolo: " + e(L["minimum_size"]["simbolo"]) + ". Carimbo: " + e(L["minimum_size"]["carimbo"]) + ".", "Abaixo disso as barras se fundem e a alternância, que é o que se reconhece, desaparece.", "Em 16 e 32 px, use os arquivos de favicon, já alinhados à grade de pixels.")}
+      {regra("Respeite os tamanhos mínimos", "Símbolo sozinho: " + e(L["minimum_size"]["simbolo"]) + ". Assinaturas: símbolo com 44 px ou 8,5 mm de altura; abaixo disso, use só o símbolo. Carimbo: " + e(L["minimum_size"]["carimbo"]) + ".", "Abaixo disso as barras se fundem e INSTITUTO deixa de ser lido; o símbolo sozinho resiste a tamanhos bem menores.", "Em 16 e 32 px, use os arquivos de favicon, já alinhados à grade de pixels.")}
       {regra("Use a versão do fundo", "Tinta e Urucum sobre claro; Palha e Urucum sobre Tinta; uma cor quando a produção só tem uma tinta.", "O Urucum do centro sobre Tinta tem contraste suficiente para forma (3,6 : 1); sobre Areia, prefira a versão em Tinta.")}
       {regra("Não mexa na malha", e(L["rules"][0]), "A alternância das nove barras é o que torna o símbolo reconhecível e distinto de uma grade qualquer.")}
       {regra("Assine sem descritor fixo", e(L["rules"][3]), "O Instituto tem quatro frentes; um descritor setorial encolhe a marca-mãe.", "Quando o contexto pedir, escreva o descritor como texto, fora da assinatura: " + e(V["descriptors"]["instituto"]))}

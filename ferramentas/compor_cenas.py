@@ -61,7 +61,12 @@ def cracha(cr_png):
     L = luz(cena, (x0, y0, x1, y1))
     # máscara do cartão: onde a cena é o plástico branco (exclui furo, mosquetão e mesa nos cantos)
     lum = reg.mean(axis=2)
+    # o cartão inteiro recebe a arte; só o furo e o mosquetão, no topo, continuam da cena
     masc = np.clip((lum - 150) / 50, 0, 1)
+    topo = int(0.12 * masc.shape[0])
+    masc[topo:] = 1.0
+    borda = 3
+    masc[:, :borda] = masc[:, -borda:] = 0.0
     masc = np.asarray(Image.fromarray((masc * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))).astype(float)[..., None] / 255
     # impressão fosca sobre plástico: arte × luz, com um leve brilho do plástico por cima
     impresso = arte * 255 * L
