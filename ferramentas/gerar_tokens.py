@@ -50,29 +50,29 @@ css = f"""/* Instituto Urupema — tokens de marca. Gerado a partir do contrato;
   --fonte-sistema: "Space Grotesk", Arial, sans-serif;
 
   /* papéis em uso: trocam juntos no modo escuro */
-  --papel-fundo: var(--color-fundo);
-  --papel-superficie: var(--color-superficie);
-  --papel-texto: var(--color-texto);
-  --papel-texto-secundario: var(--color-texto-secundario);
-  --papel-decisao: var(--color-decisao);
-  --papel-decisao-texto: var(--color-decisao-texto);
-  --papel-filete: var(--color-superficie);
-  --papel-filete-forte: var(--color-filete-forte);
-  --papel-simbolo: var(--color-texto);
+  --papel-fundo: var(--color-background);
+  --papel-superficie: var(--color-surface);
+  --papel-texto: var(--color-text);
+  --papel-texto-secundario: var(--color-text-secondary);
+  --papel-decisao: var(--color-decision);
+  --papel-decisao-texto: var(--color-decision-text);
+  --papel-filete: var(--color-surface);
+  --papel-filete-forte: var(--color-rule-strong);
+  --papel-simbolo: var(--color-text);
 }}
 
 .escuro, [data-tema="escuro"] {{
-  --papel-fundo: var(--color-escuro-fundo);
-  --papel-superficie: var(--color-escuro-superficie);
-  --papel-texto: var(--color-escuro-texto);
-  --papel-texto-secundario: var(--color-escuro-texto-secundario);
-  --papel-decisao-texto: var(--color-escuro-decisao-texto);
-  --papel-filete: var(--color-escuro-filete);
-  --papel-filete-forte: var(--color-escuro-filete-forte);
-  --papel-simbolo: var(--color-escuro-texto);
-  --color-estado-correto: var(--color-estado-correto-escuro);
-  --color-estado-atencao: var(--color-estado-atencao-escuro);
-  --color-estado-falha: var(--color-estado-falha-escuro);
+  --papel-fundo: var(--color-dark-background);
+  --papel-superficie: var(--color-dark-surface);
+  --papel-texto: var(--color-dark-text);
+  --papel-texto-secundario: var(--color-dark-text-secondary);
+  --papel-decisao-texto: var(--color-dark-decision-text);
+  --papel-filete: var(--color-dark-rule);
+  --papel-filete-forte: var(--color-dark-rule-strong);
+  --papel-simbolo: var(--color-dark-text);
+  --color-state-ok: var(--color-state-ok-dark);
+  --color-state-warning: var(--color-state-warning-dark);
+  --color-state-failure: var(--color-state-failure-dark);
 }}
 """
 (RAIZ / "docs" / "cores").mkdir(parents=True, exist_ok=True)

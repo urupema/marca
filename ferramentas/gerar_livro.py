@@ -13,7 +13,9 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 LIVRO = RAIZ / "docs"
-C = json.loads((RAIZ / "contrato" / "brand-spec.json").read_text())
+# valores (cores, contraste) vêm do contrato; a redação em português, do arquivo de textos do livro
+CONTRATO = json.loads((RAIZ / "contrato" / "brand-spec.json").read_text())
+C = json.loads((RAIZ / "ferramentas" / "livro-textos.pt-BR.json").read_text())
 sys.path.insert(0, "/root/.claude/plugins/cache/enniolopes/branding-studio/3.1.0/scripts")
 try:
     from color_tools import wcag_ratio
@@ -27,7 +29,7 @@ except ImportError:  # cálculo WCAG 2.x local, idêntico
         x, y = sorted([_l(a), _l(b)], reverse=True)
         return (x + 0.05) / (y + 0.05)
 
-T = C["visual"]["tokens"]["color"]
+T = CONTRATO["visual"]["tokens"]["color"]
 e = html.escape
 
 
@@ -72,10 +74,10 @@ def linhas_cor(grupo, chaves):
     return out
 
 
-nucleo = linhas_cor(T, ["fundo", "superficie", "texto", "decisao"])
-funcionais = linhas_cor(T, ["texto_secundario", "decisao_texto", "filete_forte", "papel"])
-escuro = linhas_cor(T["escuro"], ["superficie", "filete", "texto_secundario", "decisao_texto", "filete_forte"])
-estados = linhas_cor(T["estado"], ["correto", "atencao", "falha", "correto_escuro", "atencao_escuro", "falha_escuro"])
+nucleo = linhas_cor(T, ["background", "surface", "text", "decision"])
+funcionais = linhas_cor(T, ["text_secondary", "decision_text", "rule_strong", "paper"])
+escuro = linhas_cor(T["dark"], ["surface", "rule", "text_secondary", "decision_text", "rule_strong"])
+estados = linhas_cor(T["state"], ["ok", "warning", "failure", "ok_dark", "warning_dark", "failure_dark"])
 papeis_cor = {
     "Palha": "fundo institucional dominante",
     "Areia": "superfícies secundárias, filetes, campo do símbolo em escala",
@@ -93,7 +95,7 @@ papeis_cor = {
 }
 
 pares = []
-for p in C["visual"]["contrast_pairs"]:
+for p in CONTRATO["visual"]["contrast_pairs"]:
     tt, bt = token(p["text"]), token(p["background"])
     fg, bg = resolver(p["text"]), resolver(p["background"])
     uso = {"body": "texto", "large": "texto grande", "ui": "bordas e formas"}[p["usage"]]
