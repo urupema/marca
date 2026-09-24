@@ -232,7 +232,7 @@
         "master_path": "docs/logo/simbolo.svg",
         "criterion": "Masters em SVG com lettering em contornos, geometria do símbolo idêntica ao master de 285 unidades e verificação estrutural sem fonte, raster ou script; reproduzíveis por ferramentas/gerar_logos.py."
       },
-      "construction": "Malha 3 x 3 de barras 81 x 34 com raio 17, alternando horizontais e verticais; a barra central horizontal é Urucum. Célula = um terço do lado do símbolo. Nas assinaturas, a altura de maiúscula de INSTITUTO é a espessura da barra (34), a altura de x de urupema é o comprimento da barra (81), o vão entre as duas linhas e entre símbolo e texto é o vão entre barras (44,5), e o bloco de texto, das maiúsculas ao fim das descendentes, fica centrado na altura do símbolo. Na vertical, o texto começa um comprimento de barra abaixo do símbolo.",
+      "construction": "Malha 3 x 3 de barras 81 x 34 com raio 17, alternando horizontais e verticais; a barra central horizontal é Urucum. Célula = um terço do lado do símbolo. Nas assinaturas, a altura de maiúscula de INSTITUTO é a espessura da barra (34), a altura de x de urupema é o comprimento da barra (81), o vão entre as duas linhas é o vão entre barras (44,5), a distância entre símbolo e texto é um comprimento de barra (81) nas duas assinaturas, e na horizontal o bloco de texto, das maiúsculas ao fim das descendentes, fica centrado na altura do símbolo.",
       "clear_space": "Uma célula em volta do símbolo ou da assinatura; os arquivos de assinatura já incluem esse respiro.",
       "minimum_size": {
         "simbolo": "16 px com o favicon ajustado; 20 px com o master; 6 mm impresso",

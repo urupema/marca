@@ -30,7 +30,7 @@ CELULA = LADO / 3  # unidade de respiro: um terço do símbolo
 # Assinatura: todas as medidas saem da malha do símbolo, não de proporções soltas.
 # Linhas horizontais do símbolo: fileira de cima 23,5–57,5 (barra de 34);
 # fileira do meio 102–183 (barras verticais de 81); intervalo entre elas 44,5.
-INTERVALO = 44.5                   # vão entre barras vizinhas; também símbolo → texto
+INTERVALO = 44.5                   # vão entre barras vizinhas; também entre INSTITUTO e urupema
 ESPESSURA, COMPRIMENTO = 34.0, 81.0
 DESCENDENTE = 0.20                 # Space Grotesk: descendente do p / corpo
 # INSTITUTO: altura de maiúscula = espessura da barra; urupema: altura de x = comprimento da barra;
@@ -45,8 +45,8 @@ MAIUSCULA = 0.70                   # Space Grotesk: altura de maiúscula / corpo
 ALTURA_X = 0.486                   # Space Grotesk: altura de x / corpo
 INSTITUTO_CORPO = (FAIXA_INSTITUTO[1] - FAIXA_INSTITUTO[0]) / MAIUSCULA
 URUPEMA_CORPO = (FAIXA_URUPEMA[1] - FAIXA_URUPEMA[0]) / ALTURA_X
-AFASTAMENTO = INTERVALO
-AFASTAMENTO_VERTICAL = 81.0        # símbolo → INSTITUTO na vertical: um comprimento de barra
+AFASTAMENTO = 81.0                 # símbolo → texto: um comprimento de barra, nas duas assinaturas
+AFASTAMENTO_VERTICAL = AFASTAMENTO
 
 
 def barras(cor, centro, dx=0.0, dy=0.0, escala=1.0):
