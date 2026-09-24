@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Modelo — Certificado de competência · Instituto Urupema</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  body { background: #d9d3c7; }
+  .pagina { width: 297mm; height: 210mm; margin: 0 auto; position: relative; overflow: hidden; background: var(--color-papel); padding: 16mm 18mm 14mm; display: grid; grid-template-columns: 1fr 62mm; grid-template-rows: auto 1fr auto; column-gap: 14mm; font-size: 10pt; }
+  @media print { body { background: none; } }
+  .topo { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-start; }
+  .topo img { height: 14mm; margin: -3.9mm 0 0 -3.9mm; }
+  .conteudo { align-self: center; }
+  .conteudo .rotulo { margin-bottom: 6mm; }
+  .nome { font-family: var(--fonte-institucional); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 44pt; line-height: 1; letter-spacing: -0.015em; margin: 0 0 7mm; }
+  .conteudo p.corpo { font-size: 12pt; line-height: 1.5; max-width: 150mm; }
+  .conteudo p.corpo b { font-weight: 600; }
+  .competencias { margin-top: 8mm; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 6mm; border-top: 1px solid var(--papel-texto); max-width: 170mm; }
+  .competencias div { padding-top: 2.5mm; font-size: 9.5pt; line-height: 1.35; }
+  .competencias span { display: block; font-size: 7.5pt; letter-spacing: .09em; text-transform: uppercase; color: var(--papel-texto-secundario); font-weight: 500; margin-bottom: 1mm; }
+  .lateral { grid-row: 2 / 4; grid-column: 2; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 8mm; padding-bottom: 1mm; }
+  .lateral img { width: 44mm; }
+  .assinaturas { display: flex; gap: 12mm; align-items: flex-end; margin-bottom: 8mm; }
+  .assinaturas div { border-top: 1px solid var(--papel-texto); padding-top: 2mm; width: 64mm; font-size: 8.5pt; }
+  .assinaturas b { display: block; font-size: 9pt; font-weight: 600; }
+  .base { grid-column: 1; }
+  .registro { --colunas: 5; }
+</style>
+</head>
+<body>
+<section class="pagina">
+  <div class="topo">
+    <img src="../logo/assinatura-horizontal-mono.svg" alt="Instituto Urupema">
+    <p class="rotulo">Certificado de competência</p>
+  </div>
+  <div class="conteudo">
+    <p class="rotulo">Formação em IA e tecnologia · Trilha de engenharia de dados</p>
+    <h1 class="nome">Joana Ferreira dos Santos</h1>
+    <p class="corpo">demonstrou competência em engenharia de dados ao entregar, avaliado por banca, o projeto <b>Pipeline de indicadores de mobilidade para um consórcio intermunicipal</b>, com código e documentação públicos no portfólio verificável.</p>
+    <div class="competencias">
+      <div><span>Competência 1</span>Modelagem e versionamento de dados</div>
+      <div><span>Competência 2</span>Pipelines reprodutíveis e testados</div>
+      <div><span>Competência 3</span>Documentação e trilha de origem</div>
+    </div>
+  </div>
+  <div class="lateral">
+    <img src="../logo/carimbo-urucum.svg" alt="Carimbo institucional do Instituto Urupema">
+  </div>
+  <div class="base">
+    <div class="assinaturas">
+      <div><b>Coordenação de Formação</b>Instituto Urupema</div>
+      <div><b>Banca avaliadora</b>3 avaliadores, parecer 2026-118</div>
+    </div>
+    <dl class="registro">
+      <div><dt>Carga</dt><dd>360 h · 240 h de projeto</dd></div>
+      <div><dt>Conclusão</dt><dd>12 set 2026</dd></div>
+      <div><dt>Turma</dt><dd>ED-2026-1</dd></div>
+      <div><dt>Código</dt><dd>IU-CF-7Q4M-2K9D</dd></div>
+      <div><dt>Verificar em</dt><dd>institutourupema.org/verificar</dd></div>
+    </dl>
+  </div>
+</section>
+</body>
+</html>

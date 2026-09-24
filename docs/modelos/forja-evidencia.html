@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Modelo de interface — Forja, evidência de execução</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  body { font-size: 14px; background: var(--papel-fundo); }
+  .app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+  nav { border-right: 1px solid var(--papel-filete); padding: 24px 20px; display: flex; flex-direction: column; gap: 28px; }
+  nav .marca b { display: block; font: 600 24px/1 var(--fonte-sistema); letter-spacing: -0.01em; }
+  nav .marca span { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 11px; color: var(--papel-texto-secundario); white-space: nowrap; }
+  nav .marca span img { width: 16px; height: 16px; }
+  nav .marca span strong { font-weight: 600; color: var(--papel-texto); }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  nav li { padding: 8px 10px; border-radius: 4px; color: var(--papel-texto-secundario); font-weight: 500; }
+  nav li.atual { background: var(--papel-superficie); color: var(--papel-texto); }
+  nav .no { margin-top: auto; border-top: 1px solid var(--papel-filete); padding-top: 14px; }
+  nav .no .v { font-size: 13px; }
+  main { padding: 28px 40px 32px; display: flex; flex-direction: column; gap: 24px; }
+  .cabeca { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+  .cabeca > div:first-child { min-width: 0; }
+  .cabeca h1 { font: 600 30px/1.1 var(--fonte-sistema); letter-spacing: -0.01em; margin: 6px 0 0; }
+  .cabeca .apoio { margin-top: 6px; }
+  .botoes { display: flex; gap: 12px; align-items: center; }
+  .botao { white-space: nowrap; font: 500 14px/1 var(--fonte-sistema); padding: 12px 16px; border-radius: 4px; border: 1px solid var(--papel-filete-forte); background: transparent; color: var(--papel-texto); display: inline-flex; gap: 10px; align-items: center; }
+  .botao.primario { background: var(--papel-texto); color: var(--papel-fundo); border-color: var(--papel-texto); }
+  .botao.primario .barra-decisao { --b: 7px; }
+
+  .trilha { border: 1px solid var(--papel-filete); border-radius: 4px; padding: 18px 20px 20px; background: var(--color-papel); }
+  .trilha .topo { display: flex; justify-content: space-between; margin-bottom: 16px; }
+  .elos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 28px; position: relative; }
+  .elo { border-top: 2px solid var(--papel-texto); padding-top: 10px; position: relative; }
+  .elo::after { content: ""; position: absolute; top: -6px; right: -22px; width: 0; height: 0; border-left: 7px solid var(--papel-texto); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .elo:last-child::after { display: none; }
+  .elo .rotulo { font-size: 10.5px; }
+  .elo b { display: block; font-weight: 600; font-size: 15px; margin: 4px 0 2px; }
+  .elo .apoio { font-size: 12.5px; }
+  .elo .dado { font-size: 12px; color: var(--papel-texto-secundario); display: block; margin-top: 8px; }
+
+  .colunas { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; align-items: start; }
+  .painel { border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--color-papel); }
+  .painel h2 { font: 600 14px/1 var(--fonte-sistema); margin: 0; padding: 16px 20px; border-bottom: 1px solid var(--papel-filete); display: flex; justify-content: space-between; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding: 10px 20px; border-bottom: 1px solid var(--papel-filete); }
+  td:nth-child(3), td:nth-child(4) { white-space: nowrap; }
+  td:first-child { white-space: nowrap; }
+  td { padding: 12px 20px; border-bottom: 1px solid var(--papel-filete); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  td .apoio { font-size: 12.5px; }
+  .politica { padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 10px; }
+  .politica dt { font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding-top: 2px; }
+  .politica dd { margin: 0; }
+  .rodape-evidencia { padding: 16px 20px 18px; border-top: 1px solid var(--papel-filete); }
+  a.link { color: var(--papel-texto); text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <div class="marca" aria-label="Forja, um produto do Instituto Urupema"><b>Forja</b><span><img src="../logo/favicon-16.svg" alt="">um produto do <strong>Instituto Urupema</strong></span></div>
+    <ul>
+      <li>Participantes</li>
+      <li>Conjuntos de dados</li>
+      <li>Políticas</li>
+      <li class="atual">Execuções</li>
+      <li>Evidências</li>
+      <li>Revogações</li>
+    </ul>
+    <div class="no">
+      <p class="rotulo">Nó atual</p>
+      <p class="v" style="margin:4px 0 0">Secretaria do Município A</p><p class="v dado" style="margin:0">no-a-01</p>
+      <p class="apoio" style="font-size:12.5px;margin:2px 0 0">Versão do nó 2.4.1</p>
+    </div>
+  </nav>
+
+  <main>
+    <div class="cabeca">
+      <div>
+        <p class="rotulo">Execuções / FJ-2048</p>
+        <h1 class="dado">Execução FJ-2048</h1>
+        <p class="apoio" style="max-width:62ch">Taxa semanal de notificação de dengue, 3 secretarias · pedida por R. Almeida (Município B) em 22 set 2026, 09:12</p>
+      </div>
+      <div class="botoes">
+        <button class="botao">Ver código da consulta</button>
+        <button class="botao">Revogar autorização</button>
+        <button class="botao primario"><span class="barra-decisao"></span>Liberar resultado agregado</button>
+      </div>
+    </div>
+
+    <section class="trilha" aria-label="Linhagem da execução">
+      <div class="topo"><p class="rotulo">Linhagem</p><span class="estado correto">Trilha completa · 5 de 5 elos assinados</span></div>
+      <div class="elos">
+        <div class="elo"><p class="rotulo">Origem</p><b>Notificações de agravos</b><p class="apoio">3 nós de origem · dado não sai</p><span class="dado">v3.2 · 21 set, 23:00</span></div>
+        <div class="elo"><p class="rotulo">Política</p><b>G-881 Vigilância</b><p class="apoio">Só agregados, n ≥ 20 por célula</p><span class="dado">ativa até 31 dez 2026</span></div>
+        <div class="elo"><p class="rotulo">Execução</p><b>Q-19 na origem</b><p class="apoio">Computação vai até o dado</p><span class="dado">3 × 4 min 12 s</span></div>
+        <div class="elo"><p class="rotulo">Resultado</p><b>52 semanas × 3</b><p class="apoio">156 valores agregados</p><span class="dado">sha256 7f3a…c91e</span></div>
+        <div class="elo"><p class="rotulo">Destino</p><b>Painel comum</b><p class="apoio">Aguarda liberação</p><span class="dado">—</span></div>
+      </div>
+    </section>
+
+    <div class="colunas">
+      <section class="painel" aria-label="Autorizações">
+        <h2>Autorizações dos participantes <span class="apoio" style="font-weight:400">3 de 3 concedidas</span></h2>
+        <table>
+          <thead><tr><th>Participante</th><th>Permissão</th><th>Validade</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>Secretaria do Município A<div class="apoio">no-a-01</div></td><td>Agregar, não exportar linhas</td><td class="dado">31 dez 2026</td><td><span class="estado correto">Concedida</span></td></tr>
+            <tr><td>Secretaria do Município B<div class="apoio">no-b-02</div></td><td>Agregar, não exportar linhas</td><td class="dado">31 dez 2026</td><td><span class="estado correto">Concedida</span></td></tr>
+            <tr><td>Secretaria do Município C<div class="apoio">no-c-01</div></td><td>Agregar; revisão a cada uso</td><td class="dado">30 out 2026</td><td><span class="estado atencao">Expira em 36 dias</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="painel" aria-label="Evidência">
+        <h2>Evidência</h2>
+        <dl class="politica">
+          <dt>Regra</dt><dd>G-881, versão 4</dd>
+          <dt>Saída de dado</dt><dd>Bloqueada: nenhuma linha deixou os nós</dd>
+          <dt>Assinatura</dt><dd class="dado">3 nós · 22 set 2026, 09:31 BRT</dd>
+          <dt>Registro</dt><dd><a class="link dado" href="#">ev.forja/FJ-2048</a></dd>
+        </dl>
+        <div class="rodape-evidencia">
+          <div class="selo">
+            <img src="../logo/simbolo-mono.svg" alt="">
+            <div>
+              <div class="selo-cabeca">Verificado <span>· Instituto Urupema</span></div>
+              <dl>
+                <dt>Objeto</dt><dd>Execução FJ-2048</dd>
+                <dt>Regra</dt><dd>G-881 v4</dd>
+                <dt>Evidência</dt><dd class="dado">ev.forja/FJ-2048</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

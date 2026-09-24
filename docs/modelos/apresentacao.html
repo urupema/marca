@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Modelo — Apresentação institucional · Instituto Urupema</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  body { background: #d9d3c7; }
+  .slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; margin: 0 auto 40px; padding: 96px 128px; display: flex; flex-direction: column; background: var(--papel-fundo); }
+  @media print { body { background: none; } .slide { margin: 0; page-break-after: always; } }
+  .slide .topo { display: flex; justify-content: space-between; align-items: flex-start; }
+  .slide .topo img { height: 96px; margin: -26px 0 0 -26px; }
+
+  .s-capa .simbolo-campo { width: 1180px; left: 980px; top: -80px; }
+  .s-capa .tipo { margin-top: auto; max-width: 1000px; }
+  .s-capa .rotulo { font-size: 20px; margin-bottom: 36px; }
+  .s-capa h1 { font-size: 132px; line-height: .94; }
+  .s-capa .rodape { display: flex; gap: 64px; margin-top: 72px; font-size: 20px; color: var(--papel-texto-secundario); }
+
+  .s-conteudo .rotulo { font-size: 20px; }
+  .s-conteudo h2 { font-size: 112px; line-height: .98; max-width: 1560px; margin-top: 36px; }
+  .s-conteudo .tres { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 48px; margin-top: auto; border-top: 2px solid var(--papel-texto); }
+  .s-conteudo .tres div { padding-top: 28px; }
+  .s-conteudo .tres b { display: block; font: 500 72px/1 var(--fonte-sistema); font-variant-numeric: tabular-nums; letter-spacing: -0.015em; }
+  .s-conteudo .tres .destaque b { display: flex; align-items: center; gap: 24px; }
+  .s-conteudo .tres .destaque .barra-decisao { --b: 22px; }
+  .s-conteudo .tres p { font-size: 26px; line-height: 1.4; margin: 20px 0 0; max-width: 460px; }
+  .s-conteudo .fonte { font-size: 17px; color: var(--papel-texto-secundario); margin-top: 40px; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<section class="slide s-capa campo escuro">
+  <img class="simbolo-campo" src="../logo/simbolo-campo-escuro.svg" alt="">
+  <div class="topo"><img src="../logo/assinatura-horizontal-mono-negativa.svg" alt="Instituto Urupema"></div>
+  <div class="tipo">
+    <p class="rotulo">Reunião com a Secretaria de Ciência e Tecnologia · 2 out 2026</p>
+    <h1 class="exibicao">Cooperar com dados sem entregar o controle</h1>
+  </div>
+  <div class="rodape"><span>Diretoria de Pesquisa e Desenvolvimento</span><span class="dado">IU-AP-2026-022</span></div>
+</section>
+
+<section class="slide s-conteudo">
+  <p class="rotulo">3 · O que a primeira fase entregou</p>
+  <h2 class="exibicao">Três secretarias analisaram dados juntas e nenhum registro saiu de casa</h2>
+  <div class="tres">
+    <div><b>12</b><p>semanas de consultas conjuntas em produção</p></div>
+    <div class="destaque"><b><span class="barra-decisao"></span>3</b><p>semanas de antecedência no alerta do município C</p></div>
+    <div><b>0</b><p>linhas individuais fora dos nós de origem</p></div>
+  </div>
+  <p class="fonte"><span>Fonte: relatório técnico IU-RT-2026-007, versão 2.1 · execução FJ-2048</span><span class="dado">4 / 18</span></p>
+</section>
+</body>
+</html>
