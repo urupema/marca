@@ -1,0 +1,817 @@
+{
+  "meta": {
+    "brand_name": "Instituto Urupema",
+    "version": "3.0.0",
+    "date": "2026-09-05",
+    "tier": "full",
+    "briefing_register": "research_institute",
+    "touchpoints": [
+      "website institucional",
+      "propostas e editais",
+      "convênios e documentos",
+      "Forja product interface",
+      "formação e empregabilidade",
+      "social e imprensa",
+      "selo de atestação"
+    ],
+    "architecture": {
+      "model": "endorsed",
+      "studio_endorsement": "none",
+      "shared_cues": [
+        "malha geométrica do Instituto",
+        "Tinta/Palha",
+        "Urucum pontual",
+        "linguagem de critério e prova",
+        "endosso explícito Instituto Urupema"
+      ],
+      "$rationale": "A instituição precisa sustentar missão pública ampla enquanto produtos especializados, sobretudo a Forja, mantêm nomes e ritmos próprios. O modelo endossado preserva autoridade e neutralidade da casa sem transformar cada módulo técnico em submarca.",
+      "collision_policy": {
+        "parent_child": "semelhança intencional em selo, paleta-base e linguagem; produtos podem ter gesto próprio",
+        "siblings": "diferenciar por função e nome; evitar inventar universos visuais desconectados"
+      }
+    },
+    "changelog": [
+      {
+        "version": "3.0.0",
+        "date": "2026-09-05",
+        "trigger": "creation",
+        "evidence_refs": [
+          "E-001",
+          "E-002",
+          "E-003",
+          "E-004",
+          "E-005",
+          "E-006",
+          "E-007"
+        ],
+        "changes": "Formalização do sistema completo a partir da direção visual A Malha e do escopo institucional ampliado: estratégia, verbal, visual, arquitetura Forja e provas contextuais.",
+        "affected_touchpoints": [
+          "website institucional",
+          "propostas e editais",
+          "Forja product interface",
+          "formação e empregabilidade"
+        ]
+      }
+    ]
+  },
+  "research": {
+    "findings": [
+      {
+        "id": "E-001",
+        "claim": "A legislação brasileira admite ICT como pessoa jurídica de direito privado sem fins lucrativos, constituída no Brasil, quando a missão ou objeto social/estatutário inclui pesquisa científica/tecnológica ou desenvolvimento de novos produtos, serviços ou processos.",
+        "kind": "fact",
+        "source": "Lei 10.973/2004 compilada, Planalto, art. 2º, V; consulta 2026-09-05",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-002",
+        "claim": "Pares brasileiros de ICT e infraestrutura de pesquisa tendem a usar territórios amplos de inovação, impacto, transformação, rede e desenvolvimento tecnológico; isso torna 'inovação' pouco distintivo como ideia central isolada.",
+        "kind": "observation",
+        "source": "Sites oficiais de CESAR, Instituto ELDORADO, RNP e EMBRAPII; consulta 2026-09-05",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-003",
+        "claim": "CESAR, um par brasileiro relevante, usa visualmente combinações fortes de laranja, preto e fundos claros, criando risco de convergência se Urupema adotar laranja vivo, sans-only e linguagem visual de centro de inovação genérico.",
+        "kind": "observation",
+        "source": "CESAR - site e área oficial de downloads/manual de marca; consulta 2026-09-05",
+        "confidence": "medium",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-004",
+        "claim": "Em arquiteturas federadas de dados, soberania é tratada como transparência e controle de uso, apoiada por mecanismos de confiança, políticas e registros, não apenas como localização física de dados.",
+        "kind": "fact",
+        "source": "Gaia-X Architecture/Data Exchange documentation; consulta 2026-09-05",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-005",
+        "claim": "Neutralidade e independência organizacional são capacidades centrais propostas para data trustees em compartilhamento soberano de dados, ao lado de enforcement de direitos e transmissão controlada.",
+        "kind": "fact",
+        "source": "Fraunhofer ISST, Core Capabilities of Data Trustees for Sovereign Data Sharing, 2025/2026 publication page",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-006",
+        "claim": "Urupema é dicionarizada como peneira de palha e como trançado de fibra vegetal, com etimologia tupi 'urupéma'.",
+        "kind": "fact",
+        "source": "Michaelis On-line, verbete urupema; consulta 2026-09-05",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-007",
+        "claim": "Newsreader e Space Grotesk têm licenças SIL Open Font License 1.1 e suporte latino amplo, incluindo português; são adequadas para um sistema aberto e digital/institucional.",
+        "kind": "fact",
+        "source": "Repositórios oficiais de Production Type/Newsreader e Florian Karsten/Space Grotesk; consulta 2026-09-05",
+        "confidence": "high",
+        "validation": "verified",
+        "state": "active"
+      },
+      {
+        "id": "E-008",
+        "claim": "A promessa 'Refinar tecnologia em bem comum' será mais memorável e compreendida pelos públicos do Instituto do que descrições setoriais longas.",
+        "kind": "hypothesis",
+        "source": "Hipótese estratégica derivada do briefing institucional; requer pesquisa com stakeholders e públicos",
+        "confidence": "medium",
+        "validation": "needs_field_research",
+        "state": "active"
+      },
+      {
+        "id": "E-009",
+        "claim": "O símbolo de nove barras, a combinação Palha/Tinta/Urucum e o contraste Newsreader/Space Grotesk podem acumular reconhecimento próprio do Instituto ao longo do tempo.",
+        "kind": "hypothesis",
+        "source": "Hipótese de ativo distintivo; requer medição de reconhecimento/fama ao longo do tempo",
+        "confidence": "medium",
+        "validation": "needs_field_research",
+        "state": "active"
+      }
+    ],
+    "open_questions": [
+      "Qual será a forma jurídica final e quando a qualificação ICT poderá ser afirmada publicamente sem ressalva?",
+      "Qual meta pública anual de recolocação será adotada no eixo educação e trabalho?",
+      "Quais critérios técnicos autorizam o uso do selo VERIFICADO em cada produto/resultado?"
+    ],
+    "field_research_needed": [
+      "Teste qualitativo de entendimento do posicionamento com pesquisadores, gestores de ICT, órgãos de fomento e parceiros técnicos",
+      "Teste de reconhecimento/associação do símbolo sem nome após implantação",
+      "Validação de percepção de neutralidade da Forja entre instituições participantes"
+    ]
+  },
+  "strategy": {
+    "customer": {
+      "who_it_is": "Instituições de pesquisa e ensino, órgãos públicos e de fomento, equipes de dados/IA e inovação, organizações que precisam cooperar com dados ou computação sem perder controle, parceiros de PD&I, projetos sociais sem acesso a infraestrutura e pessoas buscando entrada ou retorno ao mercado de tecnologia.",
+      "who_it_is_NOT": "Compradores de body shop genérico, hospedagem commodity sem requisito de soberania, 'inovação' de vitrine, marketplace de dados sem governança, cursos que medem sucesso apenas por certificado ou organizações que pedem circulação de dados fora de política e trilha.",
+      "insight": "Os públicos não precisam de mais uma promessa abstrata de inovação; precisam de uma instituição capaz de transformar tecnologia em capacidade compartilhável sem apagar responsabilidade, origem, soberania ou acesso.",
+      "$rationale": "O escopo institucional combina PD&I, infraestrutura, educação e extensão. O denominador comum é criar capacidade tecnológica confiável e acessível, não vender uma lista de serviços."
+    },
+    "competitive_alternatives": [
+      "status quo informal de cópias, e-mails e aprovações manuais",
+      "nuvens estrangeiras e plataformas proprietárias com alto lock-in",
+      "consultorias de transformação/IA sem infraestrutura ou mandato institucional",
+      "ICTs generalistas posicionadas por inovação ampla",
+      "não compartilhar dados por receio regulatório ou político"
+    ],
+    "right_to_win": {
+      "statement": "Unir governança institucional, operação federada de dados, infraestrutura computacional soberana, PD&I e missão de acesso em uma mesma casa, fazendo critério e evidência existirem antes e durante a circulação da tecnologia.",
+      "evidence_refs": [
+        "E-001",
+        "E-004",
+        "E-005"
+      ],
+      "$rationale": "A vantagem defendível não é 'ser inovador'; é a coerência entre arquitetura técnica, neutralidade institucional, capacidade operacional própria e missão pública. A unicidade de mercado ainda não foi provada e não deve ser alegada."
+    },
+    "differentiation": {
+      "statement": "Instituto Urupema ocupa o território de infraestrutura de confiança: tecnologia passa por critério, preserva soberania, deixa prova e amplia acesso.",
+      "competitors_analyzed": [
+        {
+          "name": "CESAR",
+          "positioning": "centro integrado de inovação e conhecimento, tecnologia, educação e ventures",
+          "visual_code": "linguagem contemporânea de inovação; forte uso de laranja/preto e sans em materiais atuais",
+          "source": "https://www.cesar.org.br/ e https://www.cesar.org.br/downloads"
+        },
+        {
+          "name": "Instituto ELDORADO",
+          "positioning": "P&D, inovação, testes, capacitação e consultoria para múltiplos setores",
+          "visual_code": "institucional-tecnológico orientado a portfólio de soluções",
+          "source": "https://www.eldorado.org.br/"
+        },
+        {
+          "name": "RNP",
+          "positioning": "rede brasileira para educação e pesquisa, conectividade e serviços seguros",
+          "visual_code": "rede/comunidade/conexão como narrativa dominante",
+          "source": "https://www.rnp.br/"
+        },
+        {
+          "name": "EMBRAPII",
+          "positioning": "rede de ICTs para acelerar P&D industrial com agilidade e menor burocracia",
+          "visual_code": "institucional de fomento e rede de competências",
+          "source": "https://embrapii.org.br/"
+        }
+      ],
+      "category_conventions": [
+        "inovação como palavra-mãe",
+        "futuro/transformação/impacto em claims",
+        "azuis/gradientes ou cores digitais vibrantes",
+        "diagramas abstratos de rede/nós",
+        "portfólio exposto como lista de serviços"
+      ],
+      "conventions_kept": [
+        "clareza institucional",
+        "documentação e governança visíveis",
+        "legibilidade e seriedade em editais/convênios"
+      ],
+      "conventions_broken": [
+        "trocar 'inovação' genérica por critério/prova/soberania",
+        "usar pigmento terroso e editorialidade em vez de futurismo neon",
+        "representar federação por malha/limites e não por nuvem de nós decorativa"
+      ],
+      "$rationale": "Desk research mostra sobreposição semântica forte entre pares em inovação e impacto. A marca precisa codificar uma tese mais específica e coerente com a arquitetura real do Instituto."
+    },
+    "context": {
+      "chosen_context": "ICT brasileira de longa duração: autoridade institucional e científica, interoperabilidade com Estado/academia/mercado, infraestrutura crítica e compromisso social mensurável.",
+      "evidence_refs": [
+        "E-001",
+        "E-002",
+        "E-004",
+        "E-006"
+      ],
+      "$rationale": "A marca deve sobreviver a convênios, código, sala de aula, datacenter e décadas. Brasilidade entra por linguagem e lógica material, não por folclore gráfico."
+    },
+    "theme": {
+      "statement": "Refinar tecnologia em bem comum.",
+      "because_test": "Refinar tecnologia em bem comum porque o Instituto constrói a malha de critérios, infraestrutura e conhecimento que permite transformar dados, computação e aprendizagem em valor confiável e mais acessível.",
+      "onliness": "Não usar como claim público de exclusividade até haver pesquisa V4; internamente, a combinação de critério + soberania + prova + acesso é o eixo de diferenciação.",
+      "$rationale": "O verbo 'refinar' conecta a origem do nome a todas as frentes sem reduzir o Instituto a dados; 'bem comum' fecha o propósito público sem transformar a marca em ONG ambiental."
+    },
+    "manifesto_or_mission": "Refinar tecnologia em bem comum: dados, infraestrutura e conhecimento que passam por critério e chegam a quem normalmente fica de fora.",
+    "category_entry_points": [
+      "cooperação interinstitucional com dados sensíveis ou distribuídos",
+      "necessidade de computação soberana ou controlada",
+      "PD&I aplicada em dados/IA/sistemas federados",
+      "formação tecnológica orientada a emprego",
+      "apoio computacional a projetos de interesse público",
+      "convênios e projetos que exigem prova, governança e rastreabilidade"
+    ]
+  },
+  "creative_direction": {
+    "central_idea": {
+      "statement": "A malha vem antes do fluxo.",
+      "$rationale": "A urupema só funciona porque a estrutura existe antes do material atravessá-la; isso espelha a tese técnica do Instituto: política, permissão, origem e evidência antecedem a circulação e a execução."
+    },
+    "productive_tensions": [
+      {
+        "pole_a": "institucional",
+        "pole_b": "operacional",
+        "behavior": "A casa fala com calma e duração; produtos mostram ação, estado, prova e decisão."
+      },
+      {
+        "pole_a": "brasileiro",
+        "pole_b": "universal técnico",
+        "behavior": "Usar nome, pigmento e materialidade local sem símbolos folclóricos; usar linguagem técnica interoperável quando necessário."
+      },
+      {
+        "pole_a": "soberania",
+        "pole_b": "cooperação",
+        "behavior": "Toda expressão de controle deve deixar claro que o objetivo é permitir colaboração sem dissolver fronteiras legítimas."
+      },
+      {
+        "pole_a": "rigor",
+        "pole_b": "acesso",
+        "behavior": "Precisão não deve produzir elitismo; explicar sem infantilizar e tornar capacidade utilizável por mais gente."
+      }
+    ],
+    "principles": [
+      {
+        "name": "Critério antes do gesto",
+        "rule": "Toda composição, mensagem ou experiência precisa explicitar estrutura antes de efeito: regra, fonte, responsável, condição ou limite aparece antes de promessa vazia.",
+        "enables": [
+          "documentos confiáveis",
+          "interfaces auditáveis",
+          "hierarquia visual calma"
+        ],
+        "excludes": [
+          "hype",
+          "efeitos decorativos sem função",
+          "claims absolutos"
+        ],
+        "$rationale": "Deriva da arquitetura EDMM/Forja e da metáfora da malha prévia ao fluxo."
+      },
+      {
+        "name": "Uma decisão em Urucum",
+        "rule": "Urucum marca um único ponto de decisão, passagem ou chamada por composição; nunca vira atmosfera, fundo amplo ou gradiente.",
+        "enables": [
+          "sinal reconhecível",
+          "hierarquia",
+          "calor sem perder sobriedade"
+        ],
+        "excludes": [
+          "laranja dominante",
+          "gradientes",
+          "decoração repetitiva"
+        ],
+        "$rationale": "Preserva o gesto central do símbolo e diferencia a paleta de pares que usam laranja vibrante como campo dominante."
+      },
+      {
+        "name": "Estrutura legível, não rede decorativa",
+        "rule": "Quando relações são mostradas, devem ter fronteiras, rótulos ou consequência; usar célula, trilha, regra e alinhamento em vez de nuvens de pontos e linhas.",
+        "enables": [
+          "visualização de proveniência",
+          "federação compreensível",
+          "sistemas gráficos modulares"
+        ],
+        "excludes": [
+          "network art",
+          "circuitos genéricos",
+          "blockchain cliché"
+        ],
+        "$rationale": "A marca fala de soberania e evidência; relação sem semântica contradiz a promessa."
+      },
+      {
+        "name": "Público como agente",
+        "rule": "Fotografia e texto mostram pessoas trabalhando, pesquisando, aprendendo e decidindo; nunca como destinatários passivos de benevolência.",
+        "enables": [
+          "dignidade",
+          "impacto concreto",
+          "educação orientada a trabalho"
+        ],
+        "excludes": [
+          "paternalismo",
+          "foto de 'beneficiário' genérico",
+          "caridade como estética"
+        ],
+        "$rationale": "O eixo social é acesso a capacidade e trabalho, não filantropia performática."
+      }
+    ],
+    "reference_frame": {
+      "properties_to_seek": [
+        "editorialidade de publicações científicas",
+        "materialidade de carimbo/relevo seco/documento",
+        "interfaces de infraestrutura com estados e evidência claros",
+        "fotografia documental de laboratórios, datacenters, campo e sala de aula",
+        "ritmo modular com muito respiro"
+      ],
+      "anti_references": [
+        "startup de IA neon/roxo",
+        "ONG ambiental verde/folha",
+        "motivos indígenas literais ou pseudo-étnicos",
+        "corporativo azul genérico",
+        "cestas, mandioca ou peneira ilustrada como mascote"
+      ]
+    },
+    "distinctive_asset_hypotheses": [
+      "símbolo de nove barras",
+      "barra central em Urucum",
+      "Palha + Tinta + Urucum",
+      "contraste editorial Newsreader / técnico Space Grotesk",
+      "selo de atestação quando tecnicamente legitimado",
+      "frase 'O que passa, passa com prova.'"
+    ],
+    "art_direction": {
+      "subjects": "infraestrutura real, pesquisa, equipamentos, dados como operação, pessoas estudando/trabalhando, projetos sociais em contexto real",
+      "framing": "próximo e documental; detalhes de mãos, hardware, cadernos, racks, telas e trabalho; planos amplos apenas quando mostram infraestrutura ou comunidade",
+      "light_materiality": "luz natural/neutra, papel, metal, vidro, concreto e telas sem filtros cromáticos pesados; calor vem do Urucum gráfico",
+      "realism_abstraction": "fotografia real para impacto; abstração geométrica para sistema/proveniência; nunca simular etnografia",
+      "motion": "barras entram por eixos ortogonais e travam na malha; a barra Urucum aparece por último como decisão; sem elasticidade ou ondas"
+    },
+    "$excludes": "verde ambiental, folhas, fibras ilustradas, padrões indígenas apropriativos, cestaria literal, gradiente, neon, glow, 3D blob, escudo/cadeado, nuvens de nós, circuitos genéricos, estética blockchain, excesso de laranja.",
+    "exploration": [
+      {
+        "route": "A Malha",
+        "thesis": "A instituição é a estrutura anterior à circulação.",
+        "signature_expression": "nove barras, uma decisão em Urucum, editorialidade documental e células modulares",
+        "strength": "Traduz diretamente critério, federação e prova sem ilustrar peneira.",
+        "failure_mode": "Pode parecer grid genérico se o símbolo for deformado ou se a linguagem de evidência desaparecer.",
+        "status": "preferred"
+      },
+      {
+        "route": "O Selo",
+        "thesis": "A instituição existe para atestar travessias confiáveis.",
+        "signature_expression": "anéis, certificados, carimbos e linguagem de verificação",
+        "strength": "Muito forte para convênios e evidência.",
+        "failure_mode": "Reduz a ICT a certificadora e empobrece educação/infraestrutura.",
+        "status": "discarded"
+      },
+      {
+        "route": "O Refino",
+        "thesis": "Bruto entra, capacidade sai.",
+        "signature_expression": "sequências, antes/depois, filtros e transformação",
+        "strength": "Costura os quatro eixos.",
+        "failure_mode": "Pode virar metáfora industrial genérica e competir com Forja.",
+        "status": "explored"
+      }
+    ]
+  },
+  "naming": {
+    "in_scope": false,
+    "name": "Instituto Urupema",
+    "approach": "suggestive",
+    "construct": "real-word",
+    "$rationale": "Nome já escolhido pelo decisor e fora do escopo desta missão; o sistema trabalha seu significado sem reabrir naming.",
+    "$excludes": "Não derivar nomes pseudo-tupi para todo produto nem transformar a origem do nome em tema folclórico.",
+    "phonosemantics": "Não usada como prova.",
+    "clearance": {
+      "markets": [],
+      "nice_classes": [],
+      "search_date": "",
+      "status": "not_applicable",
+      "evidence": [],
+      "domains": {},
+      "handles": {},
+      "language_checks": [],
+      "human_legal_clearance": "PENDING"
+    }
+  },
+  "verbal": {
+    "principles": [
+      {
+        "name": "Prova antes de superlativo",
+        "rule": "Se uma afirmação puder ser sustentada por fonte, versão, número, responsável ou condição, mostrar isso; se não puder, reduzir o claim."
+      },
+      {
+        "name": "Concreto antes de abstração",
+        "rule": "Dizer o que circula, onde roda, quem decide e que resultado muda antes de falar em transformação."
+      },
+      {
+        "name": "Brasileiro sem folclore",
+        "rule": "Português claro, termos locais quando úteis e linguagem institucional contemporânea; explicar jargão sem exoticizar a origem do nome."
+      },
+      {
+        "name": "Acesso sem paternalismo",
+        "rule": "Falar de capacidade, trabalho, autonomia e parceria; nunca de 'dar voz' ou 'salvar' públicos."
+      }
+    ],
+    "voice_chart": {
+      "base": "sóbria, precisa, material e pública",
+      "institutional": "formal sem juridiquês desnecessário; missão + critério + evidência",
+      "Forja": "operacional, curta, auditável; verbos de ação e estados",
+      "educacao": "clara, exigente e acolhedora; resultado medido em competência e trabalho",
+      "comercial": "pragmática; problema, capacidade, escopo, prova; sem consultorês",
+      "incidente": "factual, cronológica, responsável e não defensiva"
+    },
+    "not_like_this": [
+      {
+        "example": "Revolucionamos o futuro com soluções de IA de ponta em um ecossistema 360°.",
+        "why_not": "É intercambiável com qualquer empresa de tecnologia, não diz o que o Instituto controla nem como prova o que faz."
+      },
+      {
+        "example": "Democratizamos a tecnologia para os menos favorecidos.",
+        "why_not": "É paternalista e impossível de verificar como está; preferir acesso concreto, critérios e resultados de emprego/infraestrutura."
+      }
+    ],
+    "moments": {
+      "tagline": "Refinar tecnologia em bem comum.",
+      "proofline": "O que passa, passa com prova.",
+      "manifesto_open": "Antes do fluxo, existe a malha.",
+      "Forja_descriptor": "circulação e processamento federado de dados, com soberania e evidência",
+      "education_outcome": "formação que termina em competência demonstrável e conexão com trabalho"
+    },
+    "message_hierarchy": [
+      "1. Refinar tecnologia em bem comum.",
+      "2. Critério, soberania, prova e acesso.",
+      "3. Quatro eixos: PD&I/plataformas, infraestrutura soberana, educação-trabalho, extensão tecnológica.",
+      "4. Forja como produto-âncora de dados federados e governados.",
+      "5. Evidência específica por projeto, resultado e parceiro."
+    ]
+  },
+  "visual": {
+    "$overall_rationale": "A identidade preserva a direção já escolhida e a torna sistema: uma casa editorial e durável, com malha geométrica como estrutura, Tinta/Palha como base documental e Urucum como evento de decisão. Isso suporta convênios, produto digital, infraestrutura e impacto social sem cair em códigos genéricos de IA ou ONG.",
+    "$excludes": "Não usar verde/folha/fibra ilustrada, padrões indígenas literais, gradientes, laranja como fundo amplo, glow, 3D, escudos/cadeados, rede de pontos decorativa, deformação do símbolo ou reconfiguração das nove barras.",
+    "identity_grammar": {
+      "principles": [
+        "monocromático primeiro",
+        "uma intervenção em Urucum por composição",
+        "estrutura ortogonal e modular",
+        "editorialidade + linguagem de sistema",
+        "respiro mínimo equivalente a uma célula da malha"
+      ],
+      "signature_devices": [
+        "símbolo nove barras",
+        "barra curta de Urucum",
+        "células/cartões com filete Areia",
+        "linhas finas de evidência/linhagem",
+        "selo de atestação condicionado a prova técnica"
+      ],
+      "$rationale": "Poucos elementos repetíveis carregam a tese sem transformar cada aplicação em ilustração da urupema."
+    },
+    "tokens": {
+      "color": {
+        "brand": {
+          "palha": {
+            "$type": "color",
+            "$value": "#F6F1E7"
+          },
+          "areia": {
+            "$type": "color",
+            "$value": "#E7DFD0"
+          },
+          "tinta": {
+            "$type": "color",
+            "$value": "#221F1A"
+          },
+          "urucum": {
+            "$type": "color",
+            "$value": "#B4602F"
+          }
+        },
+        "functional": {
+          "muted": {
+            "$type": "color",
+            "$value": "#6D665C"
+          },
+          "urucumText": {
+            "$type": "color",
+            "$value": "#AA5828"
+          },
+          "surface": {
+            "$type": "color",
+            "$value": "{color.brand.palha}"
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{color.brand.tinta}"
+          }
+        }
+      }
+    },
+    "palette": {
+      "colors": [
+        {
+          "name": "Palha",
+          "hex": "#F6F1E7",
+          "oklch": {
+            "L": 0.9593,
+            "C": 0.0143,
+            "H": 84.58
+          },
+          "role": "fundo institucional dominante"
+        },
+        {
+          "name": "Areia",
+          "hex": "#E7DFD0",
+          "oklch": {
+            "L": 0.9059,
+            "C": 0.0219,
+            "H": 83.26
+          },
+          "role": "bordas, divisórias e superfícies secundárias"
+        },
+        {
+          "name": "Tinta",
+          "hex": "#221F1A",
+          "oklch": {
+            "L": 0.2408,
+            "C": 0.0103,
+            "H": 80.6
+          },
+          "role": "texto, símbolo e fundos escuros"
+        },
+        {
+          "name": "Urucum",
+          "hex": "#B4602F",
+          "oklch": {
+            "L": 0.5787,
+            "C": 0.1253,
+            "H": 48.51
+          },
+          "role": "acento de decisão; nunca fundo dominante"
+        },
+        {
+          "name": "Tinta reduzida",
+          "hex": "#6D665C",
+          "oklch": {
+            "L": 0.5137,
+            "C": 0.0178,
+            "H": 76.95
+          },
+          "role": "texto secundário acessível em Palha; token funcional"
+        },
+        {
+          "name": "Urucum texto",
+          "hex": "#AA5828",
+          "oklch": {
+            "L": 0.5504,
+            "C": 0.1234,
+            "H": 48.21
+          },
+          "role": "links/texto pequeno quando acento cromático for necessário; token funcional"
+        }
+      ],
+      "$rationale": "A paleta existente é preservada. Derivados funcionais resolvem contraste digital sem alterar o gesto de marca.",
+      "$excludes": "Urucum em grandes fundos, gradiente, verde como cor de marca, tons neon ou ampliação indiscriminada da paleta."
+    },
+    "contrast_pairs": [
+      {
+        "text": "{color.brand.tinta}",
+        "background": "{color.brand.palha}",
+        "usage": "body"
+      },
+      {
+        "text": "{color.brand.palha}",
+        "background": "{color.brand.tinta}",
+        "usage": "body"
+      },
+      {
+        "text": "{color.functional.muted}",
+        "background": "{color.brand.palha}",
+        "usage": "body"
+      },
+      {
+        "text": "{color.functional.urucumText}",
+        "background": "{color.brand.palha}",
+        "usage": "body"
+      },
+      {
+        "text": "{color.brand.urucum}",
+        "background": "{color.brand.palha}",
+        "usage": "large"
+      }
+    ],
+    "typography": {
+      "families": [
+        {
+          "name": "Newsreader",
+          "role": "institutional/display",
+          "license": "SIL OFL 1.1",
+          "notes": "títulos institucionais, manifesto, selo editorial; usar com espaço e contraste"
+        },
+        {
+          "name": "Space Grotesk",
+          "role": "system/interface/text",
+          "license": "SIL OFL 1.1",
+          "notes": "corpo, rótulos, dados, interface, wordmark e assinaturas"
+        },
+        {
+          "name": "Georgia / Arial-System",
+          "role": "office fallback",
+          "notes": "somente quando o ambiente não permitir as famílias canônicas"
+        }
+      ],
+      "roles": [
+        "Newsreader: títulos e voz institucional",
+        "Space Grotesk: corpo, interface, rótulos, dados, assinaturas",
+        "fallbacks: documentos editáveis de terceiros"
+      ],
+      "hierarchy": {
+        "mode": "custom",
+        "base_px": null,
+        "ratio": null,
+        "steps": [],
+        "rules": [
+          "Display editorial: Newsreader 48-72 px, peso 500-600, entrelinha 0.95-1.05",
+          "H2/H3 institucional: Newsreader 28-40 px",
+          "Corpo: Space Grotesk 16-20 px, entrelinha 1.45-1.6",
+          "Rótulos/metadata: Space Grotesk 11-14 px, caixa alta com tracking moderado",
+          "Dados/UI: Space Grotesk com numerais tabulares quando disponíveis",
+          "Wordmark urupema: Space Grotesk semibold; INSTITUTO em caixa alta espaçada"
+        ]
+      },
+      "$rationale": "Newsreader traz autoridade editorial sem academia ornamental; Space Grotesk traz engenharia, legibilidade e dados. Ambas suportam português e licença aberta.",
+      "$excludes": "serifa clássica excessivamente cerimonial, sans geométrica genérica como única voz, mono como corpo principal, tracking exagerado em textos corridos."
+    },
+    "logo": {
+      "concept_type": "geometric-symbol",
+      "concept": "Nove barras arredondadas formam uma malha 3x3; o centro horizontal em Urucum é a decisão dentro de uma estrutura estável. O símbolo é institucional; o lockup nominal é secundário e não deve carregar um descritor setorial permanente.",
+      "construction": {
+        "canvas": "285x285 unidades",
+        "grid_centers": "aprox. 40.5 / 142.5 / 244.5 em X e Y",
+        "horizontal_bar": "81x34, raio 17",
+        "vertical_bar": "34x81, raio 17",
+        "center": "barra horizontal 81x34 em Urucum",
+        "outer": "oito barras em Tinta"
+      },
+      "clear_space": "mínimo de uma célula da malha ao redor do símbolo/assinatura; aumentar em capas e fachadas",
+      "minimum_size": {
+        "symbol_digital": "20 px de largura mínimo; preferir 24 px+",
+        "symbol_print": "7 mm mínimo",
+        "lockup_horizontal": "120 px digital ou 32 mm impresso, sujeito a prova final do lettering"
+      },
+      "variants": [
+        "Tinta + Urucum sobre Palha/branco",
+        "monocromática Tinta",
+        "negativa Palha + Urucum sobre Tinta",
+        "assinatura horizontal",
+        "assinatura vertical",
+        "palavra 'urupema' em corpo de texto quando contexto já estabelece a instituição"
+      ],
+      "optical_adjustments": "Manter espaçamentos do master; não equalizar mecanicamente se uma conversão de ferramenta alterar a percepção. Em tamanhos pequenos, usar o master simplificado sem filetes/selo.",
+      "production": {
+        "status": "final",
+        "master_format": "SVG",
+        "master_path": "assets/urupema-symbol.svg",
+        "production_brief": "O símbolo vetorial é master final. Templates de lockup com texto permanecem dependentes das fontes canônicas; converter lettering em contornos e revisar espaçamento óptico antes de distribuir como master final."
+      },
+      "$rationale": "O símbolo já escolhido é uma tradução mínima e não literal da urupema, funciona monocromático, escala e oferece um gesto distintivo coerente com federação e critério.",
+      "$excludes": "redesenhar o entrelaçado, rotacionar células, trocar o centro por outro elemento, usar mais de uma barra em Urucum, encaixar letras no símbolo, criar versão de folha/peneira/cesto."
+    },
+    "imagery": {
+      "rules": [
+        "Fotografia documental de trabalho real: laboratório, infraestrutura, datacenter, campo, pesquisa e aprendizagem",
+        "Preferir detalhes que mostram ação, material, ferramenta, tela ou resultado a poses corporativas",
+        "Pessoas aparecem como pesquisadoras, técnicas, estudantes, profissionais e parceiras - agentes, não beneficiários passivos",
+        "Cor natural/neutra; evitar duotone de marca e filtros alaranjados",
+        "Uso de IA generativa em imagem deve ser explicitamente art-directed e nunca simular documentação de impacto real"
+      ],
+      "$rationale": "A marca promete prova; imagens documentais reforçam materialidade e evitam representar impacto social como publicidade abstrata."
+    },
+    "iconography": {
+      "rules": [
+        "Traço uniforme 1.5-2 px em tamanhos UI padrão ou preenchimentos simples",
+        "Cantos arredondados relacionados ao raio das barras sem copiar o símbolo",
+        "Ícones operacionais devem ter semântica legível antes de estilo",
+        "Estados de permissão, revogação, origem e evidência precisam de rótulo/texto quando ambíguos",
+        "Não usar ícones de cadeado como representação única de soberania"
+      ],
+      "$rationale": "Soberania e governança excedem segurança; a iconografia precisa representar estados e relações, não apenas proteção."
+    },
+    "composition": {
+      "rules": [
+        "Fundo Palha ou branco com grandes áreas de respiro",
+        "Alinhamento ortogonal e assimetria controlada; evitar centralização automática de tudo",
+        "Uma barra Urucum curta pode marcar seção, decisão ou CTA",
+        "Cartões/células usam fundo claro, filete Areia e raio discreto",
+        "Linhas finas podem representar lineage apenas quando conectam entidades rotuladas",
+        "Em peças densas, preservar hierarquia de título editorial + informação técnica em Space Grotesk"
+      ],
+      "grid": {
+        "principle": "grade modular flexível derivada de células; não usar o logo como padrão",
+        "desktop": "12 colunas ou estrutura editorial equivalente; margens amplas",
+        "document": "2-4 colunas conforme densidade; rodapé de proveniência quando aplicável",
+        "mobile": "uma coluna dominante; barra Urucum e metadados como âncoras"
+      },
+      "$rationale": "A composição torna a malha uma lógica de organização, não um wallpaper."
+    },
+    "motion": {
+      "in_scope": true,
+      "rules": [
+        "Entradas ortogonais curtas; sem overshoot elástico",
+        "Estrutura aparece antes do conteúdo que atravessa",
+        "Urucum entra por último como decisão/estado",
+        "Usar 160-280 ms para microinterações e 400-700 ms para assinatura",
+        "Respeitar prefers-reduced-motion com estado final imediato"
+      ]
+    }
+  },
+  "trial_applications": [
+    {
+      "touchpoint": "capa de proposta institucional",
+      "job": "Transmitir autoridade de ICT ampla sem parecer consultoria genérica nem reduzir o Instituto à Forja.",
+      "artifact": "trials/proposta-institucional.png",
+      "failures_found": [
+        "O descritor 'governança de dados de pesquisa' restringia a marca-mãe"
+      ],
+      "system_changes": [
+        "Retirar descritor setorial do lockup primário; usar a tagline 'Refinar tecnologia em bem comum.' como mensagem, não como parte fixa do logo"
+      ],
+      "status": "approved"
+    },
+    {
+      "touchpoint": "Forja product/evidence card",
+      "job": "Distinguir produto e casa, mostrar federação/soberania/prova sem iconografia de segurança genérica.",
+      "artifact": "trials/forja-evidence-card.png",
+      "failures_found": [
+        "Urucum em texto pequeno perdeu contraste em Palha"
+      ],
+      "system_changes": [
+        "Criar token funcional Urucum Texto #AA5828 e manter #B4602F para acento/large/non-text"
+      ],
+      "status": "approved"
+    },
+    {
+      "touchpoint": "peça de educação e trabalho",
+      "job": "Mostrar missão social com dignidade e resultado de trabalho, mantendo a mesma marca de uma proposta científica.",
+      "artifact": "trials/formacao-trabalho.png",
+      "failures_found": [
+        "Linguagem de 'democratizar tecnologia' soava abstrata/paternalista"
+      ],
+      "system_changes": [
+        "Adotar regra verbal 'acesso sem paternalismo' e orientar mensagem a competência demonstrável + conexão com trabalho"
+      ],
+      "status": "approved"
+    }
+  ],
+  "portfolio_summary": {
+    "name": {
+      "name": "Instituto Urupema",
+      "approach": "suggestive",
+      "construct": "real-word"
+    },
+    "primary_color_oklch": {
+      "L": 0.5787,
+      "C": 0.1253,
+      "H": 48.51
+    },
+    "logo_morphology": [
+      "geometric-symbol",
+      "3x3 grid",
+      "rounded bars",
+      "single accent center",
+      "endorsed product seal"
+    ],
+    "creative_territory": [
+      "malha",
+      "critério",
+      "prova",
+      "soberania",
+      "refino",
+      "infraestrutura de confiança"
+    ],
+    "shared_cues": [
+      "Urucum pontual",
+      "Palha/Tinta",
+      "malha institucional",
+      "endosso Instituto Urupema"
+    ]
+  }
+}
