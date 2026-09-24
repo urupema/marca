@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formação que termina em trabalho — Instituto Urupema</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  :root { --margem: clamp(20px, 6.6vw, 96px); }
+  .topo { display: flex; justify-content: space-between; align-items: center; padding: 20px var(--margem); border-bottom: 1px solid var(--papel-filete); }
+  .topo img { height: 40px; margin: -9px 0 -9px -12px; }
+  .topo span { font-weight: 500; font-size: 15px; }
+  .abre { padding: 36px var(--margem) 8px; }
+  .abre .rotulo { margin-bottom: 18px; }
+  .abre h1 { font-size: clamp(40px, 11vw, 88px); line-height: .98; }
+  .abre p.corpo { font-size: 17px; margin-top: 22px; }
+  .trilha { padding: 36px var(--margem) 8px; }
+  .trilha ol { list-style: none; margin: 16px 0 0; padding: 0; border-left: 1px solid var(--papel-texto); }
+  .trilha li { padding: 0 0 22px 22px; position: relative; }
+  .trilha li::before { content: ""; position: absolute; left: -4px; top: 7px; width: 7px; height: 7px; border-radius: 2px; background: var(--papel-texto); }
+  .trilha li b { display: block; font-weight: 600; font-size: 17px; }
+  .trilha li .apoio { font-size: 14.5px; margin-top: 2px; }
+  .trilha li .dado { font-size: 13px; color: var(--papel-texto-secundario); }
+  .meta { margin: 20px var(--margem) 0; padding: 20px 0; border-top: 1px solid var(--papel-texto); border-bottom: 1px solid var(--papel-filete); display: grid; row-gap: 10px; }
+  .meta b { font: 500 40px/1 var(--fonte-sistema); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .meta p { margin: 0; font-size: 14.5px; }
+  .meta .apoio { font-size: 12.5px; margin-top: 4px; }
+  .inscricao { padding: 28px var(--margem) 40px; }
+  .botao { width: 100%; justify-content: center; font: 500 16px/1 var(--fonte-sistema); padding: 18px 20px; border-radius: 4px; background: var(--papel-texto); color: var(--papel-fundo); display: inline-flex; gap: 12px; align-items: center; border: 0; text-decoration: none; }
+  .botao .barra-decisao { --b: 8px; }
+  .inscricao .apoio { font-size: 13.5px; margin-top: 12px; text-align: left; }
+</style>
+</head>
+<body>
+  <header class="topo"><img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema"><span>Formação</span></header>
+  <section class="abre">
+    <p class="rotulo">Engenharia de dados · Turma de março</p>
+    <h1 class="exibicao">Aprender tecnologia precisa terminar em capacidade de trabalho.</h1>
+    <p class="corpo">Dez meses, com prioridade para quem está fora do mercado. Você sai com um projeto real no portfólio e com entrevistas marcadas.</p>
+  </section>
+  <section class="trilha">
+    <p class="rotulo">Como a trilha funciona</p>
+    <ol>
+      <li><b>Fundamentos</b><p class="apoio">Programação, bancos de dados e versionamento.</p><span class="dado">meses 1–3</span></li>
+      <li><b>Projeto real</b><p class="apoio">Um problema de uma organização parceira, com dado de verdade.</p><span class="dado">meses 4–8</span></li>
+      <li><b>Portfólio verificável</b><p class="apoio">Código, documentação e parecer de banca com código de verificação.</p><span class="dado">mês 9</span></li>
+      <li><b>Ponte com trabalho</b><p class="apoio">Entrevistas com empresas e órgãos que contratam.</p><span class="dado">mês 10</span></li>
+    </ol>
+  </section>
+  <div class="meta"><b>6 meses</b><div><p>depois da conclusão, publicamos quantas pessoas da turma estão trabalhando na área</p><p class="apoio">O resultado sai para toda turma, com a meta atingida ou não.</p></div></div>
+  <section class="inscricao">
+    <a class="botao" href="#"><span class="barra-decisao"></span>Inscrever-se na turma de março</a>
+    <p class="apoio">Inscrições até 15 fev 2027 · 40 vagas</p>
+  </section>
+</body>
+</html>

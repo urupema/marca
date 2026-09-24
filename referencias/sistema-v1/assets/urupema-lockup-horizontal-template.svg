@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-labelledby="title desc">
-  <title id="title">Assinatura horizontal - template</title>
-  <desc id="desc">Template de assinatura horizontal do Instituto Urupema. Converter a tipografia Space Grotesk em contornos no arquivo final de produção.</desc>
-  <g transform="translate(28 28) scale(.64)">
-    <g fill="#221F1A"><rect x="0" y="23.5" width="81" height="34" rx="17"/><rect x="125.5" y="0" width="34" height="81" rx="17"/><rect x="204" y="23.5" width="81" height="34" rx="17"/><rect x="23.5" y="102" width="34" height="81" rx="17"/><rect x="227.5" y="102" width="34" height="81" rx="17"/><rect x="0" y="227.5" width="81" height="34" rx="17"/><rect x="125.5" y="204" width="34" height="81" rx="17"/><rect x="204" y="227.5" width="81" height="34" rx="17"/></g><rect x="102" y="125.5" width="81" height="34" rx="17" fill="#B4602F"/>
-  </g>
-  <text x="260" y="88" font-family="Space Grotesk, Arial, sans-serif" font-size="18" letter-spacing="8" fill="#6D665C">INSTITUTO</text>
-  <text x="255" y="154" font-family="Space Grotesk, Arial, sans-serif" font-size="72" font-weight="600" fill="#221F1A">urupema</text>
-</svg>

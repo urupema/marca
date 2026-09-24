@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Modelo — Proposta institucional · Instituto Urupema</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  @page { size: A4; margin: 0; }
+  body { background: #d9d3c7; }
+  .pagina {
+    width: 210mm; height: 297mm; margin: 0 auto 12mm; position: relative; overflow: hidden;
+    background: var(--papel-fundo); padding: 18mm 18mm 12mm; display: flex; flex-direction: column;
+    font-size: 10.5pt; line-height: 1.5;
+  }
+  @media print { body { background: none; } .pagina { margin: 0; page-break-after: always; } }
+
+  /* capa */
+  .capa .simbolo-campo { width: 174mm; left: 18mm; top: 88.5mm; } /* a malha do símbolo é a malha da página */
+  .capa .topo { position: relative; display: flex; justify-content: space-between; align-items: flex-start; }
+  .capa .topo img { height: 15mm; margin: -4.2mm 0 0 -4.2mm; }
+  .capa .tipo { margin-top: 5mm; }
+  .capa .tipo .rotulo { margin-bottom: 7mm; }
+  .capa h1 { font-size: 31pt; max-width: 150mm; }
+  .capa .sub { font: 400 13pt/1.45 var(--fonte-sistema); max-width: 104mm; margin: 8mm 0 0; color: var(--papel-texto-secundario); }
+  .capa .registro { margin-top: auto; --colunas: 4; }
+
+  /* miolo */
+  .miolo header { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 3mm; border-bottom: 1px solid var(--papel-filete); }
+  .miolo header img { height: 6mm; }
+  .miolo .secao { display: grid; grid-template-columns: 38mm 1fr; column-gap: 8mm; margin-top: 12mm; }
+  .miolo .secao > .rotulo { padding-top: 2.2mm; }
+  .miolo h2 { font-family: var(--fonte-institucional); font-weight: 500; font-variation-settings: "opsz" 36; font-size: 19pt; line-height: 1.12; margin: 0 0 4mm; letter-spacing: -0.005em; }
+  .miolo p { margin: 0 0 3mm; max-width: 118mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 2mm; }
+  th { text-align: left; font-size: 7.5pt; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding: 0 0 2mm; border-bottom: 1px solid var(--papel-texto); }
+  td { padding: 2.2mm 0; border-bottom: 1px solid var(--papel-filete); vertical-align: top; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { border-bottom: 0; border-top: 1px solid var(--papel-texto); font-weight: 600; }
+  .assinaturas { display: grid; grid-template-columns: 1fr 1fr 34mm; column-gap: 8mm; align-items: end; margin-top: auto; padding-top: 10mm; }
+  .assinaturas .linha { border-top: 1px solid var(--papel-texto); padding-top: 2mm; font-size: 8.5pt; }
+  .assinaturas .linha b { display: block; font-weight: 600; font-size: 9pt; }
+  .assinaturas img { width: 30mm; opacity: .92; }
+  .miolo .registro { margin-top: 8mm; --colunas: 5; }
+  .folio { position: absolute; right: 18mm; bottom: 9mm; font-size: 8pt; color: var(--papel-texto-secundario); }
+</style>
+</head>
+<body>
+
+<section class="pagina capa campo">
+  <img class="simbolo-campo" src="../logo/simbolo-campo.svg" alt="">
+  <div class="topo">
+    <img src="../logo/assinatura-horizontal-mono.svg" alt="Instituto Urupema">
+  </div>
+  <div class="tipo">
+    <p class="rotulo">Proposta de cooperação técnica</p>
+    <h1 class="exibicao">Dados de vigilância em saúde que cooperam sem sair da origem</h1>
+  </div>
+  <dl class="registro">
+    <div><dt>Documento</dt><dd>Proposta institucional</dd></div>
+    <div><dt>Versão</dt><dd>1.0</dd></div>
+    <div><dt>Data</dt><dd>24 set 2026</dd></div>
+    <div><dt>Identificador</dt><dd>IU-PR-2026-014</dd></div>
+  </dl>
+</section>
+
+<section class="pagina miolo">
+  <header>
+    <img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema">
+    <span class="rotulo">Proposta IU-PR-2026-014 · Plano de trabalho</span>
+  </header>
+
+  <div class="secao">
+    <p class="rotulo">03 · Escopo</p>
+    <div>
+      <h2>O dado fica em cada secretaria; a análise vai até ele</h2>
+      <p>Cada participante mantém sua base no próprio ambiente. As consultas conjuntas são executadas no local de origem e só resultados agregados, autorizados por política de cada secretaria, atravessam para o painel comum.</p>
+      <p>Toda execução deixa registro: quem pediu, qual versão do dado, sob qual regra, onde rodou e que resultado saiu. Uma autorização pode ser revogada a qualquer momento, e a revogação vale para as execuções seguintes.</p>
+    </div>
+  </div>
+
+  <div class="secao">
+    <p class="rotulo">04 · Cronograma e orçamento</p>
+    <div>
+      <table>
+        <colgroup><col style="width:30%"><col><col style="width:13%"><col style="width:13%"></colgroup>
+        <thead><tr><th>Etapa</th><th>Entrega verificável</th><th class="n">Meses</th><th class="n">R$ mil</th></tr></thead>
+        <tbody>
+          <tr><td>1. Pactuação</td><td>Políticas de uso assinadas por participante</td><td class="n">1–2</td><td class="n">86</td></tr>
+          <tr><td>2. Nós de origem</td><td>Nó instalado e auditado em cada secretaria</td><td class="n">2–5</td><td class="n">412</td></tr>
+          <tr><td>3. Consultas conjuntas</td><td>12 indicadores com trilha de evidência</td><td class="n">5–9</td><td class="n">298</td></tr>
+          <tr><td>4. Formação</td><td>Equipes locais operando sem apoio externo</td><td class="n">7–10</td><td class="n">104</td></tr>
+          <tr class="total"><td>Total</td><td></td><td class="n">10</td><td class="n">900</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="assinaturas">
+    <div class="linha"><b>Pelo Instituto Urupema</b>Diretoria de Pesquisa e Desenvolvimento</div>
+    <div class="linha"><b>Pela parte parceira</b>Nome e cargo</div>
+    <img src="../logo/carimbo.svg" alt="Carimbo institucional do Instituto Urupema">
+  </div>
+
+  <dl class="registro">
+    <div><dt>Documento</dt><dd>Proposta institucional</dd></div>
+    <div><dt>Versão</dt><dd>1.0</dd></div>
+    <div><dt>Data</dt><dd>24 set 2026</dd></div>
+    <div><dt>Responsável</dt><dd>Diretoria de PD&amp;I</dd></div>
+    <div><dt>Identificador</dt><dd>IU-PR-2026-014</dd></div>
+  </dl>
+  <span class="folio dado">2 / 14</span>
+</section>
+
+</body>
+</html>

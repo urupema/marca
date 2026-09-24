@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Modelo de interface — Painel de infraestrutura · Instituto Urupema</title>
+<link rel="stylesheet" href="componentes.css">
+<style>
+  body { font-size: 14px; }
+  .painel-infra { min-height: 100vh; padding: 24px 40px 36px; display: flex; flex-direction: column; gap: 22px; }
+  .barra-topo { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--papel-filete); }
+  .barra-topo .marca { display: flex; align-items: center; gap: 14px; }
+  .barra-topo .marca img { width: 28px; height: 28px; }
+  .barra-topo .marca b { font: 600 15px/1.1 var(--fonte-sistema); display: block; }
+  .barra-topo .marca span { font-size: 12px; color: var(--papel-texto-secundario); }
+  .barra-topo nav { display: flex; gap: 24px; color: var(--papel-texto-secundario); font-weight: 500; }
+  .barra-topo nav .atual { color: var(--papel-texto); box-shadow: inset 0 -2px 0 var(--papel-texto); padding-bottom: 20px; margin-bottom: -20px; }
+  .resumo { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--papel-superficie); }
+  .resumo > div { padding: 18px 20px; border-left: 1px solid var(--papel-filete); }
+  .resumo > div:first-child { border-left: 0; }
+  .resumo h1 { font: 400 34px/1.05 var(--fonte-institucional); font-variation-settings: "opsz" 48; margin: 6px 0 0; }
+  .resumo .num { font: 500 30px/1 var(--fonte-sistema); font-variant-numeric: tabular-nums; margin: 10px 0 4px; letter-spacing: -0.01em; }
+  .resumo .apoio { font-size: 12.5px; }
+  .grade-infra { display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; align-items: start; }
+  .caixa { border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--papel-superficie); }
+  .caixa h2 { font: 600 14px/1 var(--fonte-sistema); margin: 0; padding: 16px 20px; border-bottom: 1px solid var(--papel-filete); display: flex; justify-content: space-between; align-items: center; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding: 10px 20px; border-bottom: 1px solid var(--papel-filete); }
+  td { padding: 11px 20px; border-bottom: 1px solid var(--papel-filete); white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .uso { display: inline-block; width: 110px; height: 6px; border-radius: 3px; background: var(--papel-filete); vertical-align: middle; margin-right: 10px; overflow: hidden; }
+  .uso i { display: block; height: 100%; background: var(--papel-texto-secundario); border-radius: 3px; }
+  .alertas { list-style: none; margin: 0; padding: 0; }
+  .alertas li { padding: 14px 20px; border-bottom: 1px solid var(--papel-filete); display: grid; grid-template-columns: 1fr auto; row-gap: 4px; }
+  .alertas li:last-child { border-bottom: 0; }
+  .alertas .estado { grid-column: 1 / -1; }
+  .alertas b { font-weight: 500; }
+  .alertas time { font-size: 12.5px; color: var(--papel-texto-secundario); font-variant-numeric: tabular-nums; }
+  .alertas .apoio { font-size: 12.5px; grid-column: 1 / -1; }
+  .alertas .decidir { grid-column: 1 / -1; display: flex; gap: 12px; margin-top: 8px; }
+  .botao { white-space: nowrap; font: 500 13px/1 var(--fonte-sistema); padding: 10px 14px; border-radius: 4px; border: 1px solid var(--papel-filete-forte); background: transparent; color: var(--papel-texto); display: inline-flex; gap: 10px; align-items: center; }
+  .botao.primario { background: var(--papel-texto); color: var(--papel-fundo); border-color: var(--papel-texto); }
+  .botao.primario .barra-decisao { --b: 6px; }
+</style>
+</head>
+<body class="escuro">
+<div class="painel-infra">
+  <header class="barra-topo">
+    <div class="marca">
+      <img src="../logo/simbolo-negativa.svg" alt="">
+      <div><b>Infraestrutura</b><span>Instituto Urupema · sala de máquinas 1</span></div>
+    </div>
+    <nav><span class="atual">Visão geral</span><span>Nós</span><span>Reservas</span><span>Incidentes</span><span>Documentação</span></nav>
+  </header>
+
+  <section class="resumo">
+    <div><p class="rotulo">Agora, 24 set 2026 · 14:32</p><h1>Operação normal, com um nó em atenção</h1></div>
+    <div><p class="rotulo">Disponibilidade 30 d</p><p class="num">99,94%</p><p class="apoio">meta 99,9%</p></div>
+    <div><p class="rotulo">GPU em uso</p><p class="num">71%</p><p class="apoio">46 de 64 aceleradores</p></div>
+    <div><p class="rotulo">Projetos sociais</p><p class="num">12</p><p class="apoio">18% da capacidade reservada</p></div>
+    <div><p class="rotulo">Saída de dados</p><p class="num">0</p><p class="apoio">transferências fora de política</p></div>
+  </section>
+
+  <div class="grade-infra">
+    <section class="caixa">
+      <h2>Nós <span class="apoio" style="font-weight:400">6 nós · 5 operando</span></h2>
+      <table>
+        <thead><tr><th>Nó</th><th>Função</th><th>Uso</th><th>Temp.</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="dado">gpu-a01</td><td>Treino de modelos</td><td><span class="uso"><i style="width:88%"></i></span><span class="dado">88%</span></td><td class="n">61 °C</td><td><span class="estado correto">Operando</span></td></tr>
+          <tr><td class="dado">gpu-a02</td><td>Treino de modelos</td><td><span class="uso"><i style="width:84%"></i></span><span class="dado">84%</span></td><td class="n">63 °C</td><td><span class="estado correto">Operando</span></td></tr>
+          <tr><td class="dado">gpu-b01</td><td>Projetos sociais</td><td><span class="uso"><i style="width:52%"></i></span><span class="dado">52%</span></td><td class="n">55 °C</td><td><span class="estado correto">Operando</span></td></tr>
+          <tr><td class="dado">cpu-c03</td><td>Nó federado · Forja</td><td><span class="uso"><i style="width:37%"></i></span><span class="dado">37%</span></td><td class="n">48 °C</td><td><span class="estado correto">Operando</span></td></tr>
+          <tr><td class="dado">sto-d01</td><td>Armazenamento</td><td><span class="uso"><i style="width:91%"></i></span><span class="dado">91%</span></td><td class="n">41 °C</td><td><span class="estado atencao">Capacidade alta</span></td></tr>
+          <tr><td class="dado">gpu-b02</td><td>Reserva de formação</td><td><span class="uso"><i style="width:0%"></i></span><span class="dado">0%</span></td><td class="n">—</td><td><span class="estado neutro">Em manutenção</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="caixa">
+      <h2>Alertas <span class="apoio" style="font-weight:400">2 abertos</span></h2>
+      <ul class="alertas">
+        <li>
+          <span class="estado atencao">Atenção · capacidade</span>
+          <b>sto-d01 atinge 95% em cerca de 6 dias</b><time>14:05</time>
+          <p class="apoio">Tendência de 7 dias. Liberar 40 TB de dados expirados do projeto P-114 resolve até dezembro.</p>
+          <div class="decidir"><button class="botao primario"><span class="barra-decisao"></span>Aprovar liberação de 40 TB</button><button class="botao">Ver dados afetados</button></div>
+        </li>
+        <li>
+          <span class="estado falha">Falha resolvida · energia</span>
+          <b>Queda de fase no quadro 2 por 4 min</b><time>03:18</time>
+          <p class="apoio">Nobreak assumiu; nenhuma execução perdida. Relatório de incidente IU-IN-2026-031 publicado.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+</body>
+</html>

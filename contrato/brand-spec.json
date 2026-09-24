@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "schema_version": 5,
+    "version": "2.0.0",
+    "brand_name": "Instituto Urupema",
+    "tier": "full",
+    "touchpoints": [
+      "site institucional: home, pesquisa, programa, chamada de parceria",
+      "proposta, edital e convênio: capa, miolo, tabela, assinatura e anexos",
+      "relatório técnico ou científico: capa, figuras, notas, referências e dados",
+      "produto digital Forja: evidência, permissões, linhagem e estados de confiança",
+      "infraestrutura: painel, status, alertas e documentação técnica",
+      "educação e trabalho: landing, trilha, certificado e comunicação de recolocação",
+      "parceria: co-assinatura com universidade, governo, empresa e organização social",
+      "selo de verificação: versão digital e impressa",
+      "carimbo institucional e relevo seco",
+      "apresentação institucional",
+      "microaplicações: favicon, avatar, assinatura de e-mail, card social, crachá, fundo escuro"
+    ]
+  },
+  "strategy": {
+    "brand_job": {
+      "statement": "Fazer uma ICT privada nova ser reconhecida por Estado, academia, empresas e pessoas em formação como uma única instituição de longa duração — não uma lista de serviços — que faz dados, computação e conhecimento circularem com critério, soberania, prova e acesso."
+    },
+    "audience": {
+      "primary": "Dirigentes, conselho e mantenedores; órgãos públicos, ICTs, universidades e agências de fomento; pesquisadores, engenheiros e times de dados; empresas e parceiros de PD&I; alunos e pessoas em transição profissional; projetos sociais e organizações menores sem infraestrutura adequada.",
+      "language": "pt-BR",
+      "not_for": "Compradores de body shop genérico, hospedagem commodity sem requisito de soberania, inovação de vitrine, marketplace de dados sem governança, cursos que medem sucesso apenas por certificado e quem pede circulação de dados fora de política e trilha."
+    },
+    "offer_truth": {
+      "statement": "Quatro eixos sob uma tese: pesquisa e plataformas de dados (PD&I em governança de dados, IA, interoperabilidade e sistemas federados), soberania digital e infraestrutura computacional, educação e trabalho com compromisso de empregabilidade, e extensão tecnológica. PD&I é a atividade-fim; consultoria e treinamento sustentam a missão e não a deslocam. A Forja é o produto-âncora de circulação e processamento federado de dados.",
+      "basis": "Briefing mestre do Instituto. A qualificação pública “ICT privada sem fins lucrativos” só vale quando a constituição jurídica e o objeto estatutário efetivos a suportarem (Lei 10.973/2004, art. 2º, V)."
+    },
+    "alternatives": [
+      "status quo informal de cópias, e-mails e aprovações manuais",
+      "nuvens estrangeiras e plataformas proprietárias com alto aprisionamento",
+      "consultorias de transformação ou IA sem infraestrutura nem mandato institucional",
+      "ICTs generalistas posicionadas por inovação ampla",
+      "não compartilhar dados por receio regulatório ou político"
+    ],
+    "position": {
+      "statement": "Infraestrutura de confiança para ciência e tecnologia: a instituição onde a tecnologia passa por critério, preserva soberania, deixa prova e chega a quem normalmente fica de fora.",
+      "basis": "Pares brasileiros (CESAR, Eldorado, RNP, EMBRAPII) ocupam inovação, impacto, transformação e rede; consulta aos sites oficiais em 2026-09-05."
+    },
+    "right_to_win": {
+      "statement": "Governança institucional, operação federada de dados, computação soberana própria, PD&I e missão de acesso na mesma casa, com critério e evidência existindo antes e durante a circulação.",
+      "basis": "Hipótese estratégica: a unicidade de mercado não foi verificada e não deve ser alegada publicamente."
+    },
+    "desired_meaning": "Critério antes do fluxo; soberania como colaboração sob controle, não isolamento; prova no lugar de promessa; acesso como capacidade de trabalho, não benevolência."
+  },
+  "creative_direction": {
+    "thesis": "A malha vem antes do fluxo.",
+    "principles": [
+      {
+        "name": "Critério antes do gesto",
+        "rule": "Estrutura, regra, fonte, responsável ou limite aparecem antes de efeito; o que não carrega a ideia sai ou fica quieto."
+      },
+      {
+        "name": "Uma decisão em Urucum",
+        "rule": "Por composição (página, tela, peça), no máximo um elemento em Urucum além do centro do símbolo, que é parte da marca e não conta. Numerais, listas, títulos, fundos, ícones, links de texto corrido e séries secundárias de gráficos nunca são Urucum."
+      },
+      {
+        "name": "Estrutura legível, não rede decorativa",
+        "rule": "Toda linha conecta entidades rotuladas e tem consequência; células, trilhas e alinhamentos substituem nuvens de pontos, circuitos e redes."
+      },
+      {
+        "name": "Toda peça oficial deixa registro",
+        "rule": "Documentos, certificados, relatórios, telas de evidência e selos terminam em um registro legível: o que é, versão, data, responsável e identificador consultável. Registro sem dado real não é impresso."
+      },
+      {
+        "name": "Público como agente",
+        "rule": "Pessoas aparecem pesquisando, construindo, estudando e trabalhando; nunca como destinatárias passivas de benevolência."
+      }
+    ],
+    "signature": "Nove barras, uma decisão: a barra central do símbolo reaparece como a única marca de decisão de cada peça, sobre uma malha de células e filetes que aparece antes do conteúdo; em capas, o símbolo entra em escala de campo, recortado pelo quadro, com o centro sempre visível.",
+    "excludes": "Verde como cor de marca, folhas, fibras ou cestaria ilustradas, peneira literal, grafismos pseudoindígenas, gradientes, neon, brilho, 3D, escudos e cadeados como sinal de soberania, redes de pontos, estética de blockchain ou cybersecurity, Urucum como campo dominante, o símbolo repetido como textura."
+  },
+  "verbal": {
+    "tagline": "Refinar tecnologia em bem comum.",
+    "proofline": {
+      "text": "O que passa, passa com prova.",
+      "use": "Somente onde há governança, evidência, proveniência ou atestação reais na peça."
+    },
+    "principles": [
+      {
+        "name": "Prova antes de superlativo",
+        "rule": "Se a afirmação pode mostrar fonte, versão, número, responsável ou condição, mostre; se não pode, reduza a afirmação."
+      },
+      {
+        "name": "Concreto antes de abstração",
+        "rule": "Diga o que circula, onde roda, quem decide e o que muda antes de falar em transformação."
+      },
+      {
+        "name": "Brasileiro sem folclore",
+        "rule": "Português claro e contemporâneo; a origem do nome informa o método e nunca vira vocabulário pseudoindígena."
+      },
+      {
+        "name": "Acesso sem paternalismo",
+        "rule": "Fale de capacidade, trabalho, autonomia e parceria; nunca de dar voz, salvar ou beneficiar."
+      },
+      {
+        "name": "Promessa condicionada a mecanismo",
+        "rule": "Soberano, verificado, auditável e seguro só aparecem quando o mecanismo que os sustenta existe e pode ser nomeado na mesma peça."
+      }
+    ],
+    "tone_by_moment": {
+      "institucional_e_editais": "formal, econômico, verificável: missão, capacidade, governança, evidência",
+      "produto_e_operacao": "operacional: verbos curtos, estados claros, rótulos de política, origem e evidência",
+      "educacao_e_trabalho": "claro, exigente e respeitoso: meta de aprendizagem e conexão com trabalho, sem promessa motivacional",
+      "pdi_e_comercial": "problema, hipótese, escopo, risco, capacidade, entrega, prova",
+      "incidente": "cronologia, fatos conhecidos, fatos ainda desconhecidos, ação tomada, responsável e próximo marco"
+    },
+    "vocabulary": {
+      "own": ["critério", "prova", "evidência", "origem", "soberania", "federação", "circulação", "capacidade", "acesso", "trabalho", "responsabilidade", "revogação", "versão", "infraestrutura", "cooperação"],
+      "avoid": ["disruptivo", "revolucionário", "transformação digital", "solução 360°", "ecossistema sem estrutura real", "democratizar sem mecanismo e medida", "empoderar", "de ponta", "líder"]
+    },
+    "boilerplates": {
+      "curto": "O Instituto Urupema refina tecnologia em bem comum: pesquisa, infraestrutura e formação para que dados, computação e conhecimento circulem com critério, soberania e prova.",
+      "medio": "O Instituto Urupema é uma instituição brasileira de pesquisa, desenvolvimento e inovação em dados, inteligência artificial e infraestrutura computacional. Desenvolve plataformas para que instituições cooperem com dados sem perder controle sobre eles, opera infraestrutura computacional própria para parceiros e projetos sociais, forma pessoas em tecnologia com compromisso de conexão com trabalho e transfere conhecimento a organizações públicas e privadas."
+    },
+    "descriptors": {
+      "instituto": "Pesquisa, infraestrutura e formação em dados, IA e computação.",
+      "forja": "Circulação e processamento federado de dados, com soberania e evidência."
+    },
+    "seal_rule": "VERIFICADO · INSTITUTO URUPEMA é um estado, não um ornamento: aparece somente com o registro que responde o que foi verificado, por quem, quando, em qual versão, sob qual regra e com qual evidência."
+  },
+  "visual": {
+    "tokens": {
+      "color": {
+        "fundo": { "$type": "color", "$value": "#F6F1E7", "name": "Palha" },
+        "superficie": { "$type": "color", "$value": "#E7DFD0", "name": "Areia" },
+        "texto": { "$type": "color", "$value": "#221F1A", "name": "Tinta" },
+        "decisao": { "$type": "color", "$value": "#B4602F", "name": "Urucum" },
+        "texto_secundario": { "$type": "color", "$value": "#686157", "name": "Tinta reduzida" },
+        "decisao_texto": { "$type": "color", "$value": "#A85626", "name": "Urucum texto" },
+        "filete_forte": { "$type": "color", "$value": "#8E887F", "name": "Filete forte" },
+        "papel": { "$type": "color", "$value": "#FFFFFF", "name": "Branco papel" },
+        "escuro": {
+          "fundo": { "$type": "color", "$value": "{color.texto}", "name": "Tinta" },
+          "superficie": { "$type": "color", "$value": "#2D2A24", "name": "Tinta elevada" },
+          "filete": { "$type": "color", "$value": "#3B3731", "name": "Filete escuro" },
+          "texto": { "$type": "color", "$value": "{color.fundo}", "name": "Palha" },
+          "texto_secundario": { "$type": "color", "$value": "#BCB8AE", "name": "Palha reduzida" },
+          "decisao_texto": { "$type": "color", "$value": "#EB9461", "name": "Urucum texto sobre Tinta" },
+          "filete_forte": { "$type": "color", "$value": "#706B64", "name": "Filete forte escuro" }
+        },
+        "estado": {
+          "correto": { "$type": "color", "$value": "#426B4B", "name": "Estado correto" },
+          "atencao": { "$type": "color", "$value": "#805B09", "name": "Estado de atenção" },
+          "falha": { "$type": "color", "$value": "#AC3942", "name": "Estado de falha" },
+          "correto_escuro": { "$type": "color", "$value": "#8DBA96", "name": "Estado correto sobre Tinta" },
+          "atencao_escuro": { "$type": "color", "$value": "#CDAB62", "name": "Estado de atenção sobre Tinta" },
+          "falha_escuro": { "$type": "color", "$value": "#EA98A6", "name": "Estado de falha sobre Tinta" }
+        }
+      },
+      "space": {
+        "1": { "$type": "dimension", "$value": "4px" },
+        "2": { "$type": "dimension", "$value": "8px" },
+        "3": { "$type": "dimension", "$value": "12px" },
+        "4": { "$type": "dimension", "$value": "16px" },
+        "5": { "$type": "dimension", "$value": "24px" },
+        "6": { "$type": "dimension", "$value": "32px" },
+        "7": { "$type": "dimension", "$value": "48px" },
+        "8": { "$type": "dimension", "$value": "64px" },
+        "celula": { "$type": "dimension", "$value": "96px", "name": "Célula" }
+      },
+      "radius": {
+        "barra": { "$type": "dimension", "$value": "999px", "name": "Ponta da barra" },
+        "superficie": { "$type": "dimension", "$value": "4px", "name": "Canto de superfície" }
+      }
+    },
+    "palette": {
+      "behavior": "Palha ou branco dominam o campo; Tinta carrega texto, símbolo e fundos escuros; Areia separa e agrupa; Urucum aparece uma vez por composição como decisão. As cores funcionais existem para contraste e estados e nunca representam a marca em comunicação.",
+      "rules": [
+        "Texto em Urucum usa Urucum texto e só sobre Palha ou branco; sobre Areia, texto é Tinta ou Tinta reduzida.",
+        "Filete Areia separa quando o espaço já separa; bordas de campos, botões e controles usam Filete forte (3:1).",
+        "Cores de estado existem só em produto e operação, sempre com rótulo; nunca em comunicação institucional.",
+        "Fundo Tinta é uma decisão de peça inteira ou de seção inteira, não um cartão escuro solto.",
+        "No impresso, o miolo sai em papel branco; Palha é o campo da tela e das capas.",
+        "Urucum texto sobre Tinta só em 16 px ou mais com peso 500 ou mais: chamada, estado ou destaque, nunca corpo."
+      ]
+    },
+    "contrast_pairs": [
+      { "text": "{color.texto}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.texto}", "background": "{color.superficie}", "usage": "body" },
+      { "text": "{color.texto_secundario}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.texto_secundario}", "background": "{color.superficie}", "usage": "body" },
+      { "text": "{color.texto_secundario}", "background": "{color.papel}", "usage": "body" },
+      { "text": "{color.decisao_texto}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.decisao_texto}", "background": "{color.papel}", "usage": "body" },
+      { "text": "{color.decisao}", "background": "{color.fundo}", "usage": "large" },
+      { "text": "{color.filete_forte}", "background": "{color.fundo}", "usage": "ui" },
+      { "text": "{color.escuro.texto}", "background": "{color.escuro.fundo}", "usage": "body" },
+      { "text": "{color.escuro.texto_secundario}", "background": "{color.escuro.fundo}", "usage": "body" },
+      { "text": "{color.escuro.texto_secundario}", "background": "{color.escuro.superficie}", "usage": "body" },
+      { "text": "{color.escuro.decisao_texto}", "background": "{color.escuro.fundo}", "usage": "body" },
+      { "text": "{color.escuro.decisao_texto}", "background": "{color.escuro.superficie}", "usage": "body" },
+      { "text": "{color.decisao}", "background": "{color.escuro.fundo}", "usage": "ui" },
+      { "text": "{color.escuro.filete_forte}", "background": "{color.escuro.fundo}", "usage": "ui" },
+      { "text": "{color.estado.correto}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.estado.atencao}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.estado.falha}", "background": "{color.fundo}", "usage": "body" },
+      { "text": "{color.estado.correto_escuro}", "background": "{color.escuro.fundo}", "usage": "body" },
+      { "text": "{color.estado.atencao_escuro}", "background": "{color.escuro.fundo}", "usage": "body" },
+      { "text": "{color.estado.falha_escuro}", "background": "{color.escuro.fundo}", "usage": "body" }
+    ],
+    "typography": {
+      "families": [
+        { "name": "Newsreader", "role": "voz institucional", "license": "SIL OFL 1.1", "use": "títulos, abertura de documentos, manifesto, citações, carimbo" },
+        { "name": "Space Grotesk", "role": "voz de sistema", "license": "SIL OFL 1.1", "use": "corpo, interface, dados, rótulos, registro, assinatura nominal" },
+        { "name": "Georgia e Arial", "role": "substitutas de escritório", "use": "somente em arquivos editados por terceiros sem as famílias da marca" }
+      ],
+      "roles": {
+        "monumental": "Newsreader, 96–200 px ou 60–120 pt, peso 400, entrelinha 0,92, eixo óptico no máximo; uma por peça, em capas e aberturas",
+        "exibicao": "Newsreader, 48–80 px, peso 400–500, entrelinha 0,98–1,04",
+        "titulo": "Newsreader, 28–40 px, peso 500, entrelinha 1,1",
+        "corpo": "Space Grotesk, 16–19 px ou 10–11 pt, peso 400, entrelinha 1,5, linha de 60–72 caracteres",
+        "apoio": "Space Grotesk, 14–15 px, peso 400, Tinta reduzida",
+        "rotulo": "Space Grotesk, 11–13 px, peso 500, caixa alta, espaçamento 0,08 em",
+        "dado": "Space Grotesk com algarismos tabulares, peso 400–500"
+      },
+      "rules": [
+        "Um salto de escala por peça: o título grande é pelo menos três vezes o corpo.",
+        "Newsreader nunca em rótulos, tabelas ou interface; Space Grotesk nunca no título de abertura de um documento institucional.",
+        "Títulos em exibição são compostos à mão: quebra de linha por sentido, sem viúvas, alinhados à borda visível."
+      ]
+    },
+    "logo": {
+      "production": {
+        "status": "final",
+        "master_format": "SVG",
+        "master_path": "livro/logo/simbolo.svg",
+        "criterion": "Masters em SVG com lettering em contornos, geometria do símbolo idêntica ao master de 285 unidades e verificação estrutural sem fonte, raster ou script; reproduzíveis por ferramentas/gerar_logos.py."
+      },
+      "construction": "Malha 3 x 3 de barras 81 x 34 com raio 17, alternando horizontais e verticais; a barra central horizontal é Urucum. Célula = um terço do lado do símbolo.",
+      "clear_space": "Uma célula em volta do símbolo ou da assinatura; os arquivos de assinatura já incluem esse respiro.",
+      "minimum_size": {
+        "simbolo": "16 px com o favicon ajustado; 20 px com o master; 6 mm impresso",
+        "assinatura_horizontal": "180 px ou 40 mm de largura; abaixo disso, só o símbolo",
+        "assinatura_vertical": "120 px ou 28 mm de largura",
+        "carimbo": "25 mm de diâmetro; digital a partir de 160 px"
+      },
+      "variants": "Tinta e Urucum sobre claro; Palha e Urucum sobre Tinta; uma cor Tinta para carimbo, relevo seco e gravação; uma cor Palha sobre escuro.",
+      "rules": [
+        "Não redesenhar, rotacionar, espelhar, espaçar ou reordenar as barras; não colocar letras dentro do símbolo.",
+        "O símbolo pode entrar em escala de campo, recortado pelo quadro, uma vez por peça, com a barra central sempre inteira e visível.",
+        "O símbolo nunca vira padrão, textura ou ícone de produto.",
+        "A assinatura não carrega descritor setorial fixo."
+      ]
+    },
+    "composition": {
+      "grid": "Malha de células: a largura útil se divide em 3, 6 ou 12 colunas; o respiro mínimo das margens é uma célula (96 px em tela; 18 mm em A4).",
+      "rules": [
+        "A estrutura aparece antes do conteúdo: filetes Areia marcam as células e o conteúdo ocupa células inteiras.",
+        "A barra de decisão tem a proporção da barra do símbolo (2,4 : 1, pontas redondas) e marca a única decisão da peça: chamada principal, etapa atual, valor que importa ou seção de destino. Filetes longos são Tinta ou Areia, nunca Urucum.",
+        "Assimetria controlada: o título ocupa a coluna da esquerda ou o terço superior; nada se centraliza por hábito.",
+        "Peças oficiais terminam no registro: rótulos em Space Grotesk caixa alta e valores em algarismos tabulares, sobre filete."
+      ]
+    },
+    "imagery": {
+      "rules": [
+        "Fotografia documental de trabalho real: laboratório, sala de máquinas, campo, pesquisa e sala de aula; mãos, ferramentas, telas, cadernos e cabos antes de retratos posados.",
+        "Pessoas como pesquisadoras, técnicas, estudantes, profissionais e parceiras.",
+        "Luz natural ou neutra, cor natural; sem duotone de marca nem filtro alaranjado. O calor vem do Urucum gráfico.",
+        "Imagem gerada nunca documenta impacto, pessoa ou lugar real; quando usada, é declarada como ilustração."
+      ]
+    },
+    "iconography": {
+      "rules": [
+        "Traço uniforme de 1,5 px a 24 px, pontas e cantos arredondados na proporção da barra, sem copiar o símbolo.",
+        "Estados de permissão, origem, revogação e evidência sempre com rótulo textual.",
+        "Cadeado nunca representa soberania sozinho."
+      ]
+    },
+    "data": {
+      "rules": [
+        "Gráficos em Tinta e tons de Areia; uma única série ou valor em Urucum, o que a peça quer que se decida.",
+        "Linhagem é desenhada como trilha entre entidades rotuladas, com direção e data; nunca como rede de nós sem rótulo.",
+        "Toda figura traz fonte, versão do dado e data no rodapé."
+      ]
+    },
+    "motion": {
+      "rules": [
+        "Barras entram por eixos ortogonais e travam na malha; sem elasticidade nem ondas.",
+        "A estrutura aparece antes do conteúdo que a atravessa; o Urucum entra por último, como decisão.",
+        "160–280 ms em microinterações; 400–700 ms na assinatura animada.",
+        "Com movimento reduzido, o estado final aparece imediatamente."
+      ]
+    }
+  },
+  "architecture": {
+    "model": "endorsed",
+    "rules": [
+      "O Instituto Urupema é a marca-mãe e a única fonte de autoridade institucional; o símbolo é só dele.",
+      "Produto recebe nome próprio quando pessoas de fora do Instituto o operam ou contratam diretamente e precisam reconhecê-lo onde o Instituto não aparece; assina sempre com a linha “um produto do Instituto Urupema”.",
+      "Programa de pesquisa, educação ou impacto usa nome descritivo seguido de “do Instituto Urupema”; ganha nome próprio só com público externo recorrente e horizonte plurianual, e nunca cria símbolo.",
+      "Componente técnico interno não recebe nome público; é descrito pela função.",
+      "A iniciativa que não responde ao teste da urupema (tecnologia bruta entra, passa por critério, vira valor para quem precisa) é exceção estratégica e não recebe nome nem assinatura.",
+      "Na camada de confiança (Forja, selo de verificação, registros), participantes aparecem como participantes, em texto, nunca como patrocinadores; logotipos comerciais não acompanham o selo."
+    ],
+    "cobranding": [
+      "Instituto lidera: assinatura do Instituto primeiro; parceiros depois de “com” ou “em parceria com”, menores.",
+      "Parceiro lidera: a assinatura horizontal do Instituto entra na régua de parceiros na altura óptica dos demais, com respiro de uma célula, sem mudar cores de ninguém.",
+      "Paridade: duas assinaturas de mesma altura óptica separadas por um filete vertical da altura do símbolo, com uma célula de cada lado."
+    ]
+  },
+  "governance": {
+    "source_of_truth": "Este repositório: o livro da marca e seus arquivos em livro/, este contrato e as ferramentas que reproduzem os masters.",
+    "owner": "Responsável pela marca designado pela direção do Instituto; aprova aplicações novas e exceções.",
+    "change": "Proposta, teste em aplicação real, aprovação do responsável e nova versão: correção de arquivo muda o terceiro número; regra ou arquivo novo, o segundo; tese, símbolo, paleta-base, famílias tipográficas ou arquitetura, o primeiro, com aprovação da direção.",
+    "exceptions": "Exceção é pedida por escrito, vale para uma peça e é registrada; a mesma exceção pedida três vezes vira proposta de mudança."
+  }
+}

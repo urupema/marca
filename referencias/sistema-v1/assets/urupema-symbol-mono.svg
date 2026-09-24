@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="285" height="285" viewBox="0 0 285 285" role="img" aria-labelledby="title desc">
-  <title id="title">Símbolo monocromático do Instituto Urupema</title>
-  <desc id="desc">Nove barras arredondadas em uma malha três por três, todas em Tinta.</desc>
-  <g fill="#221F1A">
-    <rect x="0" y="23.5" width="81" height="34" rx="17"/><rect x="125.5" y="0" width="34" height="81" rx="17"/><rect x="204" y="23.5" width="81" height="34" rx="17"/>
-    <rect x="23.5" y="102" width="34" height="81" rx="17"/><rect x="102" y="125.5" width="81" height="34" rx="17"/><rect x="227.5" y="102" width="34" height="81" rx="17"/>
-    <rect x="0" y="227.5" width="81" height="34" rx="17"/><rect x="125.5" y="204" width="34" height="81" rx="17"/><rect x="204" y="227.5" width="81" height="34" rx="17"/>
-  </g>
-</svg>

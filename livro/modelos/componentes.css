@@ -1,0 +1,119 @@
+/* Instituto Urupema — componentes de marca para modelos em HTML.
+   Depende de ../cores/tokens.css. */
+@import url("../cores/tokens.css");
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  background: var(--papel-fundo);
+  color: var(--papel-texto);
+  font-family: var(--fonte-sistema);
+  font-size: 17px;
+  line-height: 1.5;
+  font-feature-settings: "kern";
+}
+
+.escuro, [data-tema="escuro"] { background: var(--papel-fundo); color: var(--papel-texto); }
+
+/* ---------- papéis tipográficos ---------- */
+.monumental, .exibicao, .titulo {
+  font-family: var(--fonte-institucional);
+  font-weight: 400;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.012em;
+  margin: 0;
+  text-wrap: balance;
+}
+.monumental { font-size: clamp(72px, 11vw, 176px); line-height: 0.92; letter-spacing: -0.022em; }
+.exibicao { font-size: clamp(44px, 5.4vw, 80px); line-height: 1.0; }
+.titulo { font-size: clamp(28px, 2.6vw, 40px); line-height: 1.1; font-weight: 500; font-variation-settings: "opsz" 36; }
+.corpo { font-size: 17px; line-height: 1.5; max-width: 66ch; margin: 0; }
+.apoio { font-size: 15px; line-height: 1.5; color: var(--papel-texto-secundario); margin: 0; }
+.rotulo {
+  font-family: var(--fonte-sistema);
+  font-size: 12px; line-height: 1.3; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--papel-texto-secundario);
+  margin: 0;
+}
+.dado { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+.italico { font-style: italic; }
+
+/* ---------- barra de decisão: a barra central do símbolo, 81 x 34 ---------- */
+.barra-decisao {
+  --b: 10px;
+  display: inline-block;
+  width: calc(var(--b) * 2.382);
+  height: var(--b);
+  border-radius: var(--radius-barra);
+  background: var(--papel-decisao);
+  vertical-align: middle;
+  flex: none;
+}
+.barra-decisao.vertical { width: var(--b); height: calc(var(--b) * 2.382); }
+
+/* ---------- filetes e malha ---------- */
+.filete { border: 0; border-top: 1px solid var(--papel-filete); margin: 0; }
+.filete-forte { border: 0; border-top: 1px solid var(--papel-filete-forte); margin: 0; }
+.malha { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-5); }
+
+/* ---------- registro: toda peça oficial termina nele ---------- */
+.registro {
+  display: grid;
+  grid-template-columns: repeat(var(--colunas, 5), minmax(0, auto));
+  justify-content: start;
+  column-gap: var(--space-6);
+  row-gap: var(--space-2);
+  border-top: 1px solid var(--papel-texto);
+  padding-top: var(--space-3);
+}
+.registro > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.registro dt, .registro .r { font-size: 10.5px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--papel-texto-secundario); }
+.registro dd, .registro .v { margin: 0; font-size: 13px; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; color: var(--papel-texto); white-space: nowrap; }
+
+/* ---------- selo de verificação: estado com registro, nunca ornamento ---------- */
+.selo {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-3);
+  align-items: start;
+  border: 1.5px solid var(--papel-texto);
+  border-radius: var(--radius-superficie);
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-3);
+  background: var(--papel-fundo);
+}
+.selo img, .selo svg { width: 28px; height: 28px; display: block; margin-top: 1px; }
+.selo .selo-cabeca { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.25; }
+.selo .selo-cabeca span { font-weight: 500; color: var(--papel-texto-secundario); white-space: nowrap; }
+.selo .selo-cabeca { white-space: nowrap; }
+.selo dl { margin: 6px 0 0; display: grid; grid-template-columns: max-content max-content; column-gap: var(--space-3); row-gap: 1px; }
+.selo dt { font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--papel-texto-secundario); padding-top: 2px; }
+.selo dd { margin: 0; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+/* ---------- símbolo em campo: escala de campo, recortado pelo quadro ---------- */
+.campo { position: relative; overflow: hidden; }
+.campo > .simbolo-campo { position: absolute; display: block; pointer-events: none; }
+.campo > :not(.simbolo-campo) { position: relative; }
+
+/* ---------- ação ---------- */
+.acao {
+  display: inline-flex; align-items: center; gap: var(--space-3);
+  font: 500 16px/1 var(--fonte-sistema);
+  color: var(--papel-texto); text-decoration: none;
+  padding: 14px 0; border-bottom: 1.5px solid var(--papel-texto);
+}
+.acao-secundaria { font: 500 15px/1 var(--fonte-sistema); color: var(--papel-texto); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
+/* ---------- estados de operação (produto e infraestrutura) ---------- */
+.estado { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
+.estado::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
+.estado.correto { color: var(--color-estado-correto); }
+.estado.atencao { color: var(--color-estado-atencao); }
+.estado.falha { color: var(--color-estado-falha); }
+.estado.neutro { color: var(--papel-texto-secundario); }
+
+/* ---------- impressão ---------- */
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
