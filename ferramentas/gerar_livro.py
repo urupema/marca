@@ -128,9 +128,15 @@ BIBLIOTECA = [
         ("Uma cor", "b", "assinatura-vertical-mono.svg", []),
         ("Uma cor, negativa", "t", "assinatura-vertical-mono-negativa.svg", []),
     ]),
-    ("Assinatura de produto", "Nome do produto sobre a linha de endosso do Instituto.", [
-        ("Forja, cor", "p", "forja-assinatura.svg", []),
-        ("Forja, negativa", "t", "forja-assinatura-negativa.svg", []),
+    ("Assinaturas de sistema", "Serviços da casa assinam com o Instituto; produtos endossados, com nome próprio.", [
+        ("Forja", "b", "forja-assinatura.svg", ["forja-assinatura-negativa.svg"]),
+        ("IdP Urupema", "b", "idp-assinatura.svg", ["idp-assinatura-negativa.svg"]),
+        ("Chat Urupema", "b", "chat-assinatura.svg", ["chat-assinatura-negativa.svg"]),
+    ]),
+    ("Ícones de sistema", "Uma pílula acesa por sistema, na ordem em que foram atribuídas.", [
+        ("Forja", "p", "forja-icone.svg", ["forja-icone-32.png", "forja-icone-180.png", "forja-icone-512.png"]),
+        ("IdP Urupema", "p", "idp-icone.svg", ["idp-icone-32.png", "idp-icone-180.png", "idp-icone-512.png"]),
+        ("Chat Urupema", "p", "chat-icone.svg", ["chat-icone-32.png", "chat-icone-180.png", "chat-icone-512.png"]),
     ]),
     ("Carimbo institucional", "Documentos do Instituto e matriz de relevo seco. Diâmetro mínimo de 25 mm.", [
         ("Tinta", "b", "carimbo.svg", []),
@@ -141,10 +147,10 @@ BIBLIOTECA = [
         ("Sobre Palha", "p", "simbolo-campo.svg", []),
         ("Sobre Tinta", "t", "simbolo-campo-escuro.svg", []),
     ]),
-    ("Ícones de tela", "Favicon ajustado à grade de pixels, ícone de aplicativo e avatar.", [
+    ("Ícones do Instituto", "Favicon ajustado à grade de pixels, ícone de aplicativo e avatar.", [
         ("Favicon", "p", "favicon.svg", ["favicon-48.png"]),
         ("Favicon para 16 e 32 px", "p", "favicon-32.svg", ["favicon-16.svg", "favicon-16.png", "favicon-32.png"]),
-        ("Ícone de aplicativo", "p", "icone-app-512.png", ["icone-app-180.png"]),
+        ("Ícone do Instituto", "p", "instituto-icone.svg", ["instituto-icone-180.png", "instituto-icone-512.png"]),
         ("Avatar", "t", "avatar.svg", ["avatar-800.png"]),
     ]),
 ]
@@ -170,10 +176,12 @@ MODELOS_LISTA = [
 CORES_LISTA = [("Variáveis para CSS", "tokens.css"), ("Variáveis em JSON", "tokens.json")]
 
 
-def _fmt(nome):
-    """SVG, PNG 1200, SVG 16… — formato e, quando houver, o tamanho do arquivo."""
+def _fmt(nome, principal):
+    """SVG, PNG 1200, SVG 16, SVG negativa… — formato e o que distingue o extra da miniatura."""
     base, ext = nome.rsplit(".", 1)
     fim = base.rsplit("-", 1)[-1]
+    if fim == "negativa" and not principal.rsplit(".", 1)[0].endswith("negativa"):
+        return ext.upper() + " negativa"
     return ext.upper() + (f" {fim}" if fim.isdigit() else "")
 
 
@@ -184,7 +192,7 @@ def biblioteca():
         itens = []
         for rotulo, fundo, principal, extras in versoes:
             usados.update([principal, *extras])
-            links = " ".join(f'<a href="logo/{f}" download>{_fmt(f)}</a>' for f in [principal, *extras])
+            links = " ".join(f'<a href="logo/{f}" download>{_fmt(f, principal)}</a>' for f in [principal, *extras])
             itens.append(f'<figure class="ativo"><div class="miniatura f-{fundo}"><img src="logo/{principal}" alt="{e(titulo)}, {e(rotulo.lower())}"></div>'
                          f'<figcaption><b>{e(rotulo)}</b><span>{links}</span></figcaption></figure>')
         grupos.append(f'<section class="grupo-ativos"><div class="cab-ativos"><h3>{e(titulo)}</h3><p>{e(uso)}</p></div>'
@@ -425,6 +433,15 @@ figcaption b {{ color: var(--tinta); font-weight: 600; }}
 /* arquitetura */
 .decisao-nome {{ grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); column-gap: 24px; }}
 .decisao-nome > div {{ border-top: 1px solid var(--tinta); padding-top: 14px; }}
+.sistemas {{ grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); column-gap: 24px; }}
+.sistemas figure {{ margin: 0; }}
+.sistemas .palco {{ aspect-ratio: 16 / 7; }}
+.sistemas figcaption, .icones-sis figcaption {{ font-size: 14px; color: var(--reduzida); margin-top: 12px; }}
+.sistemas figcaption b, .icones-sis figcaption b {{ display: block; color: var(--tinta); font-weight: 600; margin-bottom: 2px; }}
+.icones-sis {{ grid-column: 1 / -1; display: grid; grid-template-columns: 4fr repeat(4, minmax(0,1.6fr)); column-gap: 24px; align-items: start; border-top: 1px solid var(--tinta); padding-top: 18px; }}
+.icones-sis .cab p:last-child {{ font-size: 15px; margin-top: 10px; }}
+.icones-sis figure {{ margin: 0; }}
+.icones-sis img {{ width: 100%; max-width: 160px; }}
 .decisao-nome .ex {{ font-size: 14px; color: var(--reduzida); }}
 
 /* arquivos */
@@ -474,6 +491,9 @@ footer.fim p {{ grid-column: 5 / 12; font-size: 15px; color: var(--palha-reduzid
   .s-cab, .corpo-s {{ display: block; }}
   .s-cab h2 {{ margin-top: 12px; }}
   .corpo-s > * + * {{ margin-top: 48px; }}
+  .sistemas {{ grid-template-columns: 1fr; row-gap: 28px; }}
+  .icones-sis {{ grid-template-columns: 1fr 1fr; row-gap: 24px; }}
+  .icones-sis .cab {{ grid-column: 1 / -1; }}
   .fotos, .regras, .cadeia, .painel-simbolo, .assinaturas-grade, .especime, .dispositivos, .falhas, .frases, .decisao-nome, .aplic .par, .aplic .tres, .aplic .micro, .listas {{ grid-template-columns: 1fr; row-gap: 32px; }}
   .indice {{ columns: 1; }}
   .variantes, .aplic .celular {{ grid-template-columns: 1fr 1fr; row-gap: 32px; }}
@@ -748,7 +768,7 @@ corpo = f"""
     <div class="assinaturas-grade">
       <figure><div class="palco f-b"><img src="logo/assinatura-horizontal.svg" alt="Assinatura horizontal" style="width:78%"></div><figcaption><b>Assinatura horizontal</b>A padrão. Símbolo com pelo menos 44 px de altura na tela ou 8,5 mm no impresso; abaixo disso, use só o símbolo.</figcaption></figure>
       <figure><div class="palco f-b"><img src="logo/assinatura-vertical.svg" alt="Assinatura vertical" style="width:52%"></div><figcaption><b>Assinatura vertical</b>Para formatos estreitos e altos: fachada, lombada, avatar de evento. O mesmo mínimo do símbolo.</figcaption></figure>
-      <figure><div class="palco f-t"><img src="logo/forja-assinatura-negativa.svg" alt="Forja, um produto do Instituto Urupema" style="width:70%"></div><figcaption><b>Assinatura de produto</b>Nome do produto sobre a linha de endosso; o símbolo aparece só na linha de endosso.</figcaption></figure>
+      <figure><div class="palco f-t"><img src="logo/chat-assinatura-negativa.svg" alt="Assinatura do Chat Urupema" style="width:84%"></div><figcaption><b>Assinaturas de sistema</b>Serviços da casa assinam com o Instituto; produtos, com nome próprio endossado. Veja Produtos e parceiros.</figcaption></figure>
     </div>
     <div class="regras" style="grid-column:1/-1">
       {regra("Deixe uma célula de respiro", e(L["clear_space"]), "Um terço do lado é uma medida que se confere a olho e com régua, em qualquer tamanho.", "Em capas e fachadas, aumente o respiro; nunca o reduza.")}
@@ -848,7 +868,7 @@ corpo = f"""
     {fig("aplicacoes/relatorio-2.jpg", "Página de relatório com gráfico em que só a série decisiva está em Urucum, notas, referências e selo de verificação", "<b>Página de resultados.</b> Só a série que decide está em Urucum; a figura traz fonte, versão do dado e execução; o selo mostra o que foi verificado.")}
   </div>
   <div class="inteira">{fig("aplicacoes/cena-convenio.jpg", "Página de proposta impressa em papel branco sobre a mesa, com assinaturas, registro e o carimbo em relevo seco", "<b>Convênio impresso.</b> No papel, o fundo é o branco da folha; o carimbo entra em relevo seco, sem tinta.")}</div>
-  <div class="inteira">{fig("aplicacoes/forja-evidencia.jpg", "Tela da Forja com linhagem da execução, autorizações dos participantes e evidência", "<b>Forja, produto digital.</b> Linhagem como trilha de entidades rotuladas; estados com rótulo; a barra de decisão marca a única ação principal. Assinatura de produto no canto.")}</div>
+  <div class="inteira">{fig("aplicacoes/forja-evidencia.jpg", "Tela da Forja com linhagem da execução, autorizações dos participantes e evidência", "<b>Forja, produto digital.</b> Linhagem como trilha de entidades rotuladas; estados com rótulo; a barra de decisão marca a única ação principal. Ícone e assinatura do produto no canto.")}</div>
   <div class="inteira">{fig("aplicacoes/infra-painel.jpg", "Painel de infraestrutura em fundo Tinta com nós, uso, estados e alertas", "<b>Painel de infraestrutura, modo escuro.</b> O título diz o estado em uma frase; cores de estado só com rótulo; a decisão é aprovar a liberação.")}</div>
   <div class="inteira">{fig("aplicacoes/site-home.jpg", "Abertura do site institucional no computador", "<b>Site institucional.</b> A tese em escala monumental; o símbolo recortado à direita, com o centro inteiro.")}</div>
   <div class="celular">
@@ -901,15 +921,29 @@ corpo = f"""
   <div class="corpo-s">
     <div class="decisao-nome">
       <div><p class="rotulo">Instituto</p><h4>Marca-mãe</h4><p style="font-size:15px">{e(A["rules"][0])}</p></div>
-      <div><p class="rotulo">Produto</p><h4>Nome próprio, endossado</h4><p style="font-size:15px">{e(A["rules"][1])}</p><p class="ex">Hoje: Forja — {e(V["descriptors"]["forja"])}</p></div>
-      <div><p class="rotulo">Programa</p><h4>Nome descritivo</h4><p style="font-size:15px">{e(A["rules"][2])}</p><p class="ex">Ex.: Trilha de engenharia de dados do Instituto Urupema</p></div>
-      <div><p class="rotulo">Componente interno</p><h4>Sem nome público</h4><p style="font-size:15px">{e(A["rules"][3])}</p><p class="ex">Ex.: o módulo de políticas da Forja</p></div>
+      <div><p class="rotulo">Serviço da casa</p><h4>Nome descritivo + Urupema</h4><p style="font-size:15px">{e(A["rules"][1])}</p><p class="ex">Hoje: IdP Urupema, Chat Urupema</p></div>
+      <div><p class="rotulo">Produto endossado</p><h4>Nome próprio</h4><p style="font-size:15px">{e(A["rules"][2])}</p><p class="ex">Hoje: Forja — {e(V["descriptors"]["forja"])}</p></div>
+      <div><p class="rotulo">Programa e componente</p><h4>Sem marca própria</h4><p style="font-size:15px">{e(A["rules"][3])} {e(A["rules"][4])}</p><p class="ex">Ex.: Trilha de engenharia de dados do Instituto Urupema; o módulo de políticas da Forja</p></div>
+    </div>
+    <div class="sistemas">
+      <figure><div class="palco f-b"><img src="logo/idp-assinatura.svg" alt="Assinatura do IdP Urupema" style="width:84%"></div><figcaption><b>IdP Urupema</b>Serviço da casa: a identidade de quem entra nos sistemas do Instituto.</figcaption></figure>
+      <figure><div class="palco f-b"><img src="logo/chat-assinatura.svg" alt="Assinatura do Chat Urupema" style="width:84%"></div><figcaption><b>Chat Urupema</b>Serviço da casa: a conversa da comunidade do Instituto.</figcaption></figure>
+      <figure><div class="palco f-b"><img src="logo/forja-assinatura.svg" alt="Forja, um produto do Instituto Urupema" style="width:56%"></div><figcaption><b>Forja</b>Produto endossado: nome próprio sobre a linha de endosso, em texto.</figcaption></figure>
+    </div>
+    <div class="icones-sis">
+      <div class="cab"><p class="rotulo">Ícones de sistema</p><p>Cada sistema com tela ou aplicativo próprio recebe uma das oito pílulas da malha, para sempre. O ícone recorta a malha entre essa pílula, em Palha, e o centro, em Urucum. O símbolo inteiro continua só do Instituto.</p></div>
+      <figure><img src="logo/instituto-icone.svg" alt="Ícone do Instituto: o símbolo inteiro"><figcaption><b>Instituto</b>símbolo inteiro</figcaption></figure>
+      <figure><img src="logo/forja-icone.svg" alt="Ícone da Forja: pílula de cima à esquerda"><figcaption><b>Forja</b>pílula de cima, à esquerda</figcaption></figure>
+      <figure><img src="logo/idp-icone.svg" alt="Ícone do IdP Urupema: pílula de cima, no centro"><figcaption><b>IdP Urupema</b>pílula de cima, no centro</figcaption></figure>
+      <figure><img src="logo/chat-icone.svg" alt="Ícone do Chat Urupema: pílula de cima à direita"><figcaption><b>Chat Urupema</b>pílula de cima, à direita</figcaption></figure>
     </div>
     <div class="regras" style="grid-column:1/-1">
-      {regra("Passe a iniciativa pelo teste da urupema", e(A["rules"][4]), "A marca ajuda a conter escopo; nomear o que não cabe na tese mascara dispersão.")}
-      {regra("Mantenha a camada de confiança neutra", e(A["rules"][5]), "A confiança técnica depende de separar governança de interesse comercial.")}
+      {regra("Dê a próxima pílula ao próximo sistema", "As pílulas são atribuídas em ordem de leitura, a partir de cima à esquerda; ainda estão livres as quatro de baixo e as duas laterais. A pílula de um sistema desativado não volta a ser usada.", "Uma posição fixa faz de cada ícone um endereço: com o tempo, a comunidade reconhece o sistema pela pílula.", "Componentes internos não recebem pílula; se as oito se esgotarem, a arquitetura é revista antes de qualquer nono ícone.")}
+      {regra("Não use o símbolo como ícone de sistema", "No ícone, na barra de navegação e na tela de entrada de um sistema, use o ícone do sistema; o símbolo inteiro aparece só como assinatura do Instituto.", "Se todo sistema usasse o símbolo, a tela do celular teria vários ícones iguais e o do Instituto perderia o sentido.")}
+      {regra("Passe a iniciativa pelo teste da urupema", e(A["rules"][5]), "A marca ajuda a conter escopo; nomear o que não cabe na tese mascara dispersão.")}
+      {regra("Mantenha a camada de confiança neutra", e(A["rules"][6]), "A confiança técnica depende de separar governança de interesse comercial.")}
     </div>
-    <div class="col-cheia">{fig("aplicacoes/coassinatura.jpg", "Três modos de co-assinatura com parceiros: o Instituto lidera, o parceiro lidera e paridade", "<b>Co-assinatura.</b> As marcas de parceiros aqui são substitutos neutros.")}</div>
+    <div class="col-cheia" style="margin-top:24px">{fig("aplicacoes/coassinatura.jpg", "Três modos de co-assinatura com parceiros: o Instituto lidera, o parceiro lidera e paridade", "<b>Co-assinatura.</b> As marcas de parceiros aqui são substitutos neutros.")}</div>
     <div class="regras" style="grid-column:1/-1">{regras_de(A["cobranding"])}</div>
   </div>
 </section>

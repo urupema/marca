@@ -148,38 +148,108 @@ def assinatura_vertical():
                 "Símbolo centralizado sobre INSTITUTO e urupema. Inclui a área de respiro de uma célula.", corpo))
 
 
-def assinatura_produto(nome, arquivo):
-    """Nome do produto + linha de endosso com o símbolo reduzido.
+# Sistemas do Instituto. Serviços da casa assinam com o Instituto; produtos têm nome próprio
+# endossado. Cada sistema com tela própria recebe, para sempre, uma pílula da malha (índice
+# em BARRAS, em ordem de leitura; o centro, 4, é do Instituto e nunca é atribuído).
+SISTEMAS = [
+    # (nome, arquivo, tipo, pílula)
+    ("Forja", "forja", "produto", 0),
+    ("IdP", "idp", "servico", 1),
+    ("Chat", "chat", "servico", 2),
+]
+BARRA_APAGADA = {"escuro": "#3E3A34", "claro": "#E7DFD0"}
 
-    O único Urucum da assinatura é o centro do símbolo de endosso.
+
+def assinatura_produto(nome, arquivo):
+    """Produto endossado: nome próprio sobre a linha de endosso, em texto.
+
+    O nome tem a altura de x de urupema (81); a linha de endosso, a altura de maiúscula de
+    INSTITUTO (34), começa um comprimento de barra abaixo da linha de base do nome. Sem símbolo:
+    no tamanho da linha de endosso ele ficaria abaixo do mínimo.
     """
-    from tipografia import metricas
+    for sufixo, cor_nome, cor_apoio, desc in (("", TINTA, TINTA_REDUZIDA, "para fundos claros"),
+                                             ("-negativa", PALHA, "#BCB8AE", "para fundo Tinta")):
+        m = CELULA
+        _, _, b0 = contorno(nome, "space-grotesk", URUPEMA_CORPO, (("wght", 600),))
+        base = m + MAIUSCULA * URUPEMA_CORPO
+        d_nome, _, bn = contorno(nome, "space-grotesk", URUPEMA_CORPO, (("wght", 600),), 0, m - b0[0], base)
+        base_e = base + COMPRIMENTO + ESPESSURA
+        _, _, be0 = contorno("um produto do ", "space-grotesk", INSTITUTO_CORPO, (("wght", 400),))
+        d1, w1, _ = contorno("um produto do ", "space-grotesk", INSTITUTO_CORPO, (("wght", 400),), 0, m - be0[0], base_e)
+        d2, _, b2 = contorno("Instituto Urupema", "space-grotesk", INSTITUTO_CORPO, (("wght", 600),), 0, m - be0[0] + w1, base_e)
+        corpo = f'<path d="{d_nome}" fill="{cor_nome}"/><path d="{d1}" fill="{cor_apoio}"/><path d="{d2}" fill="{cor_nome}"/>'
+        (SAIDA / f"{arquivo}-assinatura{sufixo}.svg").write_text(
+            svg(max(bn[2], b2[2]) + m, base_e + m, f"{nome} — um produto do Instituto Urupema ({desc})",
+                "Assinatura de produto: nome próprio sobre a linha de endosso do Instituto, em texto.", corpo))
+
+
+def assinatura_servico(nome, arquivo):
+    """Serviço da casa: assinatura horizontal do Instituto, filete e o nome do serviço.
+
+    O nome do serviço tem a altura de x de urupema, peso 400, na mesma linha de base; o filete
+    vai do topo das maiúsculas de INSTITUTO à linha de base, com um comprimento de barra de cada lado.
+    """
     for sufixo, (cor, centro, ci, cu, _, desc) in list(VARIANTES.items())[:2]:
         m = CELULA
-        corpo_nome = 1.05 * LADO
-        d_nome, w_nome, b_nome = contorno(nome, "space-grotesk", corpo_nome, (("wght", 600),))
-        cap = metricas("space-grotesk")["maiuscula"] * corpo_nome
-        x0 = m - b_nome[0]
-        base_nome = m + cap
-        d_nome, _, bn = contorno(nome, "space-grotesk", corpo_nome, (("wght", 600),), 0, x0, base_nome)
-        # linha de endosso: símbolo com lado = 0,36 do lado original
-        esc = 0.36
-        topo_endosso = base_nome + 0.40 * LADO
-        simb = barras(cor, centro, m, topo_endosso, esc)
-        corpo_endosso = 0.25 * LADO
-        cap_e = metricas("space-grotesk")["maiuscula"] * corpo_endosso
-        base_e = topo_endosso + (LADO * esc) / 2 + cap_e / 2
-        xe = m + LADO * esc + 0.13 * LADO
-        d1, w1, b1 = contorno("um produto do ", "space-grotesk", corpo_endosso, (("wght", 400),), 0, xe, base_e)
-        d2, w2, b2 = contorno("Instituto Urupema", "space-grotesk", corpo_endosso, (("wght", 600),), 0, xe + w1, base_e)
-        cor_apoio = TINTA_REDUZIDA if sufixo == "" else PALHA
-        corpo = (f'<path d="{d_nome}" fill="{cu}"/>' + simb +
-                 f'<path d="{d1}" fill="{cor_apoio}"/><path d="{d2}" fill="{cu}"/>')
-        largura = max(bn[2], b2[2]) + m
-        altura = topo_endosso + LADO * esc + m
-        (SAIDA / f"{arquivo}{sufixo}.svg").write_text(
-            svg(largura, altura, f"{nome} — um produto do Instituto Urupema ({desc})",
-                "Assinatura endossada: nome do produto sobre a linha de endosso do Instituto.", corpo))
+        texto, direita, _ = palavra(m + LADO + AFASTAMENTO, ci, cu, m)
+        corpo = barras(cor, centro, m, m) + texto
+        xf = direita + COMPRIMENTO
+        topo, base = m + FAIXA_INSTITUTO[0], m + FAIXA_URUPEMA[1]
+        corpo += f'<rect x="{xf:.2f}" y="{topo:.2f}" width="3" height="{base - topo:.2f}" fill="{cu}"/>'
+        _, _, b0 = contorno(nome, "space-grotesk", URUPEMA_CORPO, (("wght", 400),))
+        d, _, b = contorno(nome, "space-grotesk", URUPEMA_CORPO, (("wght", 400),), 0, xf + 3 + COMPRIMENTO - b0[0], base)
+        corpo += f'<path d="{d}" fill="{cu}"/>'
+        (SAIDA / f"{arquivo}-assinatura{sufixo}.svg").write_text(
+            svg(b[2] + m, LADO + 2 * m, f"{nome} Urupema — serviço do Instituto Urupema ({desc})",
+                "Assinatura de serviço da casa: assinatura do Instituto, filete e nome do serviço.", corpo))
+
+
+def icone_sistema(arquivo, pilula, lado=1024.0, janela=200.0):
+    """Ícone de sistema: recorte da malha centrado entre a pílula do sistema e o centro.
+
+    A pílula do sistema em Palha, o centro em Urucum, as demais barras apagadas; quadro com cantos
+    de 22% do lado. O símbolo inteiro continua exclusivo do Instituto.
+    """
+    def meio(i):
+        x, y, w, h = BARRAS[i]
+        return x + w / 2, y + h / 2
+    (ax, ay), (bx, by) = meio(pilula), meio(CENTRO)
+    cx, cy = (ax + bx) / 2, (ay + by) / 2
+    esc = lado / janela
+    ox, oy = lado / 2 - cx * esc, lado / 2 - cy * esc
+    for sufixo, fundo, acesa, apagada in (("", TINTA, PALHA, BARRA_APAGADA["escuro"]),):
+        partes = []
+        for i, (x, y, w, h) in enumerate(BARRAS):
+            c = URUCUM if i == CENTRO else (acesa if i == pilula else apagada)
+            # barra apagada que entra só como lasca na borda vira ruído: fica de fora
+            X0, Y0, X1, Y1 = ox + x * esc, oy + y * esc, ox + (x + w) * esc, oy + (y + h) * esc
+            visivel = max(0, min(X1, lado) - max(X0, 0)) * max(0, min(Y1, lado) - max(Y0, 0))
+            if c == apagada and visivel < 0.4 * (X1 - X0) * (Y1 - Y0):
+                continue
+            partes.append(f'<rect x="{ox + x * esc:.2f}" y="{oy + y * esc:.2f}" width="{w * esc:.2f}" '
+                          f'height="{h * esc:.2f}" rx="{17 * esc:.2f}" fill="{c}"/>')
+        r = lado * 0.22
+        corpo = (f'<clipPath id="q"><rect width="{lado:g}" height="{lado:g}" rx="{r:g}"/></clipPath>'
+                 f'<g clip-path="url(#q)"><rect width="{lado:g}" height="{lado:g}" fill="{fundo}"/>{"".join(partes)}</g>')
+        (SAIDA / f"{arquivo}-icone{sufixo}.svg").write_text(
+            svg(lado, lado, f"Ícone de sistema — {arquivo}",
+                "Recorte da malha: a pílula do sistema e o centro do símbolo.", corpo))
+
+
+def icone_instituto(lado=1024.0):
+    """Ícone de aplicativo do Instituto: o símbolo inteiro, negativo, no mesmo quadro dos sistemas."""
+    esc = 0.56 * lado / LADO
+    o = (lado - LADO * esc) / 2
+    corpo = f'<rect width="{lado:g}" height="{lado:g}" rx="{lado * 0.22:g}" fill="{TINTA}"/>' + barras(PALHA, URUCUM, o, o, esc)
+    (SAIDA / "instituto-icone.svg").write_text(
+        svg(lado, lado, "Ícone de aplicativo do Instituto Urupema", "Símbolo inteiro, negativo, em quadro de cantos arredondados.", corpo))
+
+
+def sistemas():
+    for nome, arquivo, tipo, pilula in SISTEMAS:
+        (assinatura_produto if tipo == "produto" else assinatura_servico)(nome, arquivo)
+        icone_sistema(arquivo, pilula)
+    icone_instituto()
 
 
 def carimbo():
@@ -277,7 +347,7 @@ if __name__ == "__main__":
     simbolos_campo()
     assinatura_horizontal()
     assinatura_vertical()
-    assinatura_produto("Forja", "forja-assinatura")
+    sistemas()
     carimbo()
     favicon_e_avatar()
     for f in sorted(SAIDA.glob("*.svg")):

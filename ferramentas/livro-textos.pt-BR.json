@@ -198,7 +198,7 @@
       "rules": [
         "Não redesenhar, rotacionar, espelhar, espaçar ou reordenar as barras; não colocar letras dentro do símbolo.",
         "O símbolo pode entrar em escala de campo, recortado pelo quadro, uma vez por peça, com a barra central sempre inteira e visível.",
-        "O símbolo nunca vira padrão, textura ou ícone de produto.",
+        "O símbolo inteiro é só do Instituto e nunca vira padrão ou textura; sistemas usam o seu ícone de sistema, nunca o símbolo.",
         "A assinatura não carrega descritor setorial fixo."
       ]
     },
@@ -246,7 +246,8 @@
     "model": "endorsed",
     "rules": [
       "O Instituto Urupema é a marca-mãe e a única fonte de autoridade institucional; o símbolo é só dele.",
-      "Produto recebe nome próprio quando pessoas de fora do Instituto o operam ou contratam diretamente e precisam reconhecê-lo onde o Instituto não aparece; assina sempre com a linha “um produto do Instituto Urupema”.",
+      "Serviço da casa é o sistema que a própria comunidade do Instituto usa para existir como instituição: identidade, comunicação, organização. Leva nome descritivo seguido de Urupema e assina com a assinatura horizontal do Instituto, um filete e o nome do serviço.",
+      "Produto endossado é o sistema oferecido a outras instituições, que o operam ou contratam e precisam reconhecê-lo onde o Instituto não aparece. Leva nome próprio sobre a linha “um produto do Instituto Urupema”, em texto, sem símbolo.",
       "Programa de pesquisa, educação ou impacto usa nome descritivo seguido de “do Instituto Urupema”; ganha nome próprio só com público externo recorrente e horizonte plurianual, e nunca cria símbolo.",
       "Componente técnico interno não recebe nome público; é descrito pela função.",
       "A iniciativa que não responde ao teste da urupema (tecnologia bruta entra, passa por critério, vira valor para quem precisa) é exceção estratégica e não recebe nome nem assinatura.",

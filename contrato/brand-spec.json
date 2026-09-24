@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 5,
-    "version": "2.1.0",
+    "version": "2.2.0",
     "brand_name": "Instituto Urupema",
     "tier": "full",
     "touchpoints": [
@@ -247,7 +247,7 @@
       "rules": [
         "Do not redraw, rotate, mirror, respace or reorder the bars; do not place letters inside the symbol.",
         "The symbol may enter at field scale, cropped by the frame, once per piece, with the centre bar always whole and visible.",
-        "The symbol never becomes a pattern, texture or product icon.",
+        "The whole symbol belongs to the Institute alone and never becomes a pattern or texture; systems use their system icon, never the symbol.",
         "The signature carries no fixed sector descriptor."
       ]
     },
@@ -282,6 +282,11 @@
         "Every figure carries source, data version and date in its footer."
       ]
     },
+    "system_icons": {
+      "construction": "Rounded square (corner radius 22% of the side) in Tinta; a crop of the mesh, 200 units wide, centred midway between the system's pill and the symbol's centre bar; the system's pill in Palha, the centre bar in Urucum, the other bars in #3E3A34; a dimmed bar that would show less than 40% of itself at the edge is left out.",
+      "assignment": "Each system with its own screen or app receives one of the eight outer pills of the mesh, in reading order from top left, and keeps it for good; a retired system's pill is not reassigned. The centre bar is the Institute's and is never assigned. Components receive no pill.",
+      "institute": "The Institute's own app icon is the whole symbol, negative, in the same rounded square."
+    },
     "motion": {
       "rules": [
         "Bars enter along orthogonal axes and lock into the mesh; no elasticity or waves.",
@@ -293,9 +298,15 @@
   },
   "architecture": {
     "model": "endorsed",
+    "systems": [
+      { "name": "Forja", "type": "endorsed_product", "pill": "top left" },
+      { "name": "IdP Urupema", "type": "house_service", "service_name": "IdP", "pill": "top centre" },
+      { "name": "Chat Urupema", "type": "house_service", "service_name": "Chat", "pill": "top right" }
+    ],
     "rules": [
       "Instituto Urupema is the parent brand and the only source of institutional authority; the symbol belongs to it alone.",
-      "A product gets its own name when people outside the Institute operate or buy it directly and need to recognise it where the Institute does not appear; it always signs with the line “um produto do Instituto Urupema”.",
+      "House service: a system the Institute's own community uses to exist as an institution (identity, communication, organisation). It takes a descriptive name followed by Urupema and signs with the Institute's horizontal signature, a vertical rule and the service name in Space Grotesk 400 at the x-height of urupema.",
+      "Endorsed product: a system offered to other institutions, who operate or buy it directly and need to recognise it where the Institute does not appear. It takes its own name, set in Space Grotesk 600 at the x-height of urupema, over the line “um produto do Instituto Urupema” in text, one bar length below the name's baseline; no symbol in the line.",
       "A research, education or impact programme uses a descriptive name followed by “do Instituto Urupema”; it gets its own name only with a recurring external audience and a multi-year horizon, and never creates a symbol.",
       "An internal technical component gets no public name; it is described by its function.",
       "An initiative that does not answer the urupema test (raw technology goes in, passes through criteria, becomes value for those who need it) is a strategic exception and gets neither name nor signature.",
