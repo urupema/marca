@@ -122,6 +122,7 @@ GRUPOS = [
     ("cores", "Cores e variáveis"),
     ("fontes", "Fontes e licenças"),
     ("modelos", "Modelos editáveis em HTML"),
+    ("fotografia", "Fotografia"),
     ("aplicacoes", "Aplicações de referência"),
 ]
 
@@ -286,6 +287,13 @@ td .chip {{ display: inline-block; width: 14px; height: 14px; border-radius: 3px
 .falha h4::before {{ content: "Não: "; color: var(--reduzida); font-weight: 500; }}
 .falha p {{ font-size: 15px; }}
 
+/* fotografia */
+.fotos {{ grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: 24px; row-gap: 40px; }}
+.fotos figure {{ margin: 0; }}
+.fotos .f-grande {{ grid-column: 1 / -1; }}
+.fotos img {{ width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }}
+.fotos .f-grande img {{ aspect-ratio: 21 / 9; object-position: 50% 8%; }}
+
 /* aplicações */
 .aplic {{ padding: 120px var(--m) 96px; border-top: 1px solid var(--areia); }}
 .aplic .par {{ display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; margin-bottom: 72px; align-items: start; }}
@@ -328,7 +336,7 @@ footer.fim p {{ grid-column: 5 / 12; font-size: 15px; color: var(--palha-reduzid
   .s-cab, .corpo-s {{ display: block; }}
   .s-cab h2 {{ margin-top: 12px; }}
   .corpo-s > * + * {{ margin-top: 48px; }}
-  .regras, .cadeia, .painel-simbolo, .assinaturas-grade, .especime, .dispositivos, .falhas, .frases, .decisao-nome, .arquivos, .aplic .par, .aplic .tres, .aplic .celular, .indice {{ grid-template-columns: 1fr; row-gap: 32px; }}
+  .fotos, .regras, .cadeia, .painel-simbolo, .assinaturas-grade, .especime, .dispositivos, .falhas, .frases, .decisao-nome, .arquivos, .aplic .par, .aplic .tres, .aplic .celular, .indice {{ grid-template-columns: 1fr; row-gap: 32px; }}
   .amostras {{ grid-template-columns: 1fr 1fr; }}
   .campo-cor {{ min-height: 240px; }}
   .campo-cor b {{ font-size: 22px; }}
@@ -708,8 +716,15 @@ corpo = f"""
 </section>
 
 <section class="s" id="imagem">
-  {cab(11, "imagem", "Documentar capacidade, não encenar impacto")}
+  {cab(11, "imagem", "Documentar capacidade, não encenar impacto", "Fotografia de trabalho real, perto das mãos e das ferramentas, com a luz do lugar. O calor da marca vem do Urucum gráfico, nunca de um filtro na foto.")}
   <div class="corpo-s">
+    <div class="fotos">
+      <figure class="f-grande"><img src="fotografia/provisoria-infraestrutura.jpg" alt="Técnica conecta um cabo de rede no painel de um rack de servidores"><figcaption><b>A ação em primeiro plano.</b> Mãos, cabo e painel dizem o que acontece; o rosto concentrado confirma que é trabalho, não pose.</figcaption></figure>
+      <figure><img src="fotografia/provisoria-pesquisa.jpg" alt="Pesquisador analisa gráficos no monitor, com caderno de anotações ao lado"><figcaption><b>Pessoa trabalhando, não olhando para a câmera.</b> Luz de janela, cor natural, tela legível só como forma.</figcaption></figure>
+      <figure><img src="fotografia/provisoria-saude.jpg" alt="Analista de dados de saúde marca uma linha em relatório impresso"><figcaption><b>O lugar como ele é.</b> Escritório público, papel e lápis; ninguém é retratado como beneficiário.</figcaption></figure>
+      <figure><img src="fotografia/provisoria-formacao.jpg" alt="Duas pessoas programam juntas em um notebook, em sala de aula"><figcaption><b>Aprender como trabalho.</b> Duas gerações diante do mesmo problema; a turma ao fundo, fora de foco.</figcaption></figure>
+      <figure><img src="fotografia/provisoria-cooperacao.jpg" alt="Mãos de quatro pessoas em volta de uma mesa com documentos, um diagrama e uma assinatura"><figcaption><b>Cooperação mostrada pelo que se decide.</b> O diagrama e a assinatura, não o aperto de mãos.</figcaption></figure>
+    </div>
     <div class="regras" style="grid-column:1/-1">
       <div class="regra"><h4>Fotografia</h4>{"".join(f'<p class="faca">{e(r)}</p>' for r in C["visual"]["imagery"]["rules"])}</div>
       <div class="regra"><h4>Ícones</h4>{"".join(f'<p class="faca">{e(r)}</p>' for r in C["visual"]["iconography"]["rules"])}</div>

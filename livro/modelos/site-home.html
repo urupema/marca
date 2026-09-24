@@ -32,6 +32,9 @@
   .quatro p { font-size: 15.5px; margin: 0 0 20px; }
   .quatro a { font-size: 15px; }
 
+  .foto { margin: 0; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; padding: 0 var(--margem) 96px; }
+  .foto img { grid-column: 1 / 13; width: 100%; height: 620px; object-fit: cover; display: block; }
+  .foto figcaption { grid-column: 1 / 7; margin-top: 14px; font-size: 14px; color: var(--papel-texto-secundario); }
   .prova { background: var(--papel-superficie); padding: 88px var(--margem); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 40px; }
   .prova .citacao { grid-column: 1 / 7; font: 400 40px/1.12 var(--fonte-institucional); font-variation-settings: "opsz" 60; margin: 0; }
   .prova .numeros { grid-column: 8 / 13; display: grid; row-gap: 26px; }
@@ -60,6 +63,8 @@
     .quatro { grid-template-columns: 1fr; }
     .quatro article { border-right: 0; margin-right: 0; border-bottom: 1px solid var(--papel-filete); padding-right: 0; }
     .quatro h3 { margin-top: 12px; }
+    .foto { display: block; padding-bottom: 56px; }
+    .foto img { height: 300px; }
     .prova { display: block; padding: 56px var(--margem); }
     .prova .citacao { font-size: 30px; margin-bottom: 36px; }
     footer { display: block; }
@@ -99,6 +104,11 @@
       <article><span class="n">04</span><h3>Extensão tecnológica</h3><p>Projetos de PD&amp;I sob encomenda, consultoria e treinamento que transferem conhecimento e sustentam a missão.</p><a class="acao-secundaria" href="#">Trabalhar com o Instituto</a></article>
     </div>
   </section>
+
+  <figure class="foto">
+    <img src="../fotografia/provisoria-infraestrutura.jpg" alt="Técnica conecta um cabo de rede no painel de um rack de servidores">
+    <figcaption>Infraestrutura computacional própria, operada pela equipe do Instituto.</figcaption>
+  </figure>
 
   <section class="prova">
     <p class="citacao">Antes do fluxo, existe a malha: quem decide, o que circula, onde roda e que prova fica.</p>

@@ -6,3 +6,4 @@ O livro da marca é [`livro/index.html`](livro/index.html): regras, masters, cor
 - `ferramentas/` — reproduz os masters, as variáveis de cor, os renders e o livro a partir do contrato:
   `python3 ferramentas/gerar_logos.py`, `python3 ferramentas/gerar_tokens.py`, `bash ferramentas/renderizar_aplicacoes.sh`, `python3 ferramentas/gerar_livro.py` (Python com fonttools e uharfbuzz; `npm i` em `ferramentas/` para o Playwright).
 - `referencias/briefing-mestre.docx` — o mandato desta etapa.
+- `livro/fotografia/provisoria-*.jpg` — fotos provisórias, até existir acervo real; para trocar, substitua o arquivo mantendo o nome e rode `bash ferramentas/renderizar_aplicacoes.sh` e `python3 ferramentas/gerar_livro.py`.
