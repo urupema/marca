@@ -6,9 +6,10 @@
 <link rel="stylesheet" href="componentes.css">
 <style>
   body { background: var(--color-paper); }
-  .quadro { width: 1600px; padding: 56px 88px 24px; display: grid; row-gap: 0; }
-  .modo { display: grid; grid-template-columns: 300px 1fr; column-gap: 48px; align-items: center; padding: 44px 0; border-top: 1px solid var(--papel-filete); }
-  .modo:first-child { border-top: 1px solid var(--papel-texto); }
+  /* a captura entra no livro na largura das 12 colunas: aqui a malha é a mesma, com calha de 24 */
+  .quadro { --col: calc((1600px + 24px) / 12); width: 1600px; padding: 24px var(--col) 24px; display: grid; row-gap: 0; }
+  .modo { display: grid; grid-template-columns: calc(3 * var(--col) - 24px) 1fr; column-gap: 24px; align-items: center; padding: 40px 0; border-bottom: 1px solid var(--papel-filete); }
+  .modo:last-child { border-bottom: 0; }
   .modo h2 { font: 500 24px/1.15 var(--fonte-institucional); font-variation-settings: "opsz" 36; margin: 8px 0 8px; }
   .modo .apoio { font-size: 14px; }
   .regua { display: flex; align-items: center; min-height: 120px; }
