@@ -15,12 +15,20 @@
   .regua { display: flex; align-items: center; min-height: 120px; }
   .regua img { height: 110px; }
   .com { font-size: 14px; color: var(--papel-texto-secundario); margin: 0 28px 0 16px; letter-spacing: .02em; }
-  /* marcas de parceiros: substitutos neutros, fora do sistema da marca */
-  .parceiro { display: inline-flex; align-items: center; justify-content: center; height: 64px; padding: 0 22px; border: 1px dashed #8E887F; border-radius: 4px; color: #8E887F; margin-right: 24px; }
-  .parceiro span { font: 500 11px/1 var(--fonte-sistema); letter-spacing: .09em; text-transform: uppercase; }
-  .parceiro span::before { content: "Marca: "; }
-  .regua.lidera-parceiro .principal { height: 96px; padding: 0 36px; margin-right: 48px; }
+  /* marcas de parceiros: substitutos neutros e sólidos, com um glifo geométrico e o nome; nunca uma marca real */
+  .parceiro { display: inline-flex; align-items: center; gap: 12px; height: 64px; color: #686157; margin-right: 40px; }
+  .parceiro::before { content: ""; width: 34px; height: 34px; flex: none; background: #8E887F; }
+  .parceiro.p-circulo::before { border-radius: 50%; }
+  .parceiro.p-hex::before { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+  .parceiro.p-anel::before { background: none; box-shadow: inset 0 0 0 5px #8E887F; border-radius: 50%; }
+  .parceiro.p-barra::before { width: 44px; height: 18px; border-radius: 9px; }
+  .parceiro span { font: 600 16px/1.1 var(--fonte-sistema); letter-spacing: -.01em; max-width: 9em; }
+  .regua.lidera-parceiro .principal { height: 96px; margin-right: 48px; }
+  .regua.lidera-parceiro .principal::before { width: 48px; height: 48px; }
+  .regua.lidera-parceiro .principal span { font-size: 22px; }
   .paridade .parceiro { height: 76px; margin: 0; }
+  .paridade .parceiro::before { width: 44px; height: 44px; }
+  .paridade .parceiro span { font-size: 20px; }
   .regua .realizacao { display: flex; align-items: center; border-left: 1px solid var(--papel-filete); padding-left: 32px; }
   .regua .realizacao .rotulo { margin-right: 8px; }
   .paridade { display: flex; align-items: center; }
@@ -34,15 +42,15 @@
     <div class="regua">
       <img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema">
       <span class="com">em parceria com</span>
-      <span class="parceiro"><span>Universidade Parceira</span></span>
-      <span class="parceiro"><span>Organização Social</span></span>
+      <span class="parceiro p-circulo"><span>Universidade Parceira</span></span>
+      <span class="parceiro p-hex"><span>Organização Social</span></span>
     </div>
   </section>
   <section class="modo">
     <div><p class="rotulo">Modo 2</p><h2>O parceiro lidera</h2><p class="apoio">Edital ou programa de outra instituição com participação do Instituto.</p></div>
     <div class="regua lidera-parceiro">
-      <span class="parceiro principal"><span>Programa estadual</span></span>
-      <div class="realizacao"><span class="rotulo">Execução</span><img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema" style="height:84px;margin:-20px 4px -20px -6px"><span class="parceiro"><span>Empresa Parceira</span></span></div>
+      <span class="parceiro principal p-anel"><span>Programa Estadual</span></span>
+      <div class="realizacao"><span class="rotulo">Execução</span><img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema" style="height:84px;margin:-20px 4px -20px -6px"><span class="parceiro p-barra"><span>Empresa Parceira</span></span></div>
     </div>
   </section>
   <section class="modo">
@@ -50,7 +58,7 @@
     <div class="paridade">
       <img src="../logo/assinatura-horizontal.svg" alt="Instituto Urupema" style="height:120px;margin:-28px -30px">
       <span class="filete-v"></span>
-      <span class="parceiro"><span>Universidade Parceira</span></span>
+      <span class="parceiro p-circulo"><span>Universidade Parceira</span></span>
     </div>
   </section>
 </div>

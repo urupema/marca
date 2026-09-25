@@ -549,8 +549,25 @@ footer.fim p { grid-column: 4 / 11; font-size: 15px; color: var(--palha-reduzida
 
 /* ============================================================ impresso */
 @media print {
-  @page { size: A4; margin: 14mm 14mm 16mm; }
-  @page :first { margin: 0; }
+  /* caderno A4: margem de uma célula, cabeço com o guia e o capítulo, fólio no pé */
+  @page {
+    size: A4; margin: 22mm 18mm 20mm;
+    @top-left { content: "Guia da marca · Instituto Urupema"; font: 500 7pt/1 "Space Grotesk", Arial, sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #686157; vertical-align: bottom; padding-bottom: 5mm; }
+    @top-right { font: 500 7pt/1 "Space Grotesk", Arial, sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #221F1A; vertical-align: bottom; padding-bottom: 5mm; }
+    @bottom-right { content: counter(page); font: 400 10pt/1 "Newsreader", Georgia, serif; color: #221F1A; vertical-align: top; padding-top: 5mm; }
+  }
+  @page :first { margin: 0; @top-left { content: none; } @bottom-right { content: none; } }
+  @page abre { margin: 0; @top-left { content: none; } @top-right { content: none; } @bottom-right { content: none; } }
+  @page c1 { @top-right { content: "I · A marca"; } }
+  @page c2 { @top-right { content: "II · Como usar"; } }
+  @page c3 { @top-right { content: "III · Aplicações"; } }
+  @page c4 { @top-right { content: "IV · Voz e produtos"; } }
+  @page c5 { @top-right { content: "V · Arquivos"; } }
+  body > div.capitulo:nth-of-type(1) { page: c1; }
+  body > div.capitulo:nth-of-type(2) { page: c2; }
+  body > div.capitulo:nth-of-type(3) { page: c3; }
+  body > div.capitulo:nth-of-type(4) { page: c4; }
+  body > div.capitulo:nth-of-type(5) { page: c5; }
   :root { --m: 0px; }
   body { font-size: 10pt; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { text-decoration: none; }
@@ -563,13 +580,14 @@ footer.fim p { grid-column: 4 / 11; font-size: 15px; color: var(--palha-reduzida
   .indice .ix-t { font-size: 10pt; }
   .indice .ix-s { font-size: 8pt; }
   /* abertura: página de capítulo, clara */
-  .abertura, .abertura.escura { --ab-linha: var(--areia); background-color: #fff; color: var(--tinta); min-height: 0; height: 262mm; padding: 0; break-before: page; break-after: page; }
-  .abertura::before { left: 0; right: 0; }
+  /* abertura: página inteira em Areia, sangrada; o Tinta fica para a capa */
+  .abertura, .abertura.escura { page: abre; --ab-linha: rgba(246,241,231,.95); background-color: var(--areia); color: var(--tinta); min-height: 0; height: 296.5mm; overflow: hidden; padding: 0 18mm 24mm; break-before: page; }
+  .abertura { grid-template-rows: 1fr auto auto auto; }
+  .abertura::before { left: 18mm; right: 18mm; }
   .sc-num b { font-size: 22pt; }
   .abertura.escura .rotulo, .abertura.escura .ab-lede, .abertura.escura .ab-sum a span { color: var(--reduzida); }
   .ab-num { font-size: 100pt; }
   .ab-tit { font-size: 60pt; }
-  .abertura { grid-template-rows: 1fr auto auto auto; }
   .ab-lede { font-size: 12pt; }
   .ab-sum a { font-size: 9.5pt; }
   .secao { padding: 0; border: 0 !important; break-before: page; }
