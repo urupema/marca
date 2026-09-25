@@ -377,6 +377,8 @@ figcaption b { color: var(--tinta); font-weight: 600; }
 .selo-demo dd { margin: 0; }
 
 /* ------------------------------------------------------------ V arquivos */
+.caderno img { width: 100%; }
+.caderno figcaption { max-width: 60ch; }
 .grupo-ativos { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); column-gap: var(--g); padding: 32px 0; border-top: 1px solid var(--areia); }
 .grupo-ativos:first-child { border-top: 1px solid var(--tinta); }
 .cab-ativos { grid-column: 1 / 5; }
@@ -627,6 +629,7 @@ footer.fim p { grid-column: 4 / 11; font-size: 15px; color: var(--palha-reduzida
   .ativo figcaption a, .lista .links a { color: var(--reduzida); text-decoration: none; }
   .lista.fontes li { grid-template-columns: 1fr; row-gap: 2px; }
   .so-papel { display: block; }
+  .caderno { display: none; }
   .lede-papel { font-size: 11pt; margin: -4mm 0 8mm; }
   footer.fim { background: none; color: var(--tinta); border-top: 1px solid var(--tinta); padding: 10mm 0 0; margin-top: 12mm; break-inside: avoid; }
   footer.fim img { content: url("logo/assinatura-horizontal.svg"); }
