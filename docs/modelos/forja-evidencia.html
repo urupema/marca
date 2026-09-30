@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="componentes.css">
 <style>
   body { font-size: 14px; background: var(--papel-fundo); }
-  .app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+  .app { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 100vh; }
   nav { border-right: 1px solid var(--papel-filete); padding: 24px 20px; display: flex; flex-direction: column; gap: 28px; }
   nav .marca { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
   nav .marca img { width: 32px; height: 32px; }
@@ -39,7 +39,7 @@
   .elo .apoio { font-size: 12.5px; }
   .elo .dado { font-size: 12px; color: var(--papel-texto-secundario); display: block; margin-top: 8px; }
 
-  .colunas { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; align-items: start; }
+  .colunas { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; align-items: start; }
   .painel { border: 1px solid var(--papel-filete); border-radius: 4px; background: var(--color-paper); }
   .painel h2 { font: 600 14px/1 var(--fonte-sistema); margin: 0; padding: 16px 20px; border-bottom: 1px solid var(--papel-filete); display: flex; justify-content: space-between; }
   table { width: 100%; border-collapse: collapse; }

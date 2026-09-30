@@ -431,11 +431,14 @@ footer.fim p { grid-column: 4 / 11; font-size: 15px; color: var(--palha-reduzida
   :root { --nav: 48px; }
   .principios ol { grid-template-rows: none; }
   .principios li { display: block; grid-row: auto; }
-  .nav-cap { overflow-x: auto; gap: 20px; scrollbar-width: none; }
+  .nav-cap { overflow-x: auto; gap: 16px; scrollbar-width: none; }
   .nav-cap::-webkit-scrollbar { display: none; }
   .nc-marca { margin-right: 0; }
   .nc-marca span { display: none; }
-  .nav-cap ol { gap: 20px; padding-right: var(--m); }
+  .nav-cap ol { gap: 12px; padding-right: var(--m); }
+  /* no celular a barra não cabe inteira: os outros capítulos ficam só no
+     numeral, e o capítulo atual mantém o nome, sempre visível */
+  .nav-cap ol a:not([aria-current]) { font-size: 0; gap: 0; }
   .capa h1 { font-size: 50px; hyphens: manual; margin-top: 380px; }
   .capa .campo { width: 118vw; right: auto; left: 22vw; top: 40px; }
   .indice { grid-template-columns: 1fr; row-gap: 0; }
@@ -599,7 +602,8 @@ footer.fim p { grid-column: 4 / 11; font-size: 15px; color: var(--palha-reduzida
   .sc-cab .lede, .texto-abre p { font-size: 11.5pt; }
   .ideia { font-size: 22pt !important; }
   .sc-corpo { row-gap: 10mm; }
-  .essencial li { font-size: 12pt; padding: 3mm 0 3.5mm; }
+  .essencial li { font-size: 12pt; padding: 3mm 0 3.5mm 9mm; }
+  .essencial li::before { top: calc(3mm + .55em); }
   /* detalhes sempre abertos no papel */
   .detalhes > summary::after { display: none; }
   .detalhes::details-content { content-visibility: visible; display: block; }
