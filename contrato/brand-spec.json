@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 5,
-    "version": "2.3.0",
+    "version": "2.4.0",
     "brand_name": "Instituto Urupema",
     "tier": "full",
     "touchpoints": [
@@ -247,9 +247,10 @@
         "symbol": "16 px with the pixel-fitted favicon; 20 px with the master; 6 mm in print",
         "horizontal_signature": "symbol at least 44 px tall on screen or 8.5 mm in print (drawing about 160 px or 30 mm wide), so that INSTITUTO stays legible; below that, the symbol alone",
         "vertical_signature": "the same minimum symbol height: 44 px or 8.5 mm",
-        "stamp": "25 mm diameter; on screen from 160 px"
+        "stamp": "40 mm diameter; on screen from 160 px; below that, the symbol in one colour",
+        "stamp_basis": "At 25 mm the lower ring text measured 0.6 mm cap height and the inner ring 0.13 mm; 40 mm is the smallest size at which the upper text reaches 1.6 mm and the inner ring 0.2 mm."
       },
-      "variants": "Tinta and Urucum on light; Palha and Urucum on Tinta; one colour Tinta for stamp, blind embossing and engraving; one colour Palha on dark.",
+      "variants": "Tinta and Urucum on light, with INSTITUTO in Tinta reduzida; Palha and Urucum on Tinta; one colour Tinta for stamp, blind embossing and engraving; one colour Palha on dark.",
       "rules": [
         "Do not redraw, rotate, mirror, respace or reorder the bars; do not place letters inside the symbol.",
         "The symbol may enter at field scale, cropped by the frame, once per piece, with the centre bar always whole and visible.",
@@ -325,9 +326,9 @@
     ]
   },
   "governance": {
-    "source_of_truth": "This repository: the brand book and its files in docs/ (published by GitHub Pages) and this contract. The book is hand-edited HTML and CSS (docs/index.html, docs/livro.css); its Portuguese wording changes together with this contract.",
+    "source_of_truth": "This repository: the brand book and its files in docs/ (published by GitHub Pages) and this contract. The book is hand-edited HTML and CSS (docs/index.html, docs/livro.css); its Portuguese wording changes together with this contract. In the book the thesis is called “a ideia” and the tagline “frase da marca”.",
     "owner": "Brand owner appointed by the Institute's leadership; approves new applications and exceptions.",
-    "change": "Proposal, test in a real application, owner approval and new version: a file fix changes the third number; a new rule or file, the second; thesis, symbol, base palette, type families or architecture, the first, with leadership approval.",
+    "change": "Proposal, test in a real application, owner approval and new version: a file fix changes the third number; a new rule or file, the second; thesis, tagline, symbol, base palette, type families or architecture, the first, with leadership approval.",
     "exceptions": "An exception is requested in writing, applies to one piece and is recorded; the same exception requested three times becomes a change proposal."
   }
 }
