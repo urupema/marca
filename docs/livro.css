@@ -52,7 +52,7 @@ figcaption b { color: var(--tinta); font-weight: 600; }
 
 /* ------------------------------------------------------------ capa */
 .capa { position: relative; overflow: hidden; min-height: min(88vh, 860px); padding: 40px var(--m) 48px; display: flex; flex-direction: column; }
-.capa .campo { position: absolute; width: min(1000px, 110vw); right: -14%; top: 4%; }
+.capa .campo { --campo: min(72vw, 1000px); position: absolute; width: var(--campo); right: calc(var(--campo) * -.3); top: 4%; } /* corte fixo de 30%: a barra do centro fica sempre inteira e à direita do título */
 .capa > :not(.campo) { position: relative; }
 .capa .marca { height: 80px; width: auto; margin: -16px 0 0 -16px; align-self: flex-start; }
 .capa h1 { font-size: clamp(64px, 10vw, 152px); line-height: .9; margin-top: auto; letter-spacing: -.026em; }
@@ -60,7 +60,7 @@ figcaption b { color: var(--tinta); font-weight: 600; }
 .atalhos { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); column-gap: var(--g); }
 .atalhos a { display: flex; flex-direction: column; gap: 4px; padding: 14px 0 4px; border-top: 1px solid var(--palha-reduzida); text-decoration: none; }
 .atalhos a b { font: 400 26px/1.1 var(--inst); font-variation-settings: "opsz" 36; }
-.atalhos a span { font-size: 14px; color: var(--palha-reduzida); }
+.atalhos a span { font-size: 14px; color: var(--palha-reduzida); text-wrap: balance; }
 .atalhos a:hover { border-top-color: var(--palha); }
 .atalhos a:hover b { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
 
@@ -289,7 +289,7 @@ h3.bloco + .principios { margin-top: 4px; }
 .selo-demo { display: inline-grid; grid-template-columns: auto 1fr; column-gap: 15px; border: 1.5px solid var(--tinta); border-radius: 5px; padding: 15px 20px 15px 15px; background: var(--palha); }
 .selo-demo > img { width: 35px; height: 35px; }
 .selo-demo .selo-t { font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-.selo-demo .selo-t span { font-weight: 500; color: var(--reduzida); }
+.selo-demo .selo-t span { font-weight: 500; color: var(--reduzida); display: inline-block; }
 .selo-demo dl { margin: 8px 0 0; display: grid; grid-template-columns: max-content max-content; column-gap: 15px; row-gap: 1px; font-size: 15.5px; }
 .selo-demo dt { font-size: 12.5px; padding-top: 3px; }
 .selo-demo dd { margin: 0; }
@@ -333,6 +333,7 @@ footer.fim p { font-size: 15px; color: var(--palha-reduzida); padding-top: 14px;
   .lt-marca { display: none; }
   .lateral ol { columns: 2; column-gap: var(--g); }
   .lateral li { break-inside: avoid; }
+  .atalhos { grid-template-columns: 1fr 1fr; row-gap: 20px; }
   .barra-topo { display: flex; position: sticky; top: 0; z-index: 20; align-items: center; gap: 10px; height: 48px; padding: 0 var(--m); background: var(--palha); border-bottom: 1px solid var(--areia); text-decoration: none; font-size: 14px; font-weight: 500; }
   .barra-topo img { width: 22px; height: 22px; }
   .barra-topo span { margin-left: auto; padding: 6px 10px 7px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--filete-forte); font-size: 13px; }
@@ -347,7 +348,6 @@ footer.fim p { font-size: 15px; color: var(--palha-reduzida); padding-top: 14px;
   .capa .campo { width: 118vw; right: auto; left: 22vw; top: 40px; }
   .capa h1 { margin-top: 300px; font-size: 64px; }
   .capa .sub { font-size: 18px; margin-bottom: 36px; }
-  .atalhos { grid-template-columns: 1fr 1fr; row-gap: 20px; }
   .atalhos a b { font-size: 22px; }
   .lateral ol { columns: 1; }
   .secao { padding: 72px 0 64px; }
@@ -373,7 +373,7 @@ footer.fim p { font-size: 15px; color: var(--palha-reduzida); padding-top: 14px;
   .grade-3, .grade-4 { grid-template-columns: 1fr 1fr; }
   .medidas { grid-template-columns: 1fr; row-gap: 28px; }
   .cores { grid-template-columns: 1fr 1fr; row-gap: 28px; }
-  .estados { grid-template-columns: 1fr 1fr; }
+  .estados { grid-template-columns: 1fr; }
   .hierarquia > div { grid-template-columns: 1fr; row-gap: 8px; }
   .hierarquia > div > span[style] { font-size: min(1em, 44px) !important; }
   .antes-depois .ad-cab { display: none; }
@@ -381,7 +381,7 @@ footer.fim p { font-size: 15px; color: var(--palha-reduzida); padding-top: 14px;
   .antes-depois .nao::before { content: "Não escreva: "; text-decoration: none; display: inline; }
   .antes-depois .sim::before { content: "Escreva: "; font-weight: 400; color: var(--reduzida); }
   .demo-ui { padding: 20px; }
-  .demo-ui .demo-l, .demo-ui .b2 { display: none; }
+  .demo-ui .demo-l, .demo-ui .demo-b .b2 { display: none; }
   .demo-malha .d-leg { display: none; }
   .demo-rot, .demo-tit { left: 20px; }
   .demo-rot { top: 20px; }
